@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
 
 const msp = state => {
-    // debugger
+    debugger
     return ({
         currentUser: state.entities.users[state.session.id]
     })
