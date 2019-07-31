@@ -13,10 +13,10 @@
 }
 
 .nav-bar-text {
-    font-family: sans-serif; 
-    color: gray;
-    font-weight: 850; 
-    font-size: 13px;
+    font-family: Arial, sans-serif; 
+    color: #484848;
+    font-weight: 500; 
+    font-size: 14px;
 }
 
 .nav-bar-text span {

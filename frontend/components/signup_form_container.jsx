@@ -6,7 +6,7 @@ import React from 'react';
 const msp = ({errors}) => {
     return ({
         errors: errors.session,
-        formType: "signup"
+        formType: "Sign up"
     })
 }
 
@@ -16,7 +16,7 @@ const mdp = dispatch => {
         otherForm: (
             <button onClick={() => dispatch(openModal('login'))}>
                 Login
-      </button>
+            </button>
         ),
         closeModal: () => dispatch(closeModal())
     };

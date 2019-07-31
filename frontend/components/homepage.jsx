@@ -12,7 +12,7 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                 <span>Help</span>
                 <button onClick={() => openModal('login')}>Login</button>
                 {/* &nbsp;&nbsp; */}
-                <button onClick={() => openModal('signup')}>Signup</button>
+                <button onClick={() => openModal('signup')}>Sign up</button>
             </div>
         </nav>
     );
