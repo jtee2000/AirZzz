@@ -10,9 +10,6 @@ const App = () => {
     return(
         <div>
             <header>
-                <Link to="/">
-                    <h1>AirZzz</h1>
-                </Link>
             <HomepageContainer />
             </header>
             <Switch>

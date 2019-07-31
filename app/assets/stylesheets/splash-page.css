@@ -1,0 +1,38 @@
+.nav-bar {
+    border: 1px solid lightgray;
+    padding: 30px; 
+    display: flex; 
+    justify-content: space-between; 
+
+}
+
+.logo {
+    background-image: url("https://i.kinja-img.com/gawker-media/image/upload/s--oqmQXcZx--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/n0uxpip8onijaufkntu9.jpg");
+    height: 10px; 
+    width: 10px; 
+}
+
+.nav-bar-text {
+    font-family: sans-serif; 
+    color: gray;
+    font-weight: 850; 
+    font-size: 13px;
+}
+
+.nav-bar-text span {
+    margin-right: 35px; 
+}
+
+.nav-bar-text a {
+    margin-right: 35px; 
+}
+
+.nav-bar-text a:last-of-type {
+    margin-right: 0; 
+}
+
+.logo {
+    /* background-image: url("https://s3-prod.adage.com/s3fs-public/styles/800x600/public/Airbnb_ChinaLogo17_0.jpg") !important; */
+    width: 50px !important; 
+    height: 50px !important; 
+}

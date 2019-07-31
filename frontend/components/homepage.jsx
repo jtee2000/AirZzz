@@ -8,10 +8,17 @@ class Homepage extends React.Component {
     render() {
         if (!this.props.currentUser) {
             return (
-                <div>
-                    <Link to="/signup">Signup</Link>
-                    <Link to="/login">Login</Link>
-                </div>
+                <>
+                <nav className="nav-bar">
+                    <Link to="/">Airzz</Link>
+                    <div className="nav-bar-text">
+                        <span>Become a Host</span>
+                        <span>Help</span>
+                        <Link to="/signup">Signup</Link>
+                        <Link to="/login">Login</Link>
+                    </div>
+                </nav>
+                </>
             )
         }
 
