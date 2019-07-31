@@ -6,9 +6,7 @@ class Homepage extends React.Component {
 
 
     render() {
-        // debugger
         if (!this.props.currentUser) {
-            // debugger
             return (
                 <div>
                     <Link to="/signup">Signup</Link>
