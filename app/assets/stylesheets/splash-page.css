@@ -23,11 +23,11 @@
     margin-right: 35px; 
 }
 
-.nav-bar-text a {
+.nav-bar-text button {
     margin-right: 35px; 
 }
 
-.nav-bar-text a:last-of-type {
+.nav-bar-text button:last-of-type {
     margin-right: 0; 
 }
 
