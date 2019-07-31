@@ -26,24 +26,24 @@ class SessionForm extends React.Component {
         }
     }
 
-    // renderErrors() {
-    //     return(
-    //         <ul>
-    //             {this.props.errors.map((error,i) => (
-    //                 <li key={`error-${i}`}>
-    //                     {error}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
+    renderErrors() {
+        return(
+            <ul>
+                {this.props.errors.map((error,i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
     render() {
         return (
             <div>
                 <h1>{this.props.formType}</h1>
                 <form onSubmit={this.handleSubmit}>
-                    {/* {this.renderErrors()} */}
+                    {this.renderErrors()}
                     <label>email
                         <input type="text" value={this.state.email} onChange={this.update("email")} />
                     </label>
