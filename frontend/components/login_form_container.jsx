@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { login } from '../actions/session_actions';
 import SessionForm from './session_form';
 import React from 'react';
+import {closeModal} from '../actions/modal_actions';
 
 const msp = ({errors}) => {
     return ({

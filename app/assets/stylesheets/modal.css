@@ -25,6 +25,17 @@
     align-content: center;
 }
 
+.form i {
+    margin: 20px;
+    padding: 4px;
+}
+
+.form i:active {
+    /* border: 1px solid gray; */
+    box-shadow: 2px 5px 4px gray;
+    border-radius: 40px; 
+}
+
 
 .form form {
     position: absolute;
@@ -76,12 +87,6 @@
 
 }
 
-.email-input:focus, .email-input:active {
-   border: 5px solid #00A699 !important;
-
-}
-
-
 .email-input i{
     align-content: center;
     margin-right: 10px;
@@ -95,6 +100,7 @@
 
 .form-button {
     color: white !important;
+    font-weight: 900;
 }
 
 .login-text {
@@ -115,5 +121,8 @@
 
 .link-highlight {
     color: #00A699 !important;
-    /* font-weight: 600 !important; */
+}
+
+.form ul {
+    text-align: center;
 }

@@ -6,11 +6,17 @@ const Homepage = ({ currentUser, logout, openModal }) => {
 
     const sessionLinks = () => (
         <nav className="nav-bar">
-            <Link to="/">
-            <div className="logo">
-                <div className="logo2"></div>
+            <div className="nav-bar-left">
+                <Link to="/">
+                    <div className="logo">
+                        <div className="logo2"></div>
+                    </div>
+                </Link>
+                <div className="search-bar">
+                    <i className="fas fa-search" ></i>
+                    <input type="text" value="Try Costa Blanca"/>
+                </div>
             </div>
-            </Link>
             <div className="nav-bar-text">
                 <div className="host-hover">
                 <span>Become a Host</span>
