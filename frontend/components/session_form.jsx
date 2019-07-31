@@ -16,8 +16,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
-
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     update(field) {
@@ -41,8 +40,14 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className="form">
-                <h1>{this.props.formType} with </h1>
-                
+                <div className="login-text">
+                    <span>{this.props.formType} with </span><span className="link-highlight">Facebook </span><span>or </span><span className="link-highlight">Google</span>
+                </div>
+                <div className="form-border">
+                    <span></span>
+                        or
+                    <span></span>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     {this.renderErrors()}
                     <div className="email-input">

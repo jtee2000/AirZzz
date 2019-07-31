@@ -6,9 +6,15 @@ const Homepage = ({ currentUser, logout, openModal }) => {
 
     const sessionLinks = () => (
         <nav className="nav-bar">
-            <Link to="/">Airzz</Link>
+            <Link to="/">
+            <div className="logo">
+                <div className="logo2"></div>
+            </div>
+            </Link>
             <div className="nav-bar-text">
+                <div className="host-hover">
                 <span>Become a Host</span>
+                </div>
                 <span>Help</span>
                 <button onClick={() => openModal('login')}>Login</button>
                 {/* &nbsp;&nbsp; */}

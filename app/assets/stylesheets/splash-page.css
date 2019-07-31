@@ -1,6 +1,6 @@
 .nav-bar {
     border: 1px solid lightgray;
-    padding: 30px; 
+    padding: 15px; 
     display: flex; 
     justify-content: space-between; 
 
@@ -13,10 +13,13 @@
 }
 
 .nav-bar-text {
+    display: flex; 
+    align-items: center;
     font-family: Arial, sans-serif; 
     color: #484848;
     font-weight: 500; 
     font-size: 14px;
+    /* vertical-align: middle; */
 }
 
 .nav-bar-text span {
@@ -25,14 +28,30 @@
 
 .nav-bar-text button {
     margin-right: 35px; 
+
 }
 
 .nav-bar-text button:last-of-type {
     margin-right: 0; 
 }
 
+.nav-bar-text button:hover {
+    border-bottom: 2px solid black;
+}
+
+.nav-bar-text span:hover {
+    border-bottom: 2px solid black;
+}
+
 .logo {
-    /* background-image: url("https://s3-prod.adage.com/s3fs-public/styles/800x600/public/Airbnb_ChinaLogo17_0.jpg") !important; */
-    width: 50px !important; 
-    height: 50px !important; 
+    width: 64px; 
+    height: 50px; 
+}
+
+.logo2 {
+    background-image: url('airbnb-logo.jpg');
+    width: 100%; 
+    height: 100%; 
+    background-position: 100%; 
+    background-size: cover; 
 }

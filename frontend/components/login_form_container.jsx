@@ -6,7 +6,7 @@ import React from 'react';
 const msp = ({errors}) => {
     return ({
         errors: errors.session,
-        formType: "login"
+        formType: "Login"
     })
 };
 
