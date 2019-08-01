@@ -33,10 +33,32 @@ const Homepage = ({ currentUser, logout, openModal }) => {
         </>
     );
     const personalGreeting = () => (
-        <hgroup className="header-group">
-            <h2 className="header-name">Hi, {currentUser.username}!</h2>
-            <button className="header-button" onClick={logout}>Log Out</button>
-        </hgroup>
+        // <hgroup className="header-group">
+        //     <h2 className="header-name">Hi, {currentUser.email}!</h2>
+        // </hgroup>
+        <nav className="nav-bar-2">
+            <div className="nav-bar-left-2">
+                <Link to="/">
+                    <div className="logo-2">
+                        <div className="logo2-2"></div>
+                    </div>
+                </Link>
+                <div className="search-bar-2">
+                    <i className="fas fa-search" ></i>
+                    <input type="text" value="Try &quot;Costa Blanca&quot;"/>
+                </div>
+            </div>
+            <div className="nav-bar-text-2">
+                <div className="host-hover-2-2">
+                    <span>Become a host</span>
+                </div>
+                <span>Help</span>
+                <button className="header-button-2" onClick={logout}>Log Out</button>
+                {/* <button onClick={() => openModal('login')}>Login</button> */}
+                {/* &nbsp;&nbsp; */}
+                {/* <button onClick={() => openModal('signup')}>Sign up</button> */}
+            </div>
+        </nav>
     );
 
     return (

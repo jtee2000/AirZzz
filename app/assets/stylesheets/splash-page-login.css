@@ -1,72 +1,70 @@
-.nav-bar {
-    /* border: 1px solid lightgray; */
+.nav-bar-2 {
+    border: 1px solid lightgray;
     display: flex; 
     justify-content: space-between; 
-    padding: 10px;
     align-content: center;
     width: 1500;
     z-index: 5;
 }
 
 
-.nav-bar-text {
+.nav-bar-text-2 {
     display: flex; 
     align-items: center;
     font-family: serif; 
-    /* color: #484848; */
-    color: white;
+    color: #484848;
     font-weight: 500; 
     font-size: 15px;
 }
 
 
-.nav-bar-text span {
+.nav-bar-text-2 span {
     margin-right: 35px; 
 }
 
-.nav-bar-text button {
+.nav-bar-text-2 button {
     margin-right: 35px; 
 
 }
 
-.nav-bar-text button:last-of-type {
+.nav-bar-text-2 button:last-of-type {
     margin-right: 17px; 
 }
 
-.nav-bar-text button:hover {
+.nav-bar-text-2 button:hover {
     border-bottom: 2px solid white;
 }
 
-.nav-bar-text span:hover {
+.nav-bar-text-2 span:hover {
     border-bottom: 2px solid white;
 }
 
-.logo {
+.logo-2 {
     width: 64px; 
     height: 50px; 
 }
 
-.logo2 {
-    background-image: url('air-tran.png');
+.logo2-2 {
+    background-image: url('air-tran-2.png');
     width: 100%; 
     height: 100%; 
     background-position: 100%; 
     background-size: cover; 
 }
 
-.nav-bar-left {
+.nav-bar-left-2 {
     display: flex; 
     text-align: center;
     margin-left: 17px;
 }
 
-.nav-bar a {
+.nav-bar-2 a {
     display: flex; 
    align-items: center;
 }
 
 
-.search-bar {
+.search-bar-2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -78,17 +76,17 @@
     box-shadow: 2px 2px 5px lightgray;
 }
 
-.search-bar i {
+.search-bar-2 i {
     margin-left: 10px;
 }
 
-.search-bar input {
+.search-bar-2 input {
     font-family: Arial; 
     color: 	#767676;
     font-weight: 700;
 }
 
-.splash-background-image {
+.splash-background-image-2 {
     background-image: url("boston_college.jpg");
     background-size: 100% 100% !important;
     width: 1680px;
