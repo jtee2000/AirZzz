@@ -1,0 +1,130 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+    width: 577px; 
+    height: 500px; 
+    background-color: white;
+    align-content: center;
+    /* display: block;
+    margin: 0 auto; */
+    align-content: center;
+}
+
+.form i {
+    margin: 15px;
+    padding: 4px;
+}
+
+.form i:active {
+    /* border: 1px solid gray; */
+    box-shadow: 2px 5px 4px gray;
+    border-radius: 40px; 
+}
+
+
+.form form {
+    position: absolute;
+    align-items: center;
+    
+}
+
+.form form input {
+    display: block;
+    align-content: center;
+    /* padding: 10px; 
+    border: 1px solid lightgray; */
+    border-radius: 5px;
+    width: 500px; 
+    margin: 20px;
+    font-family: serif;
+    color: gray;
+}
+
+
+
+.form-border {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    align-content: center;
+    padding: 10px;
+    color: gray;
+}
+
+.form-border span {
+    display: inline-block;
+    width: 250px;
+    height: 5px; 
+    border-bottom: 1px solid lightgray;
+}
+
+
+.email-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 500px; 
+    height: 45px;
+    margin: 17px 35px;
+
+
+}
+
+.email-input i{
+    align-content: center;
+    margin-right: 10px;
+}
+
+.form form div:last-of-type {
+    background-color: #FF5A5F; 
+    color: white !important;
+    text-align: center;
+}
+
+.form-button {
+    color: white !important;
+    font-family: Arial !important; 
+    font-weight: 900;
+}
+
+.login-text {
+    display: inline-block;
+    align-content: center;
+    padding: 5px;
+    width: 570px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.login-text span {
+    text-align: center;
+    padding: 0px; 
+    color:#484848;
+    font-family: serif;
+}
+
+.link-highlight {
+    color: #00A699 !important;
+}
+
+.form ul {
+    text-align: center;
+}

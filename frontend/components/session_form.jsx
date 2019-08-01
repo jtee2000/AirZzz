@@ -16,8 +16,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(() => this.props.history.push("/"));
-
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     update(field) {
@@ -26,39 +25,62 @@ class SessionForm extends React.Component {
         }
     }
 
-    // renderErrors() {
-    //     return(
-    //         <ul>
-    //             {this.props.errors.map((error,i) => (
-    //                 <li key={`error-${i}`}>
-    //                     {error}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
+    componentWillMount() {
+        this.props.clearErrors();
+    }
+
+    renderErrors() {
+        return(
+            <ul>
+                {this.props.errors.map((error,i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
     render() {
         return (
-            <div>
-                <h1>{this.props.formType}</h1>
+            <div className="form">
+                <i className="fas fa-times" onClick={this.props.closeModal}></i>
+                <div className="login-text">
+                    <span>{this.props.formType} with </span><span className="link-highlight">Facebook </span><span>or </span><span className="link-highlight">Google</span>
+                </div>
+                <div className="form-border">
+                    <span></span>
+                        or
+                    <span></span>
+                </div>
                 <form onSubmit={this.handleSubmit}>
-                    {/* {this.renderErrors()} */}
-                    <label>email
-                        <input type="text" value={this.state.email} onChange={this.update("email")} />
-                    </label>
-                    <label>First name
-                        <input type="text" value={this.state.fname} onChange={this.update("fname")} />
-                    </label>
-                    <label>Last name
-                        <input type="text" value={this.state.lname} onChange={this.update("lname")} />
-                    </label>
-                    <label>Password
-                        <input type="password" value={this.state.password} onChange={this.update("password")} />
-                    </label>
-                    <input type="submit" value="submit" />
+                    {this.renderErrors()}
+                    <div className="email-input">
+                        <input type="text" placeholder="Email address" value={this.state.email} onChange={this.update("email")} />
+                        <i className="far fa-envelope"></i>
+                    </div>
+                    {this.props.formType === "Sign up" && 
+                        <>
+                        <div className="email-input">
+                            <input type="text" placeholder="First Name" value={this.state.fname} onChange={this.update("fname")} />
+                            <i className="fas fa-users"></i>
+                        </div>
+                        <div className="email-input">
+                            <input type="text" placeholder="Last Name" value={this.state.lname} onChange={this.update("lname")} />
+                            <i className="fas fa-users"></i>
+                        </div>
+                        </>
+                    }
+                    <div className="email-input">
+                    <input type="password" placeholder="Create Password" value={this.state.password} onChange={this.update("password")} />
+                    <i className="fas fa-eye-slash"></i>
+                    </div>
+                    <div className="email-input">
+                    <input className="form-button" type="submit" value={this.props.formType} />
+                    </div>
                 </form>
             </div>
+            
         )
     }
 }
