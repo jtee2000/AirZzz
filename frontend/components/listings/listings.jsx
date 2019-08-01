@@ -9,16 +9,17 @@ class Listings extends React.Component {
     }
 
     render() {
-        debugger
         const listings = this.props.listings.map( (listing) => {
            return <ListingIndexItem listing={listing} key={listing.id}/>
         })
         return (
             <>
-                <h1>Places to stay around the world</h1>
-                <ul>
-                    {listings}
-                </ul>
+                <div className="homepage-index-container">
+                    <h1 className="listings-index-header">Places to stay around the world</h1>
+                    <ul className="listing-index-container">
+                        {listings}
+                    </ul>
+                </div>
             </>
         )
     }

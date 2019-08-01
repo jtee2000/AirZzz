@@ -5,7 +5,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './user_auth/modal';
 
 const App = () => {
-    // debugger
     return(
         <div>
             <Modal />

@@ -1,0 +1,69 @@
+.homepage-index-container {
+    padding: 30px 60px;
+  
+}
+
+.listing-main-img {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+.listings-index-header {
+    font-family: Arial; 
+    font-size: 23px; 
+    color: #484848;
+    font-weight: 800;
+    padding: 20px; 
+}
+
+.listing-index-container {
+    display: flex; 
+    flex-direction: row;
+    height: 100%;
+    flex-wrap: wrap;
+    
+}
+
+.listing-container {
+    width: 23%; 
+    height: 23%; 
+    padding: 15px; 
+}
+
+.listing-details-container {
+    display: flex; 
+    flex-direction: column;
+
+}
+
+.listing-details-container p {
+    padding: 3px;
+}
+
+.list-loc-ele {
+    font-family: 'Montserrat', sans-serif; 
+    font-stretch: condensed;
+    color: #767676;
+    font-weight: 900;
+    font-size: 12px; 
+}
+
+.list-desc-ele {
+    font-family: 'Montserrat', sans-serif; 
+    color: #484848;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.list-price-ele {
+    font-family: 'Montserrat', sans-serif; 
+    color: #767676;
+    font-size: 14px; 
+    font-weight: 100;
+}
+
+.listing-details-container span i {
+    color: #00A699;
+    font-size: 8px;
+}

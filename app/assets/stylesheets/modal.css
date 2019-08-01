@@ -51,10 +51,15 @@
     border-radius: 5px;
     width: 500px; 
     margin: 20px;
-    font-family: serif;
+    font-family: 'Montserrat', sans-serif;
     color: gray;
 }
 
+.form form input::placeholder {
+    color: lightgray;
+    font-size: 14px;
+    font-weight: 900;
+}
 
 
 .form-border {

@@ -9,5 +9,5 @@
 walsh = Listing.create({title: "Walsh Hall", description: "Not clean at all", price: 40, guests: 4, beds: 4, bedrooms: 2, baths: 1, latitude: 42.338194, longitude: -71.165355})
 fitz = Listing.create({title: "Fitzpatrick Hall", description: "So hot in the summers", price: 10, guests: 4, beds: 4, bedrooms: 1, baths: 1, latitude: 42.334530, longitude: -71.174423})
 iggy = Listing.create({title: "Ignacio Hall", description: "Bust down thotiana", price: 90, guests: 6, beds: 6, bedrooms: 3, baths: 2, latitude: 42.337988, longitude: -71.169765})
-
+vandy = Listing.create({title: "Vanderslice Hall", description: "Best sophomore housing", price: 100, guests: 8, beds: 8, bedrooms: 4, baths: 2, latitude: 3.337988, longitude: 4.169765})
 
