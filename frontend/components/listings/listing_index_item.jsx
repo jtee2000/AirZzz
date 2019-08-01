@@ -13,7 +13,7 @@ class ListingIndexItem extends React.Component {
                         <p className="list-loc-ele">{this.props.listing.title.toUpperCase()}</p>
                         <p className="list-desc-ele">{this.props.listing.description}</p>
                         <p className="list-price-ele">${this.props.listing.price}/night</p>
-                        <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span className="star-reviews"> No Reviews</span></span>
                     </div>
                 </li>
             </>

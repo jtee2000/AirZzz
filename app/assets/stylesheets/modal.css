@@ -20,21 +20,10 @@
     height: 500px; 
     background-color: white;
     align-content: center;
-    /* display: block;
-    margin: 0 auto; */
     align-content: center;
-}
-
-.form i {
-    margin: 15px;
     padding: 4px;
 }
 
-.form i:active {
-    /* border: 1px solid gray; */
-    box-shadow: 2px 5px 4px gray;
-    border-radius: 40px; 
-}
 
 
 .form form {
@@ -132,4 +121,17 @@
 
 .form ul {
     text-align: center;
+}
+
+.x {
+    width: 15px; 
+    height: 15px;
+    margin: 5px;
+    padding: 8px;
+}
+
+.x:active {
+    /* border: 1px solid gray; */
+    box-shadow: 2px 5px 7px gray;
+    border-radius: 40px; 
 }

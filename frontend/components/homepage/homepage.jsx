@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Listings from '../listings/listings_container';
+// import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { Route, Switch} from 'react-router-dom'; 
 
 const Homepage = ({ currentUser, logout, openModal }) => {
 
@@ -59,7 +61,6 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                     <button className="header-button-2" onClick={logout}>Log Out</button>
                 </div>
             </nav>
-            <Listings />
         </>
     );
 

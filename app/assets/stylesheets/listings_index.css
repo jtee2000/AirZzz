@@ -38,7 +38,10 @@
 }
 
 .listing-details-container p {
-    padding: 3px;
+    padding: 5px;
+}
+.listing-details-container span {
+    padding: 5px;
 }
 
 .list-loc-ele {
@@ -66,4 +69,10 @@
 .listing-details-container span i {
     color: #00A699;
     font-size: 8px;
+}
+
+.star-reviews {
+    font-size: 10px; 
+    font-family: 'Montserrat', sans-serif;
+    color: #767676;
 }

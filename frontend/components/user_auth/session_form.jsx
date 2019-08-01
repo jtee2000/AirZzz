@@ -16,7 +16,12 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.closeModal);
+        this.props.processForm(user).then(this.props.closeModal).then(() => {
+            debugger
+            return (
+                this.props.history.push("/listings")
+            )
+        })
     }
 
     update(field) {
@@ -44,7 +49,8 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className="form">
-                <i className="fas fa-times" onClick={this.props.closeModal}></i>
+                {/* <i className="fas fa-times" onClick={this.props.closeModal}></i> */}
+                <img className="x" onClick={this.props.closeModal} src={x_img} alt=""/>
                 <div className="login-text">
                     <span>{this.props.formType} with </span><span className="link-highlight">Facebook </span><span>or </span><span className="link-highlight">Google</span>
                 </div>
