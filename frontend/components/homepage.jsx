@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 const Homepage = ({ currentUser, logout, openModal }) => {
 
     const sessionLinks = () => (
+        <>
+        <div className="splash-background-image">
         <nav className="nav-bar">
             <div className="nav-bar-left">
                 <Link to="/">
@@ -12,14 +14,14 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                         <div className="logo2"></div>
                     </div>
                 </Link>
-                <div className="search-bar">
+                {/* <div className="search-bar">
                     <i className="fas fa-search" ></i>
                     <input type="text" value="Try &quot;Costa Blanca&quot;"/>
-                </div>
+                </div> */}
             </div>
             <div className="nav-bar-text">
                 <div className="host-hover">
-                <span>Become a Host</span>
+                <span>Become a host</span>
                 </div>
                 <span>Help</span>
                 <button onClick={() => openModal('login')}>Login</button>
@@ -27,6 +29,8 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                 <button onClick={() => openModal('signup')}>Sign up</button>
             </div>
         </nav>
+        </div>
+        </>
     );
     const personalGreeting = () => (
         <hgroup className="header-group">
