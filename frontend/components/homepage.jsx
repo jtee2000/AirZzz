@@ -29,6 +29,12 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                 <button onClick={() => openModal('signup')}>Sign up</button>
             </div>
         </nav>
+            <div className="rental-form">
+                <h1>Book unqiue places to stay and things to do.</h1>
+                <div className="rental-form-container">
+                    <button>   Search   </button>
+                </div>
+            </div>
         </div>
         </>
     );
