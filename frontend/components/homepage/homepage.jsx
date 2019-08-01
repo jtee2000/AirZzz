@@ -39,7 +39,7 @@ const Homepage = ({ currentUser, logout, openModal }) => {
         <>  
             <nav className="nav-bar-2">
                 <div className="nav-bar-left-2">
-                    <Link to="/">
+                    <Link to="/listings">
                         <div className="logo-2">
                             <img className="logo2-2" src={airTran2}/>
                         </div>
