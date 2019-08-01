@@ -45,8 +45,8 @@
 }
 
 .logo2-2 {
-    background-image: url('air-tran-2.png');
-    width: 100%; 
+    /* background-image: url('air-tran-2.png'); */
+    width: 130%; 
     height: 100%; 
     background-position: 100%; 
     background-size: cover; 

@@ -47,8 +47,8 @@
 }
 
 .logo2 {
-    background-image: url('air-tran.png');
-    width: 100%; 
+    /* background-image: url('air-tran.png'); */
+    width: 125%; 
     height: 100%; 
     background-position: 100%; 
     background-size: cover; 
@@ -130,12 +130,3 @@
     text-align: center;
 }
 
-.hello {
-    /* display: block;  */
-    /* position: relative;  */
-}
-
-.hello2 {
-    /* display: block; */
-    /* position: absolute; */
-}
