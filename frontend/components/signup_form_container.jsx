@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signup } from '../actions/session_actions';
+import { signup, clearErrors } from '../actions/session_actions';
 import SessionForm from './session_form';
 import React from 'react';
 import { closeModal } from '../actions/modal_actions'
@@ -19,7 +19,8 @@ const mdp = dispatch => {
                 Login
             </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        clearErrors: () => dispatch(clearErrors())
     };
 };
 

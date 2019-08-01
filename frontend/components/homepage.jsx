@@ -56,8 +56,12 @@ const Homepage = ({ currentUser, logout, openModal }) => {
             </div>
             <div className="nav-bar-text-2">
                 <div className="host-hover-2-2">
-                    <span>Become a host</span>
+                    <span>Add listing</span>
                 </div>
+                <span>Host</span>
+                <span>Saved</span>
+                <span>Trips</span>
+                <span>Messages</span>
                 <span>Help</span>
                 <button className="header-button-2" onClick={logout}>Log Out</button>
                 {/* <button onClick={() => openModal('login')}>Login</button> */}
