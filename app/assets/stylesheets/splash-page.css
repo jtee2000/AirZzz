@@ -89,10 +89,11 @@
 }
 
 .splash-background-image {
-    background-image: url("boston_college.jpg");
+    background-image: url(https://www.bc.edu/content/bc-web/bcnews/campus-community/around-campus/BCPSA_2017/_jcr_content/par/youtube_video/image.img.jpg/1504799145512.jpg);
     background-size: 100% 100% !important;
     width: 1680px;
     height: 900px;
+    /* z-index: -1;  */
 }
 
 .rental-form {
@@ -127,4 +128,14 @@
     display: flex; 
     justify-content: flex-end;
     text-align: center;
+}
+
+.hello {
+    /* display: block;  */
+    /* position: relative;  */
+}
+
+.hello2 {
+    /* display: block; */
+    /* position: absolute; */
 }

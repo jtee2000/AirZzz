@@ -6,6 +6,8 @@ window.airTran = "<%= image_url('air-tran.png') %>"
 window.airTran2 = "<%= image_url('air-tran-2.png') %>"
 </script>
 
+</main>
+
 
 <% if logged_in? %>
   <script type="text/javascript">
@@ -14,8 +16,4 @@ window.airTran2 = "<%= image_url('air-tran-2.png') %>"
       user: current_user
     ).html_safe %></script>
 <% end %>
-
-</main>
-
-
 

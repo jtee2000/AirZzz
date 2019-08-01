@@ -5,8 +5,12 @@ import { Link } from 'react-router-dom'
 const Homepage = ({ currentUser, logout, openModal }) => {
 
     const sessionLinks = () => (
-        <div>
-        <img className="splash-background-image" src={window.bostonCollege}/>
+        <>
+        {/* <div className="hello"> */}
+        {/* <img className="splash-background-image" src={window.bostonCollege}/> */}
+
+        <div className="splash-background-image">
+         {/* <div className="hello2"> */}
         <nav className="nav-bar">
             <div className="nav-bar-left">
                 <Link to="/">
@@ -14,10 +18,6 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                         <img className="logo2" src={airTran}/>
                     </div>
                 </Link>
-                {/* <div className="search-bar">
-                    <i className="fas fa-search" ></i>
-                    <input type="text" value="Try &quot;Costa Blanca&quot;"/>
-                </div> */}
             </div>
             <div className="nav-bar-text">
                 <div className="host-hover">
@@ -35,7 +35,10 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                     <button>   Search   </button>
                 </div>
             </div>
-        </div>
+            {/* // </div> */}
+        {/* // </div> */}
+            </div>
+        </>
     );
     const personalGreeting = () => (
         // <hgroup className="header-group">
