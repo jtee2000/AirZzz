@@ -11,10 +11,10 @@
 .nav-bar-text-2 {
     display: flex; 
     align-items: center;
-    font-family: serif; 
+    font-family: 'Montserrat', sans-serif; 
     color: #484848;
     font-weight: 500; 
-    font-size: 15px;
+    font-size: 14px;
 }
 
 

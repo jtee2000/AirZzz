@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 const Homepage = ({ currentUser, logout, openModal }) => {
 
     const sessionLinks = () => (
-        <>
-        <div className="splash-background-image">
+        <div>
+        <img className="splash-background-image" src={window.bostonCollege}/>
         <nav className="nav-bar">
             <div className="nav-bar-left">
                 <Link to="/">
                     <div className="logo">
-                        <div className="logo2"></div>
+                        <img className="logo2" src={airTran}/>
                     </div>
                 </Link>
                 {/* <div className="search-bar">
@@ -36,7 +36,6 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                 </div>
             </div>
         </div>
-        </>
     );
     const personalGreeting = () => (
         // <hgroup className="header-group">
@@ -46,7 +45,7 @@ const Homepage = ({ currentUser, logout, openModal }) => {
             <div className="nav-bar-left-2">
                 <Link to="/">
                     <div className="logo-2">
-                        <div className="logo2-2"></div>
+                        <img className="logo2-2" src={airTran2}/>
                     </div>
                 </Link>
                 <div className="search-bar-2">

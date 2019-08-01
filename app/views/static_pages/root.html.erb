@@ -1,4 +1,12 @@
-<main id="root"></main>
+<main id="root">
+
+<script type="text/javascript">
+window.bostonCollege = "<%= image_url('boston_college.jpg') %>"
+window.airTran = "<%= image_url('air-tran.png') %>"
+window.airTran2 = "<%= image_url('air-tran-2.png') %>"
+</script>
+
+
 <% if logged_in? %>
   <script type="text/javascript">
     window.currentUser = <%= render(
@@ -6,3 +14,8 @@
       user: current_user
     ).html_safe %></script>
 <% end %>
+
+</main>
+
+
+
