@@ -14,7 +14,7 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                 </Link>
                 <div className="search-bar">
                     <i className="fas fa-search" ></i>
-                    <input type="text" value="Try Costa Blanca"/>
+                    <input type="text" value="Try &quot;Costa Blanca&quot;"/>
                 </div>
             </div>
             <div className="nav-bar-text">

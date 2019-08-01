@@ -10,7 +10,7 @@
 
 .modal-child {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -26,7 +26,7 @@
 }
 
 .form i {
-    margin: 20px;
+    margin: 15px;
     padding: 4px;
 }
 
@@ -81,9 +81,10 @@
     align-items: center;
     border: 1px solid lightgray;
     border-radius: 5px;
-    width: 530px; 
-    height: 40px;
-    margin: 20px;
+    width: 500px; 
+    height: 45px;
+    margin: 17px 35px;
+
 
 }
 
@@ -100,14 +101,15 @@
 
 .form-button {
     color: white !important;
+    font-family: Arial !important; 
     font-weight: 900;
 }
 
 .login-text {
     display: inline-block;
     align-content: center;
-    padding: 20px;
-    width: 545px;
+    padding: 5px;
+    width: 570px;
     text-align: center;
     margin: 0 auto;
 }
