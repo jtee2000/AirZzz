@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  title       :string           not null
-#  description :string           not null
+#  description :text             not null
 #  price       :integer          not null
 #  guests      :integer          not null
 #  beds        :integer          not null
