@@ -22,6 +22,9 @@ class ListingShow extends React.Component {
         return(
             <>
                 <div className="photos-container">
+                    <div className="photo-container-half1">
+                        <img src={this.props.listing.photoUrl} alt=""/>
+                    </div>
                 </div>
                 <div className="listing-show-container">
                     <h1 className="listing-show-title">{this.props.listing.title}</h1>

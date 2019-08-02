@@ -19,7 +19,7 @@ iggy = Listing.create({title: "Ignacio Hall", description: "Bust down thotiana",
 vandy = Listing.create({title: "Vanderslice Hall", description: "Best sophomore housing", price: 100, guests: 8, beds: 8, bedrooms: 4, baths: 2, latitude: 3.337988, longitude: 4.169765})
 
 
-file = open('app/assets/images/thomas_moore.jpg')
-file2 = open('https://airzzz-seeds.s3.amazonaws.com/thomas_moore.jpg')
-walsh.photos.attach(io: file, filename: 'thomas_moore.jpg')
-walsh.photos.attach(io: file2, filename: 'boston_college.jpg')
+
+walsh_1 = open('https://airzzz-seeds.s3.amazonaws.com/thomas_moore.jpg')
+walsh_2 = open('https://airzzz-seeds.s3.amazonaws.com/walsh_hall.jpg')
+walsh.photos.attach(io: walsh_1, filename: 'thomas_more.jpg')
