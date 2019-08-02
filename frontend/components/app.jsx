@@ -4,6 +4,7 @@ import HomepageContainer from './homepage/homepage_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './user_auth/modal';
 import Listings from './listings/listings_container';
+import ListingShow from './listings/listing_show_container';
 
 const App = () => {
     return(
@@ -13,6 +14,7 @@ const App = () => {
             <HomepageContainer />
             </header>
             <Route exact path="/listings" component={Listings} />
+            <Route exact path="/listings/:listingId" component={ListingShow}/>
             {/* <Switch>
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />

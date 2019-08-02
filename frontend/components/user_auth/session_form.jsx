@@ -17,7 +17,6 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal).then(() => {
-            debugger
             return (
                 this.props.history.push("/listings")
             )
@@ -63,7 +62,7 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                     <div className="email-input">
                         <input type="text" placeholder="Email address" value={this.state.email} onChange={this.update("email")} />
-                        <i className="far fa-envelope"></i>
+                        <i className="far fa-etnvelope"></i>
                     </div>
                     {this.props.formType === "Sign up" && 
                         <>

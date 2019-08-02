@@ -10,7 +10,7 @@ class Api::ListingsController < ApplicationController
 
 
     def show 
-        @listing = Listing.find_by(params[:id])
+        @listing = Listing.find_by(id: params[:id])
         if @listing  
             render :show 
         else  

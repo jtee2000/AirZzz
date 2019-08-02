@@ -40,14 +40,15 @@
     border-radius: 5px;
     width: 500px; 
     margin: 20px;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
     color: gray;
 }
 
 .form form input::placeholder {
     color: lightgray;
-    font-size: 14px;
-    font-weight: 900;
+    font-size: 15px;
+    /* font-weight: 900; */
 }
 
 
@@ -85,6 +86,7 @@
 .email-input i{
     align-content: center;
     margin-right: 10px;
+    color: gray; 
 }
 
 .form form div:last-of-type {
