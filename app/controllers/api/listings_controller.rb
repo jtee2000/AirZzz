@@ -1,6 +1,8 @@
 class Api::ListingsController < ApplicationController 
     def index 
+        debugger
         @listings = Listing.all  
+   
         if @listings 
             render :index
         else  

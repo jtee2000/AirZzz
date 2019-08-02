@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 Listing.delete_all
 
 walsh = Listing.create({title: "Walsh Hall", description: "A building comprised of sophomores, eight-mans, and the Front Desk Pilot Project: Walsh Hall on Lower Campus, home to many late nights and sophomore bonding, is a favorite and quickly-picked building during the housing process.
@@ -17,3 +18,8 @@ fitz = Listing.create({title: "Fitzpatrick Hall", description: "So hot in the su
 iggy = Listing.create({title: "Ignacio Hall", description: "Bust down thotiana", price: 90, guests: 6, beds: 6, bedrooms: 3, baths: 2, latitude: 42.337988, longitude: -71.169765})
 vandy = Listing.create({title: "Vanderslice Hall", description: "Best sophomore housing", price: 100, guests: 8, beds: 8, bedrooms: 4, baths: 2, latitude: 3.337988, longitude: 4.169765})
 
+
+file = open('app/assets/images/thomas_moore.jpg')
+file2 = open('https://airzzz-seeds.s3.amazonaws.com/thomas_moore.jpg')
+walsh.photos.attach(io: file, filename: 'thomas_moore.jpg')
+walsh.photos.attach(io: file2, filename: 'boston_college.jpg')

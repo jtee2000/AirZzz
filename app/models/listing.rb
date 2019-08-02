@@ -19,7 +19,7 @@
 class Listing < ApplicationRecord 
     validates :title, :description, :price, :guests, :beds, :bedrooms, :baths, :longitude, :latitude, presence: true 
 
-
+    has_many_attached :photos
     
 
 end

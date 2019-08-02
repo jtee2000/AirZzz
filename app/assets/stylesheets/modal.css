@@ -46,7 +46,7 @@
 }
 
 .form form input::placeholder {
-    color: lightgray;
+    color: #767676;
     font-size: 15px;
     /* font-weight: 900; */
 }
