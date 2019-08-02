@@ -35,7 +35,7 @@ class ListingShow extends React.Component {
                         </div>
                         <div className="listing-linebreak"></div>
                         <div className="listing-show-description">
-                            <p>{simple_formatthis.props.listing.description}</p>
+                            <p>{this.props.listing.description}</p>
                         </div>
                     </div>
                     <div className="">
