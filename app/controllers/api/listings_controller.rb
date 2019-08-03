@@ -10,7 +10,6 @@ class Api::ListingsController < ApplicationController
 
 
     def show 
-        debugger
         @listing = Listing.find_by(id: params[:id])
         if @listing  
             render :show 

@@ -23,3 +23,4 @@ vandy = Listing.create({title: "Vanderslice Hall", description: "Best sophomore 
 walsh_1 = open('https://airzzz-seeds.s3.amazonaws.com/thomas_moore.jpg')
 walsh_2 = open('https://airzzz-seeds.s3.amazonaws.com/walsh_hall.jpg')
 walsh.photos.attach(io: walsh_1, filename: 'thomas_more.jpg')
+walsh.photos.attach(io: walsh_2, filename: 'walsh_hall.jpg')
