@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import Listings from '../listings/listings_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Route, Switch} from 'react-router-dom'; 
+import { Route, Switch, withRouter } from 'react-router-dom'; 
 
 const Homepage = ({ currentUser, logout, openModal }) => {
 
@@ -72,4 +72,4 @@ const Homepage = ({ currentUser, logout, openModal }) => {
 };
 
 
-export default Homepage; 
+export default withRouter(Homepage); 
