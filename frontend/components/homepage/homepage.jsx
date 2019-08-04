@@ -21,9 +21,15 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                         <div className="host-hover">
                             <span>Become a host</span>
                         </div>
-                        <span>Help</span>
-                        <button onClick={() => openModal('login')}>Login</button>
-                        <button onClick={() => openModal('signup')}>Sign up</button>
+                        <div className="host-hover">
+                            <span>Help</span>
+                        </div>
+                        <div className="host-hover">
+                            <button onClick={() => openModal('login')}>Login</button>
+                        </div>
+                        <div className="host-hover">
+                            <button onClick={() => openModal('signup')}>Sign up</button>
+                        </div>
                     </div>
                 </nav>
                 <div className="rental-form">
@@ -50,15 +56,27 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                     </div>
                 </div>
                 <div className="nav-bar-text-2">
-                    <div className="host-hover-2-2">
+                    <div className="host-hover-2">
                         <span>Add listing</span>
                     </div>
-                    <span>Host</span>
-                    <span>Saved</span>
-                    <span>Trips</span>
-                    <span>Messages</span>
-                    <span>Help</span>
-                    <button className="header-button-2" onClick={logout}>Log Out</button>
+                    <div className="host-hover-2">
+                        <span>Host</span>
+                    </div>
+                    <div className="host-hover-2">
+                        <span>Saved</span>
+                    </div>
+                    <div className="host-hover-2">
+                        <span>Trips</span>
+                    </div>
+                    <div className="host-hover-2">
+                        <span>Messages</span>
+                    </div>
+                    <div className="host-hover-2">
+                        <span>Help</span>
+                    </div>
+                    <div className="host-hover-2">
+                        <button className="header-button-2" onClick={logout}>Log Out</button>
+                    </div>
                 </div>
             </nav>
         </>

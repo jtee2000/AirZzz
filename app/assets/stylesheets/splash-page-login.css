@@ -19,26 +19,16 @@
 }
 
 
-.nav-bar-text-2 span {
-    margin-right: 35px; 
-}
 
-.nav-bar-text-2 button {
-    margin-right: 35px; 
 
-}
 
-.nav-bar-text-2 button:last-of-type {
-    margin-right: 17px; 
-}
-
-.nav-bar-text-2 button:hover {
+/* .nav-bar-text-2 button:hover {
     border-bottom: 2px solid white;
 }
 
 .nav-bar-text-2 span:hover {
     border-bottom: 2px solid white;
-}
+} */
 
 .logo-2 {
     width: 64px; 
@@ -93,5 +83,19 @@
     background-size: 100% 100% !important;
     width: 1680px;
     height: 900px;
+}
+
+.host-hover-2 {
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    margin-right: 35px;
+    margin-top: 30px;
+    margin-bottom: 29px;
+}
+
+.host-hover-2:hover {
+    border-bottom: 2px solid #767676; 
+    cursor: pointer;
 }
 

@@ -2,10 +2,11 @@
     /* border: 1px solid lightgray; */
     display: flex; 
     justify-content: space-between; 
-    padding: 10px;
+    /* padding: 10px; */
     align-content: center;
     width: 1500;
     z-index: 5;
+    border-bottom: 1px solid black; 
 }
 
 
@@ -19,27 +20,6 @@
     font-size: 14px;
 }
 
-
-.nav-bar-text span {
-    margin-right: 35px; 
-}
-
-.nav-bar-text button {
-    margin-right: 35px; 
-
-}
-
-.nav-bar-text button:last-of-type {
-    margin-right: 17px; 
-}
-
-.nav-bar-text button:hover {
-    border-bottom: 2px solid white;
-}
-
-.nav-bar-text span:hover {
-    border-bottom: 2px solid white;
-}
 
 .logo {
     width: 64px; 
@@ -62,7 +42,7 @@
 
 .nav-bar a {
     display: flex; 
-   align-items: center;
+    align-items: center;
 }
 
 
@@ -130,3 +110,16 @@
     text-align: center;
 }
 
+.host-hover {
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    margin-right: 35px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.host-hover:hover {
+    border-bottom: 1px solid white; 
+    cursor: pointer;
+}
