@@ -13,6 +13,7 @@
 
 .listing-show-container {
     padding: 0 300px;
+    min-width: 700px;
 }
 
 .listing-show-title {
@@ -102,4 +103,5 @@
     width: 30px; 
     height: 30px; 
     background: black; 
+    z-index: 5;
 }

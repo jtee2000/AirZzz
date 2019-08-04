@@ -6,6 +6,8 @@
 .listing-main-img {
     padding: 5px;
     border-radius: 10px;
+    width: 350px; 
+    height: 250px;
 }
 
 
@@ -14,7 +16,7 @@
     font-size: 23px; 
     color: #484848;
     font-weight: 800;
-    padding: 20px; 
+    padding: 20px 15px 8px 15px; 
 }
 
 .listing-index-container {
@@ -28,7 +30,7 @@
 .listing-container {
     width: 23%; 
     height: 23%; 
-    padding: 15px; 
+    padding: 8px; 
 }
 
 .listing-details-container {
@@ -38,10 +40,10 @@
 }
 
 .listing-details-container p {
-    padding: 5px;
+    padding: 2px 5px;
 }
 .listing-details-container span {
-    padding: 5px;
+    padding: 2px 5px;
 }
 
 .list-loc-ele {

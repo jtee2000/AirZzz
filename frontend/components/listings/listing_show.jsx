@@ -57,7 +57,7 @@ class ListingShow extends React.Component {
                         <div className="listing-linebreak"></div>
                         <h1>The neighborhood</h1>
                         <div ref={map => this.mapNode = map} className="google-map">
-                            <div className="circle"></div>
+                            <img src="https://developer.mozilla.org/en-US/" alt=""/>
                         </div>
                     </div>
                 </div>
