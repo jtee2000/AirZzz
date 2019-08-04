@@ -14,7 +14,7 @@ class ListingShow extends React.Component {
             debugger
             const mapOptions = { 
                 center: { lat: listing.listing.latitude, lng: listing.listing.longitude},
-                zoom: 12
+                zoom: 13
             }
 
             return this.map = new google.maps.Map(this.mapNode, mapOptions);
