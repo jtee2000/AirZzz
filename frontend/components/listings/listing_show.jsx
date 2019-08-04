@@ -9,7 +9,18 @@ class ListingShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchListing(this.props.match.params.listingId); 
+        debugger
+        this.props.fetchListing(this.props.match.params.listingId).then( (listing) => {
+            debugger
+            const mapOptions = { 
+                center: { lat: listing.listing.latitude, lng: listing.listing.longitude},
+                zoom: 12
+            }
+
+            return this.map = new google.maps.Map(this.mapNode, mapOptions);
+        }); 
+
+
     }
 
     componentDidUpdate(prevProps) {
@@ -41,8 +52,13 @@ class ListingShow extends React.Component {
                             <p>{this.props.listing.description}</p>
                         </div>
                     </div>
-                    <div className="">
-
+                    
+                    <div className="map-show-container">
+                        <div className="listing-linebreak"></div>
+                        <h1>The neighborhood</h1>
+                        <div ref={map => this.mapNode = map} className="google-map">
+                            <div className="circle"></div>
+                        </div>
                     </div>
                 </div>
             </>

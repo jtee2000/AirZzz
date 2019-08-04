@@ -1,15 +1,11 @@
 json.extract! listing, :id, :title, :description, :price, :guests, :beds, :bedrooms, :baths, :longitude, :latitude 
 
-ct = 0; 
 if listing.photos.attached?
     # debugger
     # json.photoUrl do
     #     listing.photos.each do |photo|
-    #         debugger
-    #         json.set! ct do 
+    #         # debugger
     #             url_for(photo)
-    #         end
-    #         ct+=1
     #     end
     # end
     # debugger
