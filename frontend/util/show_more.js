@@ -7,10 +7,6 @@ export const showMore = (body, id) => {
         var buttonText = document.getElementById("myBtn")
         var icon = document.getElementById("icon-1")
         if(ellipse.style.display === "none") {
-            // var icon = document.getElementById("icon-2")
-            // var icon2 = document.getElementById("icon-1")
-            // icon2.style.display = "inline"
-            // icon.style.display = "none"
             icon.removeAttribute("class");
             icon.setAttribute("class", "fas fa-chevron-down");
             ellipse.style.display = "inline";
@@ -18,10 +14,6 @@ export const showMore = (body, id) => {
             moreText.style.display = "none";
     
         } else {
-            // var icon = document.getElementById("icon-1")
-            // var icon2 = document.getElementById("icon-2")
-            // icon2.style.display = "inline"
-            // icon.style.display = "none"
             icon.removeAttribute("class");
             icon.setAttribute("class", "fas fa-chevron-up");
             ellipse.style.display = "none";
@@ -39,7 +31,6 @@ export const showMore = (body, id) => {
              <div className="show-more-btn-container">
                 <button className="show-more-button"onClick={helperfunc} className="show-more-button">
                     <i className="fas fa-chevron-down" id="icon-1"></i>
-                    {/* <i className="fas fa-chevron-up" id="icon-2"></i> */}
                     <p id="myBtn">Read more about this space</p>
                     
                 </button>
