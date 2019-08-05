@@ -1,11 +1,10 @@
 import React from 'react'; 
-
+import { showMore } from '../../util/show_more';
 
 class ListingShow extends React.Component {
 
     constructor(props) {
         super(props); 
-        this.state = this.props.listing; 
     }
 
     componentDidMount() {
@@ -14,7 +13,6 @@ class ListingShow extends React.Component {
                 center: { lat: listing.listing.latitude, lng: listing.listing.longitude},
                 zoom: 16
             }
-
             return this.map = new google.maps.Map(this.mapNode, mapOptions);
         }); 
 
@@ -27,12 +25,42 @@ class ListingShow extends React.Component {
         }
     }
 
+    getPhoto(ct, dir) {
+        if (!this.props.listing.photoUrl) {
+            return <div></div>
+        } else {
+            return <img className={`img-container`} src={this.props.listing.photoUrl[ct].service_url} />
+        }
+    }
+
     render() {
+        debugger
+        let btn;
+        if (this.props.listing.description !== undefined) {
+            debugger
+            btn = showMore(this.props.listing.description);
+        } else {
+            btn = undefined;
+        }
         return(
             <>
                 <div className="photos-container">
                     <div className="photo-container-half1">
-                        <img src={this.props.listing.photoUrl} alt=""/>
+                        {this.getPhoto(0, "half")}
+                    </div>
+                    <div className="photo-container-half2">
+                        <div className="photo-quarter">
+                            {this.getPhoto(1, "quarter")}
+                        </div>
+                        <div className="photo-quarter">
+                            {this.getPhoto(2, "quarter")}
+                        </div>
+                        <div className="photo-quarter">
+                            {this.getPhoto(3, "quarter")}
+                        </div>
+                        <div className="photo-quarter">
+                            {this.getPhoto(4, "quarter")}
+                        </div>
                     </div>
                 </div>
                 <div className="listing-show-container">
@@ -47,7 +75,8 @@ class ListingShow extends React.Component {
                         </div>
                         <div className="listing-linebreak"></div>
                         <div className="listing-show-description">
-                            <p>{this.props.listing.description}</p>
+                            {/* <p>{this.props.listing.description}</p> */}
+                            {btn}
                         </div>
                     </div>
                     
@@ -56,7 +85,6 @@ class ListingShow extends React.Component {
                         <h1>The neighborhood</h1>
                         <div ref={map => this.mapNode = map} className="google-map">
                         </div>
-                        <div className="circle"></div>
                     </div>
                 </div>
             </>

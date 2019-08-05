@@ -22,5 +22,13 @@ vandy = Listing.create({title: "Vanderslice Hall", description: "Best sophomore 
 
 walsh_1 = open('https://airzzz-seeds.s3.amazonaws.com/thomas_moore.jpg')
 walsh_2 = open('https://airzzz-seeds.s3.amazonaws.com/walsh_hall.jpg')
+walsh_3 = open('https://airzzz-seeds.s3.amazonaws.com/walsh-bc.jpg')
+walsh_4 = open('https://airzzz-seeds.s3.amazonaws.com/walsh-front-view.jpg')
+walsh_5 = open('https://airzzz-seeds.s3.amazonaws.com/walsh-layout.jpg')
+walsh_6 = open('https://airzzz-seeds.s3.amazonaws.com/walsh-street-view.jpg')
 walsh.photos.attach(io: walsh_1, filename: 'thomas_more.jpg')
 walsh.photos.attach(io: walsh_2, filename: 'walsh_hall.jpg')
+walsh.photos.attach(io: walsh_3, filename: 'walsh-bc.jpg')
+walsh.photos.attach(io: walsh_4, filename: 'walsh-front-view.jpg')
+walsh.photos.attach(io: walsh_5, filename: 'walsh-layout.jpg')
+walsh.photos.attach(io: walsh_6, filename: 'walsh-street-view.jpg')

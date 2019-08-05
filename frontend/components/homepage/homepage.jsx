@@ -52,7 +52,7 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                     </Link>
                     <div className="search-bar-2">
                         <i className="fas fa-search" ></i>
-                        <input type="text" value="Try &quot;Costa Blanca&quot;"/>
+                        <input type="text" placeholder="Try &quot;Costa Blanca&quot;"/>
                     </div>
                 </div>
                 <div className="nav-bar-text-2">
@@ -75,7 +75,7 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                         <span>Help</span>
                     </div>
                     <div className="host-hover-2">
-                        <button className="header-button-2" onClick={logout}>Log Out</button>
+                        <button className="header-button-2" onClick={() => logout().then(props.history.push("/"))}>Log Out</button>
                     </div>
                 </div>
             </nav>

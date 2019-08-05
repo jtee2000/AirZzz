@@ -2,16 +2,17 @@ json.extract! listing, :id, :title, :description, :price, :guests, :beds, :bedro
 
 if listing.photos.attached?
     # debugger
-    # json.photoUrl do
-    #     listing.photos.each do |photo|
-    #         # debugger
-    #             photo.service_url
-    #     end
-    # end
-    json.photoUrl2 do 
-        json.array! listing.photos, :service_url
+    json.photoUrl do
+        json.array! listing.photos.each do |photo|
+            # debugger
+                json.extract! photo, :service_url
+                # url_for(photo)
+        end
     end
+    # json.photoUrl do 
+    #     json.array! listing.photos, :service_url
+    # end
     # debugger
-    json.photoUrl url_for(listing.photos.first)
+    # json.photoUrl url_for(listing.photos.first)
     # json.photo2 url_for(listing.photos.second)
 end
