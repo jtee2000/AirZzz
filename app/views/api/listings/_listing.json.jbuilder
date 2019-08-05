@@ -5,9 +5,12 @@ if listing.photos.attached?
     # json.photoUrl do
     #     listing.photos.each do |photo|
     #         # debugger
-    #             url_for(photo)
+    #             photo.service_url
     #     end
     # end
+    json.photoUrl2 do 
+        json.array! listing.photos, :service_url
+    end
     # debugger
     json.photoUrl url_for(listing.photos.first)
     # json.photo2 url_for(listing.photos.second)

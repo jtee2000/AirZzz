@@ -5,6 +5,7 @@ export const RECEIVE_LISTING = "RECEIVE_LISTING"
 
 
 const receiveListing = (listing) => {
+    debugger
     return({
         type: RECEIVE_LISTING, 
         listing
