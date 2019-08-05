@@ -83,10 +83,12 @@
 .google-map {
     width: 66.66%;
     height: 500px;
+    z-index: -1;
 }
 
 .map-show-container {
     padding: 25px; 
+    
 }
 
 .map-show-container h1 {
@@ -102,6 +104,9 @@
 .circle {
     width: 30px; 
     height: 30px; 
-    background: black; 
-    z-index: 5;
+    background-color: black; 
+    z-index: 99 !important;
+    position: absolute; 
+    right: 1000px; 
+    /* bottom: 30px; */
 }

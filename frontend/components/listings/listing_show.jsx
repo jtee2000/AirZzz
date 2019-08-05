@@ -9,12 +9,10 @@ class ListingShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchListing(this.props.match.params.listingId).then( (listing) => {
-            debugger
             const mapOptions = { 
                 center: { lat: listing.listing.latitude, lng: listing.listing.longitude},
-                zoom: 13
+                zoom: 16
             }
 
             return this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -57,8 +55,8 @@ class ListingShow extends React.Component {
                         <div className="listing-linebreak"></div>
                         <h1>The neighborhood</h1>
                         <div ref={map => this.mapNode = map} className="google-map">
-                            <img src="https://developer.mozilla.org/en-US/" alt=""/>
                         </div>
+                        <div className="circle"></div>
                     </div>
                 </div>
             </>
