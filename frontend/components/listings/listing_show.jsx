@@ -33,15 +33,15 @@ class ListingShow extends React.Component {
         }
     }
 
-    render() {
-        debugger
-        let btn;
-        if (this.props.listing.description !== undefined) {
-            debugger
-            btn = showMore(this.props.listing.description);
+    getShow(description) {
+        if (description !== undefined) {
+           return showMore(description);
         } else {
-            btn = undefined;
+            return <div></div>;
         }
+    }
+
+    render() {
         return(
             <>
                 <div className="photos-container">
@@ -76,7 +76,7 @@ class ListingShow extends React.Component {
                         <div className="listing-linebreak"></div>
                         <div className="listing-show-description">
                             {/* <p>{this.props.listing.description}</p> */}
-                            {btn}
+                            <div className="description-show">{this.getShow(this.props.listing.description)}</div>
                         </div>
                     </div>
                     

@@ -140,3 +140,38 @@
 .photos-container:hover {
   background: linear-gradient(to bottom, transparent 0%, black 100%);
 }
+
+#more {
+    display: none;
+}
+
+.description-show {
+    width: 100%; 
+    height: 100%;
+}
+
+.show-more-button {
+    color: #00A699;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+#myBtn:hover {
+    text-decoration: underline;
+}
+
+
+.show-more-btn-container i {
+    color: #00A699;
+    margin-left: 10px;
+}
+
+#icon-1:hover ~ #myBtn {
+    text-decoration: underline;
+}
+
+#icon-2:hover ~ #myBtn {
+    text-decoration: underline;
+}
