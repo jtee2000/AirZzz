@@ -20,7 +20,7 @@ class Booking < ApplicationRecord
         class_name: :Listing
 
     def overlapping_requests 
-        
+        Booking.where(listing_id: self.listing_id).where
     end
 
 
