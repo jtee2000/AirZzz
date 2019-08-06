@@ -1,5 +1,5 @@
 export const createBooking = (booking) => {
-    return({
+    return $.ajax({
         method: "POST", 
         url: "api/bookings", 
         data: {booking}

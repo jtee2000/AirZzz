@@ -88,7 +88,7 @@ class ListingShow extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Bookings listing={this.props.listing}/>
+                <Bookings listing={this.props.match.params.listingId}/>
             </>
         )
     }

@@ -4,8 +4,8 @@ import { createBooking } from '../../actions/booking_actions';
 
 const msp = (state) => {
     return({
-        booking: state.booking,
-        user: state.entities.users[state.session.id]
+        user: state.entities.users[state.session.id], 
+
     })
 }
 
