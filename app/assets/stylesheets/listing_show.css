@@ -47,8 +47,9 @@
 
 
 .listing-show-container {
-    padding: 0 300px;
+    padding: 0 0 0 300px;
     min-width: 700px;
+    width: 40%;
 }
 
 .listing-show-title {
@@ -97,7 +98,7 @@
 
 .listing-linebreak {
     border-bottom: 1px solid lightgray; 
-    width: 66.66%; 
+    width: 100%; 
     padding: 10px 0; 
 }
 
@@ -108,7 +109,7 @@
     font-stretch: condensed;
     font-weight: 100;
     font-size: 14px;
-    width: 66.66%;
+    width: 100%;
 }
 
 .listing-container {
@@ -116,7 +117,7 @@
 }
 
 .google-map {
-    width: 66.66%;
+    width: 100%;
     height: 500px;
     z-index: -1;
 }
@@ -175,3 +176,43 @@
 #icon-2:hover ~ #myBtn {
     text-decoration: underline;
 }
+
+.listing-show-body {
+    display: flex;
+}
+
+.booking-form-container {
+    margin-top: 25px;
+    width: 375px; 
+    height: 460px;
+    /* background-color: #00A699; */
+}
+
+.reserve-button {
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 15px;
+    background-color: #FF5A5F;
+    color: white;
+    width: 300px;
+    text-align: center;
+    font-family: Arial;
+    font-weight: 900;
+    /* margin-top: 300px; */
+}
+
+.booking-literal-form-container {
+    height: 460px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around;
+    /* align-items: space-between; */
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+
+
+

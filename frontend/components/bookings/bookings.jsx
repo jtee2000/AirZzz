@@ -16,9 +16,10 @@ class Booking extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({user_id: this.props.user.id })
-        const x = window.parseInt(this.props.listing, 10)
-        this.setState({listing_id: x })
+        this.props.fetchListing(this.props.listing_id);
+        this.setState({user_id: this.props.user.id });
+        const x = window.parseInt(this.props.listing_id, 10);
+        this.setState({listing_id: x });
     }
 
     handleSubmit(e) {
@@ -51,17 +52,25 @@ class Booking extends React.Component {
 
 
     render () {
+        debugger
         return(
             <>
                 <div>
                     <form onSubmit={this.handleSubmit}>
-                        <label>Start Date
-                            <input type="date" onChange={this.update("start_date")} value={this.state.start_date || this.getDate()}/>
-                        </label>
-                        <label>End Date
-                            <input type="date" onChange={this.update("end_date")} value={this.state.end_date || this.getDate()}/>
-                        </label>
-                        <input type="submit" value="Reserve"/>
+                        <div className="booking-literal-form-container">
+                            <div className="bookings-details-container"><span></span><span></span></div>
+                            <div className="date-inputs">
+                                <label>Start Date
+                                    <input type="date" onChange={this.update("start_date")} value={this.state.start_date || this.getDate()}/>
+                                </label>
+                                <label>End Date
+                                    <input type="date" onChange={this.update("end_date")} value={this.state.end_date || this.getDate()}/>
+                                </label>
+                            </div>
+                            <div>
+                                <input className="reserve-button" type="submit" value="Reserve"/>
+                            </div>
+                        </div>
                     </form>
 
                 </div>

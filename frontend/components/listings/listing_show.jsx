@@ -49,6 +49,7 @@ class ListingShow extends React.Component {
                     <div className="photo-container-half1">
                         {this.getPhoto(0, "half")}
                     </div>
+                   
                     <div className="photo-container-half2">
                         <div className="photo-quarter">
                             {this.getPhoto(1, "quarter")}
@@ -64,31 +65,35 @@ class ListingShow extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="listing-show-container">
-                    <h1 className="listing-show-title">{this.props.listing.title}</h1>
-                    <div className="listing-detail-container">
-                        <div className="first-collection">
-                            <i className="fas fa-home"></i>
-                            <div className="listing-house-details-container">
-                                <h1>Entire house</h1>
-                                <span><span>{this.props.listing.guests} guests </span><span>{this.props.listing.bedrooms} bedrooms </span><span>{this.props.listing.beds} beds </span><span>{this.props.listing.baths} baths</span></span>
+                <div className="listing-show-body">
+                    <div className="listing-show-container">
+                        <h1 className="listing-show-title">{this.props.listing.title}</h1>
+                        <div className="listing-detail-container">
+                            <div className="first-collection">
+                                <i className="fas fa-home"></i>
+                                <div className="listing-house-details-container">
+                                    <h1>Entire house</h1>
+                                    <span><span>{this.props.listing.guests} guests </span><span>{this.props.listing.bedrooms} bedrooms </span><span>{this.props.listing.beds} beds </span><span>{this.props.listing.baths} baths</span></span>
+                                </div>
+                            </div>
+                            <div className="listing-linebreak"></div>
+                            <div className="listing-show-description">
+                                {/* <p>{this.props.listing.description}</p> */}
+                                <div className="description-show">{this.getShow(this.props.listing.description)}</div>
                             </div>
                         </div>
-                        <div className="listing-linebreak"></div>
-                        <div className="listing-show-description">
-                            {/* <p>{this.props.listing.description}</p> */}
-                            <div className="description-show">{this.getShow(this.props.listing.description)}</div>
+                        
+                        <div className="map-show-container">
+                            <div className="listing-linebreak"></div>
+                            <h1>The neighborhood</h1>
+                            <div ref={map => this.mapNode = map} className="google-map">
+                            </div>
                         </div>
                     </div>
-                    
-                    <div className="map-show-container">
-                        <div className="listing-linebreak"></div>
-                        <h1>The neighborhood</h1>
-                        <div ref={map => this.mapNode = map} className="google-map">
-                        </div>
+                    <div className="booking-form-container">
+                        <Bookings className="booking-form" listing_id={this.props.match.params.listingId} />
                     </div>
-                </div>
-                <Bookings listing={this.props.match.params.listingId}/>
+                </div> 
             </>
         )
     }

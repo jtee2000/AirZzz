@@ -1,17 +1,21 @@
 import { connect } from 'react-redux'; 
 import Booking from './bookings';
 import { createBooking } from '../../actions/booking_actions';
-
-const msp = (state) => {
+import { fetchListing } from '../../actions/listing_actions';
+const msp = (state, ownProps) => {
+    debugger
+    const listing = state.entities.listings[10] || {};
     return({
         user: state.entities.users[state.session.id], 
+        listing: listing
 
     })
 }
 
 const mdp = (dispatch) => {
     return({
-        processForm: (booking) => dispatch(createBooking(booking))
+        processForm: (booking) => dispatch(createBooking(booking)),
+        fetchListing: (id) => dispatch(fetchListing(id))
     })
 }
 
