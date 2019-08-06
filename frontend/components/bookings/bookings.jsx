@@ -9,7 +9,8 @@ class Booking extends React.Component {
             start_date: this.getDate(), 
             end_date: this.getDate(), 
             user_id: 0, 
-            listing_id: 0
+            listing_id: 0,
+            guests: 0
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }

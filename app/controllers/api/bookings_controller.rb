@@ -1,6 +1,7 @@
-class Api::Bookings_Controller < ApplicationController 
+class Api::BookingsController < ApplicationController 
 
     def create 
+        # debugger
         @booking = Booking.new(booking_params)
         if @booking.ensure_nonoverlapping_requests && @booking.save
             render :index

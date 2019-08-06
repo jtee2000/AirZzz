@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 Listing.delete_all
+User.delete_all 
+Booking.delete_all
 
 walsh = Listing.create({title: "Walsh Hall", description: "A building comprised of sophomores, eight-mans, and the Front Desk Pilot Project: Walsh Hall on Lower Campus, home to many late nights and sophomore bonding, is a favorite and quickly-picked building during the housing process.
 Eight-man suites contain two bathrooms and a common room, offering more living space for residents to enjoy. Walsh is also centrally located—with its proximity to Corcoran Commons, the Res, the B-Line, and other residence halls, residents are able to enjoy different aspects of campus life right outside their door.

@@ -21,14 +21,15 @@ class Booking < ApplicationRecord
         class_name: :Listing
 
     def overlapping_requests 
+        # debugger
         Booking
         .where.not(id: self.id)
-        .where(listing_id: self.listing_id)
-        .where('start_date > :end_date OR end_date < :start_date',
-                 start_date: start_date, end_date: end_date)
+        .where(listing_id: listing_id)
+        .where.not("start_date > ? OR end_date < ?", self.end_date, self.start_date)
     end
 
     def ensure_nonoverlapping_requests 
+        # debugger
         overlapping_requests.empty? 
     end
 
