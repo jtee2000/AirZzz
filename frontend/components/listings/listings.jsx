@@ -12,9 +12,8 @@ class Listings extends React.Component {
         const listings = this.props.listings.map( (listing) => {
            return <ListingIndexItem listing={listing} key={listing.id}/>
         });
-        debugger
         return (
-            <>
+            <aside>
                
                     <div className="homepage-index-container">
                         <h1 className="listings-index-header">What can we help you find, {this.props.user.fname.split(" ").join("")}?</h1>
@@ -24,7 +23,7 @@ class Listings extends React.Component {
                         </ul>
                     </div>
                 
-            </>
+            </aside>
         )
     }
 }

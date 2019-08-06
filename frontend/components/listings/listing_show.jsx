@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { showMore } from '../../util/show_more';
+import Bookings from '../bookings/bookings_container';
 
 class ListingShow extends React.Component {
 
@@ -87,6 +88,7 @@ class ListingShow extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Bookings listing={this.props.listing}/>
             </>
         )
     }
