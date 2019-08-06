@@ -21,7 +21,6 @@ class Booking < ApplicationRecord
         class_name: :Listing
 
     def overlapping_requests 
-        # debugger
         Booking
         .where.not(id: self.id)
         .where(listing_id: listing_id)
@@ -29,7 +28,6 @@ class Booking < ApplicationRecord
     end
 
     def ensure_nonoverlapping_requests 
-        # debugger
         overlapping_requests.empty? 
     end
 

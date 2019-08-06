@@ -194,7 +194,7 @@
     font-size: 15px;
     background-color: #FF5A5F;
     color: white;
-    width: 300px;
+    width: 80%;
     text-align: center;
     font-family: Arial;
     font-weight: 900;
@@ -204,15 +204,71 @@
 .booking-literal-form-container {
     height: 460px;
     width: 100%;
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-around;
-    /* align-items: space-between; */
     text-align: center;
     border: 1px solid lightgray;
     border-radius: 3px;
+    position: sticky;
+    top: 0px; 
+    /* display: flex;  */
+    /* align-items: space-around; */
+    
+}
+
+.the-literal-literal-container {
+    height: 1000px;
+    
 }
 
 
+.form-container {
+    height: 66.66%;
+    display: flex; 
+    flex-direction: column; 
+    /* align-items: space-between; */
+    justify-content: space-around;
+    text-align: center;
+}
 
 
+#bookings-show-star-reviews i {
+    color: #008489;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.bookings-price-container {
+    text-align: left;
+    padding: 22px;
+}
+
+.bookings-linebreak {
+    border-bottom: 1px solid lightgray; 
+    width: 100%; 
+    text-align: center !important;
+    padding-top: 22px;
+}
+
+.bookings-price-header {
+    font-size: 20px; 
+    color: #484848;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    font-weight: 700;
+}
+
+.bookings-per-night {
+    color: #484848;
+    font-size: 11px;
+    /* font-weight: 900; */
+    /* font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bookings-span-mini-details {
+    display: flex;
+    flex-direction: column;
+    /* padding-bottom: 5px; */
+}
+
+.star-reviews {
+    color: #484848;
+}

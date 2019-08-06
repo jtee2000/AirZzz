@@ -16,7 +16,7 @@ class Booking extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchListing(this.props.listing_id);
+        debugger
         this.setState({user_id: this.props.user.id });
         const x = window.parseInt(this.props.listing_id, 10);
         this.setState({listing_id: x });
@@ -37,7 +37,7 @@ class Booking extends React.Component {
     getDate() {
         var today = new Date();
         var dd = today.getDate();
-        var mm = today.getMonth() + 1; //January is 0!
+        var mm = today.getMonth() + 1; 
         var yyyy = today.getFullYear();
         if (dd < 10) {
             dd = '0' + dd
@@ -55,9 +55,16 @@ class Booking extends React.Component {
         debugger
         return(
             <>
-                <div>
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="booking-literal-form-container">
+                <aside className="the-literal-literal-container">
+                    <div className="booking-literal-form-container">
+                        <div className="bookings-price-container"> 
+                            <div className="bookings-span-mini-details">
+                                <span className="bookings-price-header"><i class="fas fa-dollar-sign"></i>{this.props.listing.price} <span className="bookings-per-night"> per night</span></span>
+                            </div>
+                            <span id="bookings-show-star-reviews"><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><span className="star-reviews"> No Reviews</span></span>
+                            <div className="bookings-linebreak"></div>
+                        </div>
+                        <form onSubmit={this.handleSubmit} className="form-container">
                             <div className="bookings-details-container"><span></span><span></span></div>
                             <div className="date-inputs">
                                 <label>Start Date
@@ -70,10 +77,10 @@ class Booking extends React.Component {
                             <div>
                                 <input className="reserve-button" type="submit" value="Reserve"/>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
 
-                </div>
+                </aside>
             </>
         )
     }

@@ -4,9 +4,9 @@ import { createBooking } from '../../actions/booking_actions';
 import { fetchListing } from '../../actions/listing_actions';
 const msp = (state, ownProps) => {
     debugger
-    const listing = state.entities.listings[10] || {};
+    const listing = state.entities.listings[ownProps.listing_id] || {};
     return({
-        user: state.entities.users[state.session.id], 
+        user: state.entities.users[state.session.id],
         listing: listing
 
     })
