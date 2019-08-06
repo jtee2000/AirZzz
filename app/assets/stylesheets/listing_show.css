@@ -49,7 +49,7 @@
 .listing-show-container {
     padding: 0 0 0 300px;
     min-width: 700px;
-    width: 40%;
+    width: 60%;
 }
 
 .listing-show-title {
@@ -271,4 +271,42 @@
 
 .star-reviews {
     color: #484848;
+}
+
+.date-picker-calendar {
+    width: 100%; 
+    display: flex;
+    padding: 0 25px;
+    flex-direction: column;
+}
+
+.date-picker-calendar p {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    color: #484848;
+    padding-bottom: 3px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.DateInput_input.DateInput_input_1 {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    font-size: 17px !important;
+    color: #757575 !important;
+    text-align: left;
+
+}
+
+.DateRangePickerInput.DateRangePickerInput_1.DateRangePickerInput__withBorder.DateRangePickerInput__withBorder_2 {
+    width: 100% !important; 
+
+}
+
+.DateRangePickerInput.DateRangePickerInput_1.DateRangePickerInput__withBorder.DateRangePickerInput__withBorder_2 input {
+    padding: 9px 11px 7px 11px; 
+}
+
+.CalendarMonth.CalendarMonth_1 {
+    display: hidden;
 }

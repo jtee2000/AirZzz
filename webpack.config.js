@@ -11,7 +11,8 @@ module.exports = {
         extensions: ['.js', '.jsx', '*']
     },
     module: {
-        rules: [
+        rules: 
+        [
             {
                 test: /\.jsx?$/,
                 exclude: /(node_modules)/,
@@ -19,10 +20,17 @@ module.exports = {
                     loader: 'babel-loader',
                     query: {
                         presets: ['@babel/env', '@babel/react']
-                    }
+                    },
                 },
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
             }
-        ]
+        ],
     },
     devtool: 'eval-source-map'
 };

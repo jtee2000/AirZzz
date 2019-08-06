@@ -13,6 +13,7 @@ const receiveBooking = (booking) => {
 
 
 export const createBooking = (booking) => dispatch => {
+    debugger
     return ApiUtil.createBooking(booking).then( (booking) => dispatch(receiveBooking(booking)))
 }
 
