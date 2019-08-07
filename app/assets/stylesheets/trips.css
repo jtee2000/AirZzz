@@ -123,3 +123,10 @@
     font-weight: 700; 
     padding: 40px 100px 30px; 
 }
+
+.no-upcoming-trips {
+    padding: 0 100px; 
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    color: 	#767676; 
+    
+}
