@@ -68,7 +68,7 @@ class Trips extends React.Component {
             <>
                 <h1 className="your-next-trip">Upcoming Plans</h1>
                 <p className="no-upcoming-trips"> You have no upcoming trips. Start exploring ideas for your next trip</p>
-
+                <Link to={"/listings"} className="explore-airbnb-button">Explore Airbnb</Link>
                 <img src="https://airzzz-seeds.s3.amazonaws.com/upcoming_plans.png" alt=""/>
 
             </>

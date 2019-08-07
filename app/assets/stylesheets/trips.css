@@ -128,5 +128,15 @@
     padding: 0 100px; 
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
     color: 	#767676; 
-    
+
+}
+
+.explore-airbnb-button {
+    display: inline-block;
+    border: 2px solid #008489;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    border-radius: 5px;
+    color: #008489;
+    margin: 30px 100px; 
+    padding: 10px 25px; 
 }
