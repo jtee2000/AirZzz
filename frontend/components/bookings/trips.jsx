@@ -6,12 +6,25 @@ class Trips extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        
+    }
+
 
     render () {
         return (
+            <>
             <div>
-                hello
+                <h1>Your next trip</h1>
             </div>
+            <div>
+                <ul>
+                    <li>
+
+                    </li>
+                </ul>
+            </div>
+            </>
         )
     }
 }
