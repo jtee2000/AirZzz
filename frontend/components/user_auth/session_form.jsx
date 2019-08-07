@@ -50,7 +50,9 @@ class SessionForm extends React.Component {
         return (
             <div className="form">
                 {/* <i className="fas fa-times" onClick={this.props.closeModal}></i> */}
-                <img className="x" onClick={this.props.closeModal} src={x_img} alt=""/>
+                <div className="x-out">
+                    <img className="x" onClick={this.props.closeModal} src={x_img} alt=""/>
+                </div>
                 <div className="login-text">
                     <span>{this.props.formType} with </span><span className="link-highlight">Facebook </span><span>or </span><span className="link-highlight">Google</span>
                 </div>

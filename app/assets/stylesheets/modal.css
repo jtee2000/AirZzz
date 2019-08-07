@@ -131,14 +131,18 @@
 }
 
 .x {
-    width: 15px; 
-    height: 15px;
+    width: 100% !important; 
+    height: 100% !important;
     margin: 5px;
     padding: 8px;
 }
+.x-out {
+    width: 30px; 
+    height: 30px; 
+}
 
 .x:active {
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     box-shadow: 2px 5px 7px gray;
     border-radius: 40px; 
 }
