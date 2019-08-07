@@ -197,6 +197,10 @@
     /* margin-top: 300px; */
 }
 
+.reserve-button:hover {
+    cursor: pointer !important;
+}
+
 .booking-literal-form-container {
     height: 460px;
     width: 100%;

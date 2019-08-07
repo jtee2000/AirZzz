@@ -19,7 +19,7 @@ class TripsFutureItem extends React.Component {
                             <img src={this.props.booking.service_url} alt=""/>
                         </div>
                         <div className="trip-details-show-container">
-                            <span className="trip-booking-date">{months[startDate.getMonth()].toUpperCase()} {startDate.getDay()} - {months[endDate.getMonth()].toUpperCase()} {endDate.getDay()}</span>
+                            <span className="trip-booking-date">{months[startDate.getMonth()].toUpperCase()} {startDate.getDate()} - {months[endDate.getMonth()].toUpperCase()} {endDate.getDate()}</span>
                             <h1 className="trip-booking-header">{this.props.booking.title}</h1>
                             <h1 className="trip-house-reservation">1 house reservation</h1>
                             <div className="trip-details-show-line"></div>

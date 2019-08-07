@@ -1,5 +1,6 @@
 import React from 'react'; 
 import 'react-dates/initialize';
+import { withRouter } from 'react-router-dom';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
@@ -15,6 +16,7 @@ class Booking extends React.Component {
             guests: 0
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.isDayBlocked = this.isDayBlocked.bind(this);
     }
 
     componentDidMount() {
@@ -38,7 +40,7 @@ class Booking extends React.Component {
             user_id,
             listing_id,
             guests
-        });
+        }).then( () => this.props.history.push("/trips"));
     }
 
     update(field) {
@@ -47,28 +49,29 @@ class Booking extends React.Component {
         }
     }
 
-    // getDate() {
-    //     var today = new Date();
-    //     var dd = today.getDate();
-    //     var mm = today.getMonth() + 1; 
-    //     var yyyy = today.getFullYear();
-    //     if (dd < 10) {
-    //         dd = '0' + dd
-    //     }
+    getDate() {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; 
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd
+        }
 
-    //     if (mm < 10) {
-    //         mm = '0' + mm
-    //     }
-    //     return today = yyyy + '-' + mm + '-' + dd;
-    // }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+        return today = yyyy + '-' + mm + '-' + dd;
+    }
 
     isDayBlocked(date) {
         // debugger
         const formatted = moment(date).format("YYYY-MM-DD");
         for (let i = 1; i < Object.keys(this.props.bookings).length + 1; i++) {
             debugger
-            if (formatted >= this.props.bookings[i].start_date && formatted <= this.props.bookings[i].end_date) {
-                return true;
+            if (!Object.values(this.props.bookings)[i]) break; 
+            if (formatted >= Object.values(this.props.bookings)[i].start_date && formatted <= Object.values(this.props.bookings)[i].end_date && this.props.listing.id === Object.values(this.props.bookings)[i].listing_id) {
+                return true; 
             }
         }
 
@@ -91,7 +94,7 @@ class Booking extends React.Component {
                         <div className="date-picker-calendar">
                         <p>Dates</p>
                         <DateRangePicker
-                            isDayBlocked={this.isDayBlocked.bind(this)}
+                            isDayBlocked={this.isDayBlocked}
                             numberOfMonths={1}
                             startDatePlaceholderText="Check-In"
                             endDatePlaceholderText="Checkout"
@@ -131,4 +134,4 @@ class Booking extends React.Component {
 
 
 
-export default Booking; 
+export default withRouter(Booking); 

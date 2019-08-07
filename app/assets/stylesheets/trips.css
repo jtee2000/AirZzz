@@ -1,6 +1,7 @@
 .trips-future-container {
     padding: 0 100px 70px 100px; 
-    
+    overflow: auto;
+    white-space: nowrap;
 }
 
 
@@ -9,6 +10,8 @@
     min-width: 500px;
     border-radius: 10px; 
     box-shadow: 2px 5px 7px lightgray;
+    display: inline-block;
+    margin-right: 30px; 
 }
 
 .trips-show-photo img{
@@ -62,6 +65,10 @@
     font-size: 13px; 
     /* font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed; */
     font-family: 'Montserrat', sans-serif;
+}
+
+.trips-link-to-show:hover {
+    cursor: pointer !important;
 }
 
 .trip-house-reservation {
