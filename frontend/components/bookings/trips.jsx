@@ -18,7 +18,6 @@ class Trips extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchBookings(); 
     }
 
@@ -76,8 +75,6 @@ class Trips extends React.Component {
     }
 
     yesBookings() {
-        debugger
-
         const future_bookings = Object.keys(this.props.bookings).map((id) => {
             if (this.props.bookings[id].user_id === this.props.user) {
                 if (Date.parse(this.props.bookings[id].start_date) > this.state.date.getTime()) {
@@ -115,7 +112,6 @@ class Trips extends React.Component {
                     return <TripsPastItem key={id} booking={this.props.bookings[id]} />
             }
         })
-        debugger
         return (
             <>
                 {/* <div className="trips-future-background-color">

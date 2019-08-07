@@ -4,7 +4,6 @@ import { fetchBookings } from '../../actions/booking_actions';
 import { fetchListings } from '../../actions/listing_actions'
 
 const msp = (state) => {
-    debugger
     const bookings = state.entities.bookings || {};
     const listings = state.entities.listings || {};
     return({
