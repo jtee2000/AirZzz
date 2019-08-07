@@ -6,6 +6,7 @@ import Modal from './user_auth/modal';
 import Listings from './listings/listings_container';
 import ListingShow from './listings/listing_show_container';
 import Trips from './bookings/trips_container';
+import ListingMap from './map/listing_map';
 
 const App = () => {
     return(
@@ -16,7 +17,8 @@ const App = () => {
             </header>
             <Route exact path="/listings" component={Listings} />
             <Route exact path="/listings/:listingId" component={ListingShow}/>
-            <Route exeact path="/trips" component={Trips} />
+            <Route exact path="/trips" component={Trips} />
+            <Route exact path="/map" component={ListingMap} />
             {/* <Switch>
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
