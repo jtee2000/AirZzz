@@ -1,4 +1,4 @@
-import { RECEIVE_BOOKING } from '../actions/booking_actions'; 
+import { RECEIVE_BOOKING, RECEIVE_BOOKINGS } from '../actions/booking_actions'; 
 
 
 const bookingsReducer = (state = {}, action) => {
@@ -6,6 +6,8 @@ const bookingsReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_BOOKING: 
             return Object.assign({}, oldState, {[action.booking.id]: action.booking})
+        case RECEIVE_BOOKINGS: 
+            return Object.assign({}, oldState, action.bookings)
         default: 
             return oldState;
     }

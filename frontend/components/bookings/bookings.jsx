@@ -18,7 +18,7 @@ class Booking extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        this.props.fetchBookings();
         this.setState({user_id: this.props.user.id });
         const x = window.parseInt(this.props.listing_id, 10);
         this.setState({listing_id: x });
@@ -27,7 +27,6 @@ class Booking extends React.Component {
     handleSubmit(e) {
         e.preventDefault(); 
         // const start_date = moment(this.state.startDate).format("YYYY/MM/DD");
-        // debugger
         // const end_date = moment(this.state.endDate).format("YYYY/MM/DD");
         // this.setState({start_date: start_date}); 
         // this.setState({end_date: end_date});
@@ -63,10 +62,13 @@ class Booking extends React.Component {
         return today = yyyy + '-' + mm + '-' + dd;
     }
 
+    isDayBlocked() {
+        return true;
+    }
+
 
 
     render () {
-        debugger
         return(
             <>
                 <aside className="the-literal-literal-container">
@@ -81,6 +83,7 @@ class Booking extends React.Component {
                         <div className="date-picker-calendar">
                         <p>Dates</p>
                         <DateRangePicker
+                            isDayBlocked={this.isDayBlocked.bind(this)}
                             numberOfMonths={1}
                             startDatePlaceholderText="Check-In"
                             endDatePlaceholderText="Checkout"

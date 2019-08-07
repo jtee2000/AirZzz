@@ -310,3 +310,27 @@
 .CalendarMonth.CalendarMonth_1 {
     display: hidden;
 }
+
+.CalendarMonth_caption.CalendarMonth_caption_1 {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    font-weight: 600;
+}
+
+.DayPicker_weekHeader.DayPicker_weekHeader_1 small{
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    font-size: 12px !important;
+}
+
+.CalendarMonth_table.CalendarMonth_table_1 {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+
+}
+
+.CalendarMonth_table.CalendarMonth_table_1 tbody tr td{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.DayPickerKeyboardShortcuts_buttonReset.DayPickerKeyboardShortcuts_buttonReset_1.DayPickerKeyboardShortcuts_show.DayPickerKeyboardShortcuts_show_2.DayPickerKeyboardShortcuts_show__bottomRight.DayPickerKeyboardShortcuts_show__bottomRight_3 {
+    display: none;
+}

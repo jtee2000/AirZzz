@@ -2,7 +2,7 @@ import * as ApiUtil from '../util/bookings_api_util';
 
 
 export const RECEIVE_BOOKING = "RECEIVE_BOOKING"; 
-
+export const RECEIVE_BOOKINGS = "RECEIVE_BOOKINGS";
 
 const receiveBooking = (booking) => {
     return({
@@ -11,9 +11,20 @@ const receiveBooking = (booking) => {
     })
 }
 
+const receiveBookings = (bookings) => {
+    return({
+        type: RECEIVE_BOOKINGS,
+        bookings
+    })
+}
+
 
 export const createBooking = (booking) => dispatch => {
-    debugger
     return ApiUtil.createBooking(booking).then( (booking) => dispatch(receiveBooking(booking)))
 }
+
+export const fetchBookings = () => dispatch => {
+    return ApiUtil.fetchBookings().then( (bookings) => dispatch(receiveBookings(bookings)))
+}
+
 

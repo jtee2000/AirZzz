@@ -6,3 +6,11 @@ export const createBooking = (booking) => {
     })
 }
 
+
+export const fetchBookings = () => {
+    return $.ajax({
+        method: "GET", 
+        url: "api/bookings"
+    })
+}
+
