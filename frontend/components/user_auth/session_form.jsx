@@ -63,7 +63,7 @@ class SessionForm extends React.Component {
                     {/* {this.renderErrors()} */}
                     <div className="email-input">
                         <input type="text" placeholder="Email address" value={this.state.email} onChange={this.update("email")} />
-                        <i class="far fa-envelope"></i>
+                        <i className="far fa-envelope"></i>
                     </div>
                     <div className="credential-errors">{this.props.errors.join('').includes('Email') ? "Email is required" : undefined}</div>
                     {this.props.formType === "Sign up" && 

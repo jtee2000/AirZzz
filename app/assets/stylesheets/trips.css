@@ -78,3 +78,48 @@
     font-size: 13px; 
 
 }
+
+.trips-past-container {
+    padding: 0 100px 70px 100px; 
+    display: flex; 
+    flex-direction: row; 
+    height: 100%; 
+    width: 100%;
+    flex-wrap: wrap; 
+}
+
+.trips-past-show-container {
+    border-radius: 7px;
+    width: 25%;
+}
+
+.trips-past-img{
+    border-radius: 7px;
+    padding-bottom: 7px;
+}
+
+.trips-date-past {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 11px; 
+    color: #484848;
+    font-weight: 500;
+    padding: 2px 0; 
+}
+
+.trips-past-show-container h1 {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 15px; 
+    color: #484848;
+    font-weight: 300;
+    padding: 2px 0; 
+}
+
+.where-you-been {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    color: #484848; 
+    font-size: 30px; 
+    font-weight: 700; 
+    padding: 40px 100px 30px; 
+}
