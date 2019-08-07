@@ -19,6 +19,7 @@ const receiveListings = (listings) => {
 }
 
 export const fetchListings = () => dispatch => {
+    debugger
     return ApiUtil.fetchListings().then( (listings) => dispatch(receiveListings(listings)))
 }
 

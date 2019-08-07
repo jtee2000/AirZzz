@@ -1,0 +1,73 @@
+.trips-future-container {
+    padding: 0 100px 70px 100px; 
+    
+}
+
+
+.trips-show-container {
+    width: 30%; 
+    min-width: 500px;
+    border-radius: 10px; 
+    box-shadow: 2px 5px 7px lightgray;
+}
+
+.trips-show-photo img{
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+   
+}
+
+.trip-details-show-container {
+    padding: 20px;
+}
+
+.trip-details-show-line {
+    width: 100%; 
+    border-bottom: 1px solid lightgray;
+}
+
+.your-next-trip {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    color: #484848; 
+    font-size: 30px; 
+    font-weight: 700; 
+    padding: 70px 100px 30px; 
+}
+
+.trips-future-background-color {
+    background-color: 	#F8F8F8;
+}
+
+.trip-booking-date {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 12px; 
+    color: #484848;
+    font-weight: 500;
+}
+
+.trip-booking-header {
+    padding: 10px 0; 
+    /* font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed; */
+    font-family: 'Montserrat', sans-serif;
+    color: #484848; 
+    font-size: 22px;
+}
+
+.trips-link-to-show {
+    display: inline-block;
+    padding: 20px 0; 
+    color: #008489;
+    font-weight: 500;
+    font-size: 13px; 
+    /* font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.trip-house-reservation {
+    padding-bottom: 10px; 
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    color: #767676;
+    font-size: 13px; 
+
+}
