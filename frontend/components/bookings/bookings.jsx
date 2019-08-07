@@ -47,23 +47,31 @@ class Booking extends React.Component {
         }
     }
 
-    getDate() {
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1; 
-        var yyyy = today.getFullYear();
-        if (dd < 10) {
-            dd = '0' + dd
+    // getDate() {
+    //     var today = new Date();
+    //     var dd = today.getDate();
+    //     var mm = today.getMonth() + 1; 
+    //     var yyyy = today.getFullYear();
+    //     if (dd < 10) {
+    //         dd = '0' + dd
+    //     }
+
+    //     if (mm < 10) {
+    //         mm = '0' + mm
+    //     }
+    //     return today = yyyy + '-' + mm + '-' + dd;
+    // }
+
+    isDayBlocked(date) {
+        // debugger
+        const formatted = moment(date).format("YYYY-MM-DD");
+        for (let i = 1; i < Object.keys(this.props.bookings).length + 1; i++) {
+            debugger
+            if (formatted >= this.props.bookings[i].start_date && formatted <= this.props.bookings[i].end_date) {
+                return true;
+            }
         }
 
-        if (mm < 10) {
-            mm = '0' + mm
-        }
-        return today = yyyy + '-' + mm + '-' + dd;
-    }
-
-    isDayBlocked() {
-        return true;
     }
 
 

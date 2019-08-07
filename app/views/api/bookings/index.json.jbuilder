@@ -1,6 +1,5 @@
-
 @bookings.each do |booking| 
-    json.set! booking.listing_id 
-        json.extract! booking, :listing_id, :start_date, :end_date
+    json.set! booking.id do 
+        json.extract! booking, :start_date, :end_date, :listing_id, :guests
     end
-end
+end 

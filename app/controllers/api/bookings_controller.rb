@@ -10,7 +10,6 @@ class Api::BookingsController < ApplicationController
     end 
 
     def index 
-        debugger
         @bookings = Booking.all 
         render :index 
     end

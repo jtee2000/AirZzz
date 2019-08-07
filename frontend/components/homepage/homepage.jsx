@@ -65,9 +65,11 @@ const Homepage = ({ currentUser, logout, openModal }) => {
                     <div className="host-hover-2">
                         <span>Saved</span>
                     </div>
-                    <div className="host-hover-2">
-                        <span>Trips</span>
-                    </div>
+                        <div className="host-hover-2">
+                    <Link to="/trips" className="remove-text-decoration">
+                            <span>Trips</span>
+                    </Link>
+                        </div>
                     <div className="host-hover-2">
                         <span>Messages</span>
                     </div>
