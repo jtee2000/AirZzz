@@ -111,12 +111,13 @@
 }
 
 .host-hover {
-    height: 100%; 
+    /* height: 100%;  */
+    height: 45px; 
     display: flex; 
     align-items: center; 
     margin-right: 35px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .host-hover:hover {

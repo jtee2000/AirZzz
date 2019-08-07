@@ -86,12 +86,12 @@
 }
 
 .host-hover-2 {
-    height: 100%; 
+    height: 45px; 
     display: flex; 
     align-items: center; 
     margin-right: 35px;
     margin-top: 30px;
-    margin-bottom: 29px;
+    padding-bottom: 29px;
 }
 
 .host-hover-2:hover {
