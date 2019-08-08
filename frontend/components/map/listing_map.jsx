@@ -25,21 +25,21 @@ class ListingMap extends React.Component {
         // Integrate Google Places Search Feature 
         var input = document.getElementById('airzzz-search');
         debugger
-        var searchBox = new google.maps.places.SearchBox(input);
+        var autocomplete = new google.maps.places.Autocomplete(input);
         debugger
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         debugger
-        const map = this.map
         this.map.addListener('bounds_changed', () => {
             debugger
-            searchBox.setBounds(map.getBounds());
+            return autocomplete.setBounds(this.map.getBounds());
         });
         debugger
         var markers = [];
         // Listen for the event fired when the user selects a prediction and retrieve
         // more details for that place.
-        searchBox.addListener('places_changed', function () {
-            var places = searchBox.getPlaces();
+        autocomplete.addListener('places_changed', () => {
+            debugger
+            var places = autocomplete.getPlaces();
 
             if (places.length == 0) {
                 return;
