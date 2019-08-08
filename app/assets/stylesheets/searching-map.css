@@ -1,5 +1,22 @@
-.listing-map-google {
-    width: 500px; 
-    height: 500px; 
-
+.listing-map-search-container {
+    /* display: grid; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* justify-content: column; */
 }
+
+.listing-map-google {
+    width: 50%;
+    height: 700px; 
+    /* display: block; */
+    /* position: absolute; */
+}
+
+.map-all-listings {
+    width: 50%;
+    height: 100%
+
+    /* background-color: black;  */
+}
+

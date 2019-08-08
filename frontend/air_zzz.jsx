@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'; 
 import React from 'react'; 
 import { login, logout, signup } from './util/session_api_util';
-import { fetchListing, fetchListings } from './util/listings_api_util';
+import { fetchListing, fetchListings, fetchBoundListings } from './util/listings_api_util';
 import Root from './components/root'
 import configureStore from './store/store';
 
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     window.fetchListing = fetchListing;
     window.fetchListings = fetchListings;
+    window.fetchBoundListings = fetchBoundListings;
     //End testing
 
     const root = document.getElementById('root'); 

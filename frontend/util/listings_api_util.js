@@ -1,7 +1,16 @@
-export const fetchListings = () => {
+export const fetchListings = (data) => {
     return $.ajax({
         method: "GET", 
-        url: "api/listings"
+        url: "api/listings",
+        data
+    })
+}
+
+export const fetchBoundListings = (data) => {
+    return $.ajax({
+        method: "GET", 
+        url: "api/listings/search", 
+        data
     })
 }
 

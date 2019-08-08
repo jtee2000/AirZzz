@@ -1,3 +1,4 @@
+import merge from 'lodash'
 export default class MarkerManager {
     constructor(map, handleClick) {
         this.map = map;
@@ -5,14 +6,14 @@ export default class MarkerManager {
         this.handleClick = handleClick;
     }
 
-    updateMarkers(payload = []) {
-        if (payload.length === 0) return; 
-        const listingsObject = payload.listings; 
-        Object.values(payload.listings).filter( (listing) => !this.markers[listing.id]).forEach(newListing => {
+    updateMarkers(listings = []) {
+        if (listings.length === 0) return; 
+        // const listings = merge({}, listings); 
+        Object.values(listings).filter( (listing) => !this.markers[listing.id]).forEach(newListing => {
             this.createMarker(newListing, this.handleClick)
         });
 
-        Object.keys(this.markers).filter(listingId => !listingsObject[listingId]).forEach(listingId => this.removeMarker(this.markers[listingId]))
+        Object.keys(this.markers).filter(listingId => !listings[listingId]).forEach(listingId => this.removeMarker(this.markers[listingId]))
     }
 
     createMarker(listing) {

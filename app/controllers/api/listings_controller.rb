@@ -8,6 +8,15 @@ class Api::ListingsController < ApplicationController
         end
     end 
 
+    def search 
+        @listings = Listing.in_bounds(params[:bounds]) 
+        if @listings 
+            render :index
+        else  
+            render json: ['Not a valid request'], status: 404
+        end
+    end
+
 
     def show 
         @listing = Listing.find_by(id: params[:id])

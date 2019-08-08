@@ -5,7 +5,8 @@ const listingsReducer = (state = {}, action) => {
     const oldState = Object.freeze(state);
     switch(action.type) {
         case RECEIVE_LISTINGS: 
-            return Object.assign({}, oldState, action.listings)
+        // this might break because I deleted oldState
+            return Object.assign({}, action.listings)
         case RECEIVE_LISTING: 
             return Object.assign({}, oldState, {[action.listing.id]: action.listing});
         default: 

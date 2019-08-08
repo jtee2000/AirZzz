@@ -22,6 +22,10 @@ export const fetchListings = () => dispatch => {
     return ApiUtil.fetchListings().then( (listings) => dispatch(receiveListings(listings)))
 }
 
+export const fetchBoundListings = (filters) => dispatch => {
+    return ApiUtil.fetchBoundListings(filters).then( (listings) => dispatch(receiveListings(listings)))
+}
+
 export const fetchListing = (id) => dispatch => {
     return ApiUtil.fetchListing(id).then( (listing) => dispatch(receiveListing(listing)))
 }
