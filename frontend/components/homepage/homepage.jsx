@@ -100,11 +100,21 @@ class Homepage extends React.Component {
         this.state = {
             search: ""
         }
+        this.handleEnter = this.handleEnter.bind(this);
     }
 
     update(field) {
         return (e) => {
             this.setState({ [field]: e.target.value })
+        }
+    }
+
+    handleEnter(e) {
+        debugger
+        if (e.keyCode === 13) {
+            this.setState({search: ""})
+            this.props.history.push("/map")
+
         }
     }
 
@@ -148,7 +158,6 @@ class Homepage extends React.Component {
 
 
     loggedin() {
-        debugger
         return(
             <>
                 <nav className="nav-bar-2">
@@ -160,7 +169,7 @@ class Homepage extends React.Component {
                         </Link>
                         <div className="search-bar-2">
                             <i className="fas fa-search" ></i>
-                            <input id="airzzz-search" type="text" placeholder="Try &quot;Costa Blanca&quot;" value={this.state.email} onChange={this.update("search")}/>
+                            <input id="airzzz-search" type="text" placeholder="Try &quot;Boston College&quot;" value={this.state.search} onChange={this.update("search")} onKeyUp={this.handleEnter}/>
                         </div>
                     </div>
                     <div className="nav-bar-text-2">
