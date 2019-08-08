@@ -97,6 +97,15 @@ class Homepage extends React.Component {
         super(props)
         this.splash = this.splash.bind(this);
         this.loggedin = this.loggedin.bind(this);
+        this.state = {
+            search: ""
+        }
+    }
+
+    update(field) {
+        return (e) => {
+            this.setState({ [field]: e.target.value })
+        }
     }
 
     splash() {
@@ -139,6 +148,7 @@ class Homepage extends React.Component {
 
 
     loggedin() {
+        debugger
         return(
             <>
                 <nav className="nav-bar-2">
@@ -150,7 +160,7 @@ class Homepage extends React.Component {
                         </Link>
                         <div className="search-bar-2">
                             <i className="fas fa-search" ></i>
-                            <input type="text" placeholder="Try &quot;Costa Blanca&quot;" />
+                            <input id="airzzz-search" type="text" placeholder="Try &quot;Costa Blanca&quot;" value={this.state.email} onChange={this.update("search")}/>
                         </div>
                     </div>
                     <div className="nav-bar-text-2">
@@ -183,6 +193,7 @@ class Homepage extends React.Component {
         )
     }
     render() {
+        debugger
         return (
             this.props.currentUser ?
                 this.loggedin() :

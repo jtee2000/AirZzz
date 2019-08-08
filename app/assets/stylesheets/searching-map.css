@@ -8,15 +8,23 @@
 
 .listing-map-google {
     width: 50%;
-    height: 700px; 
+    height: 740px; 
     /* display: block; */
     /* position: absolute; */
 }
 
 .map-all-listings {
     width: 50%;
-    height: 100%
-
+    height: 740px;
+    overflow: scroll;
+    /* display: flex;  */
+    /* flex-direction: column; */
+    /* justify-content: space-around;  */
     /* background-color: black;  */
+}
+
+.map-all-listings li {
+    margin-bottom: 300px !important; 
+
 }
 
