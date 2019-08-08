@@ -6,7 +6,7 @@ import Modal from './user_auth/modal';
 import Listings from './listings/listings_container';
 import ListingShow from './listings/listing_show_container';
 import Trips from './bookings/trips_container';
-import ListingMap from './map/listing_map';
+import ListingMap from './map/listing_map_container';
 
 const App = () => {
     return(
