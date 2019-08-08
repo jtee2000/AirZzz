@@ -1,6 +1,6 @@
 import React from 'react'; 
 import MarkerManager from '../../util/marker_manager'; 
-import ListingIndexItem from '../listings/listing_index_item';
+import ListingIndexMapItem from '../listings/listing_index_map_item';
 
 class ListingMap extends React.Component {
     constructor(props) {
@@ -115,7 +115,7 @@ class ListingMap extends React.Component {
 
     render() {
         const listings = Object.values(this.props.listings).map((listing) => {
-            return <ListingIndexItem listing={listing} key={listing.id} />
+            return <ListingIndexMapItem listing={listing} key={listing.id} />
         });
         debugger
         return(
