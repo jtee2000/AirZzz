@@ -117,8 +117,9 @@ class ListingMap extends React.Component {
         const listings = Object.values(this.props.listings).map((listing) => {
             return <ListingIndexMapItem listing={listing} key={listing.id} />
         });
-        debugger
         return(
+            <>
+            <span className="map-listings-count-header">{Object.values(this.props.listings).length}+ places to stay</span>
             <div className="listing-map-search-container">
                     <ul className="map-all-listings">
                         {listings}
@@ -127,6 +128,7 @@ class ListingMap extends React.Component {
                 <div id="map-container" ref={ map => this.mapNode = map } className="listing-map-google">
                 </div>
             </div>
+            </>
         )
     }
 }

@@ -71,7 +71,7 @@
 .splash-background-image {
     background-image: url(https://www.bc.edu/content/bc-web/bcnews/campus-community/around-campus/BCPSA_2017/_jcr_content/par/youtube_video/image.img.jpg/1504799145512.jpg);
     background-size: 100% 100% !important;
-    width: 1680px;
+    width: 100%;
     height: 900px;
     /* z-index: -1;  */
 }
@@ -83,7 +83,7 @@
     background-color: white;
     border-radius: 4px; 
     height: 474px; 
-    width: 380px; 
+    width: 420px; 
     margin: 47px 60px;
 }
 
@@ -101,7 +101,7 @@
     font-size: 15px;
     background-color: #FF5A5F;
     color: white;
-    width: 70px;
+    width: 90px;
 }
 
 .rental-form-container {
@@ -123,4 +123,14 @@
 .host-hover:hover {
     border-bottom: 1px solid white; 
     cursor: pointer;
+}
+
+.homepage-search-bar {
+    border: 1px solid lightgray;
+    border-radius: 3px; 
+    padding: 5px; 
+}
+
+.homepage-search-bar:focus {
+    border: 1px solid #00A699; 
 }
