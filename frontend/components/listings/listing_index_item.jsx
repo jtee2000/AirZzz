@@ -9,7 +9,7 @@ class ListingIndexItem extends React.Component {
             <>
                 <li className="listing-container">
                     <Link to={`/listings/${this.props.listing.id}`}>
-                        <img className="listing-main-img" src="https://cdn.vox-cdn.com/thumbor/pe-W7fi9ELg9WZfEjkKAzr2VFa4=/0x0:4223x2815/1200x800/filters:focal(1775x1071:2449x1745)/cdn.vox-cdn.com/uploads/chorus_image/image/62616742/usa_today_10283452.0.jpg"/>
+                        <img className="listing-main-img" src={this.props.listing.photoUrl[0].service_url}/>
                         <div className="listing-details-container">
                             <p className="list-loc-ele">{this.props.listing.title.toUpperCase()}</p>
                             <p className="list-desc-ele">Boston College</p>

@@ -11,7 +11,7 @@ class ListingIndexMapItem extends React.Component {
                     <Link to={`/listings/${this.props.listing.id}`}>
                         <div className="map-flexing-container">
                             <div className="map-listing-main-img-container">
-                                <img className="map-listing-main-img" src="https://cdn.vox-cdn.com/thumbor/pe-W7fi9ELg9WZfEjkKAzr2VFa4=/0x0:4223x2815/1200x800/filters:focal(1775x1071:2449x1745)/cdn.vox-cdn.com/uploads/chorus_image/image/62616742/usa_today_10283452.0.jpg" />
+                                <img className="map-listing-main-img" src={this.props.listing.photoUrl[0].service_url} />
                             </div>
                             <div className="map-listing-details-container">
                                 <div>
