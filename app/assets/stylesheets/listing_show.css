@@ -75,9 +75,9 @@
 
 
 .listing-show-container {
-    padding: 0 20px 0 220px;
-    min-width: 700px;
-    width: 60%;
+    padding: 0 20px 0 245px;
+    min-width: 787.05px;
+    width: 55%;
 }
 
 .listing-show-title {
@@ -363,3 +363,20 @@
 }
 
 
+.availability {
+    padding-top: 30px; 
+    padding-bottom: 20px;
+    color: #484848;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 24px; 
+    font-weight: 600;
+    
+}
+
+.listing-availability-container {
+    padding: 25px; 
+}
+
+.DayPicker_transitionContainer.DayPicker_transitionContainer_1.DayPicker_transitionContainer__horizontal.DayPicker_transitionContainer__horizontal_2 {
+    width: 100% !important;
+}

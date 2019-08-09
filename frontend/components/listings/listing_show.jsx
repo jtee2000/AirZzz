@@ -1,14 +1,21 @@
 import React from 'react'; 
 import { showMore } from '../../util/show_more';
 import Bookings from '../bookings/bookings_container';
+import 'react-dates/initialize';
+import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
+import moment from 'moment';
 
 class ListingShow extends React.Component {
 
     constructor(props) {
         super(props); 
+        this.isDayBlocked = this.isDayBlocked.bind(this);
+    
     }
 
     componentDidMount() {
+        this.props.fetchBookings();
         this.props.fetchListing(this.props.match.params.listingId).then( (listing) => {
             const mapOptions = { 
                 center: { lat: listing.listing.latitude, lng: listing.listing.longitude},
@@ -17,6 +24,19 @@ class ListingShow extends React.Component {
             return this.map = new google.maps.Map(this.mapNode, mapOptions);
         }); 
 
+
+    }
+
+    isDayBlocked(date) {
+        const formatted = moment(date).format("YYYY-MM-DD");
+
+        for (let i = 1; i < Object.keys(this.props.bookings).length + 1; i++) {
+            debugger
+            if (!Object.values(this.props.bookings)[i]) break;
+            if (formatted >= Object.values(this.props.bookings)[i].start_date && formatted <= Object.values(this.props.bookings)[i].end_date && this.props.listing.id === Object.values(this.props.bookings)[i].listing_id) {
+                return true;
+            }
+        }
 
     }
 
@@ -81,6 +101,20 @@ class ListingShow extends React.Component {
                                 {/* <p>{this.props.listing.description}</p> */}
                                 <div className="description-show">{this.getShow(this.props.listing.description)}</div>
                             </div>
+                        </div>
+                        <div className="listing-availability-container">
+                            <div className="listing-linebreak"></div>
+                                <h1 className="availability">Availability</h1>
+                                <DayPickerRangeController
+                                    numberOfMonths={2}
+                                    isDayBlocked={this.isDayBlocked}
+                                    // startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                                    // endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                                    // onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+                                    // focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                                    // onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                                    // initialVisibleMonth={() => moment().add(2, "M")} // PropTypes.func or null,
+                                />
                         </div>
                         
                         <div className="map-show-container">
