@@ -31,7 +31,6 @@ class ListingShow extends React.Component {
         const formatted = moment(date).format("YYYY-MM-DD");
 
         for (let i = 1; i < Object.keys(this.props.bookings).length + 1; i++) {
-            debugger
             if (!Object.values(this.props.bookings)[i]) break;
             if (formatted >= Object.values(this.props.bookings)[i].start_date && formatted <= Object.values(this.props.bookings)[i].end_date && this.props.listing.id === Object.values(this.props.bookings)[i].listing_id) {
                 return true;
