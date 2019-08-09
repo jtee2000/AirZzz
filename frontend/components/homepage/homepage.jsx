@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Listings from '../listings/listings_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch, withRouter } from 'react-router-dom'; 
-import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import { DateRangePicker, SingleDatePicker, DatePickerRangeController, DateRangePickerWrapper  } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import 'react-dates/initialize';
@@ -150,21 +150,25 @@ class Homepage extends React.Component {
                     </nav>
                     <div className="rental-form">
                         <h1>Book unique places to stay and things to do.</h1>
-                        <label className="where">Where
+                        <div>
+                            <label className="where">WHERE</label>
                             <input className="homepage-search-bar" type="text" placeholder="Anywhere" value={this.state.search} onChange={this.update("search")} onKeyUp={this.handleEnter} />
-                        </label>
-                        <DateRangePicker
-                            numberOfMonths={1}
-                            startDatePlaceholderText="mm/dd/yyyy"
-                            endDatePlaceholderText="mm/dd/yyyy"
-                            startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                            startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                            endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-                            endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                            onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-                            focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                            onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-                        />
+                        </div>
+                        <div className="test"> 
+                            <div className="homepage-DATES">DATES</div>
+                            <DateRangePicker
+                                numberOfMonths={1}
+                                startDatePlaceholderText="mm/dd/yyyy"
+                                endDatePlaceholderText="mm/dd/yyyy"
+                                startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                                startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                                endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                                endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                                onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+                                focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                                onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                            />    
+                        </div>
                         <div className="rental-form-container">
                             <button>   Search   </button>
                         </div>

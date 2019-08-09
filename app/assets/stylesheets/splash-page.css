@@ -128,9 +128,60 @@
 .homepage-search-bar {
     border: 1px solid lightgray;
     border-radius: 3px; 
-    padding: 5px; 
+    padding: 10px 45px; 
+    color: 	#757575;
+    font-size: 17px; 
+    width: 100%;
+    font-weight: 100;
 }
 
 .homepage-search-bar:focus {
     border: 1px solid #00A699; 
+
+}
+
+.where {
+    font-size: 13px; 
+    font-weight: 600;
+}
+
+
+/* .test div div div:first-child {
+    width: 356px !important; 
+}  */
+
+/* .test div div div div input {
+    width: 100%;
+} */
+
+
+
+
+/* .test div div div:first-child {
+    width: 100% !important; 
+    /* border-bottom: 1px solid lightgray; */
+.test div div div input:first-child {
+    color: 	#757575;
+    font-size: 17px; 
+    width: 100%;
+    font-weight: 100;
+    font-family: Arial;
+}
+
+/* .test svg {
+    display: none !important; 
+} */
+
+/* .test div div div:nth-child(3) input:first-child{
+    width: 354px !important; 
+} */
+
+.homepage-DATES {
+    padding-bottom: 7px; 
+    font-size: 13px; 
+    font-weight: 600;
+}
+
+.DateRangePickerInput.DateRangePickerInput_1.DateRangePickerInput__withBorder.DateRangePickerInput__withBorder_2 {
+    text-align: center;
 }

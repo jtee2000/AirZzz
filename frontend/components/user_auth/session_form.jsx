@@ -57,9 +57,9 @@ class SessionForm extends React.Component {
                     <span>{this.props.formType} with </span><span className="link-highlight">Facebook </span><span>or </span><span className="link-highlight">Google</span>
                 </div>
                 <div className="form-border">
-                    <span></span>
+                    <span className="span-is-annoying"></span>
                         or
-                    <span></span>
+                    <span className="hella-annoying"></span>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     {/* {this.renderErrors()} */}
@@ -88,7 +88,7 @@ class SessionForm extends React.Component {
                     <i className="fas fa-eye-slash"></i>
                     </div>
                     <div className="credential-errors">{this.props.errors.join('').includes('Password') ? "Password is required" : undefined}</div>
-                    <div className="email-input">
+                    <div className="email-input-5">
                     <input className="form-button" type="submit" value={this.props.formType} />
                     </div>
                 </form>

@@ -67,10 +67,30 @@
     width: 250px;
     height: 5px; 
     border-bottom: 1px solid lightgray;
+    
+}
+
+.span-is-annoying {
+    margin-right: 15px; 
+}
+
+.hella-annoying {
+    margin-left: 15px; 
 }
 
 
 .email-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 500px; 
+    height: 45px;
+    margin: 17px 35px;
+}
+
+.email-input-5 {
     display: flex;
     justify-content: space-between;
     align-items: center;

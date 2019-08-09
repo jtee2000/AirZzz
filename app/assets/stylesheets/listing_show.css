@@ -7,6 +7,29 @@
     display: flex;
 }
 
+/* .photos-container:hover > div{
+    filter: brightness(50%);
+    /* opacity: 0.5; */
+    
+/* }  */
+
+/* .photos-container:hover > div:first-child:hover {
+    
+    /* opacity: 1.0; */
+    /* filter: brightness(1.65) */
+    /* filter: none; */
+/* }  */
+
+/* .photo-container-half2:hover > div{
+    filter: brightness(50%);
+    /* opacity: 1; */
+/* }  */
+
+/* .photo-container-half2:hover > div:hover {
+    filter: brightness(2.65);
+    z-index: 99; 
+} */
+
 .photo-container-half1 {
     width: 50%;
     overflow: hidden;
@@ -27,7 +50,7 @@
 
 
 .photo-quarter {
-    width: 49.75%;
+    width: 50.0%;
     height: 50%;
     border: 1px solid #484848;
     overflow: hidden;
@@ -40,14 +63,19 @@
     transform: scale(1);
 }
 
+.photos-container:hover {
+    filter: brightness(80%);
+}
+
 .img-container:hover {
      transform: scale(1.1);
      opacity: none !important;
+     filter: brightness(1.20);
 }
 
 
 .listing-show-container {
-    padding: 0 0 0 300px;
+    padding: 0 20px 0 220px;
     min-width: 700px;
     width: 60%;
 }
@@ -178,7 +206,7 @@
 
 .booking-form-container {
     margin-top: 25px;
-    width: 375px; 
+    width: 420px; 
     height: 460px;
     /* background-color: #00A699; */
 }
@@ -298,7 +326,7 @@
 }
 
 .DateRangePickerInput.DateRangePickerInput_1.DateRangePickerInput__withBorder.DateRangePickerInput__withBorder_2 {
-    width: 100% !important; 
+    width: 356px; 
 
 }
 
