@@ -13,8 +13,7 @@ export const showMore = (body, id) => {
             buttonText.innerHTML = "Read more about this space";
             moreText.style.display = "none";
     
-        } else {
-            icon.removeAttribute("class");
+        } else { icon.removeAttribute("class");
             icon.setAttribute("class", "fas fa-chevron-up");
             ellipse.style.display = "none";
             buttonText.innerHTML = "Hide";
