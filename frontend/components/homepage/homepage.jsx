@@ -8,94 +8,6 @@ import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import 'react-dates/initialize';
 
-// const Homepage = ({ currentUser, logout, openModal }) => {
-
-//     const splash = () => (
-//         <>
-//             <div className="splash-background-image">
-//                 <nav className="nav-bar">
-//                     <div className="nav-bar-left">
-//                         <Link to="/">
-//                             <div className="logo">
-//                                 <img className="logo2" src={airTran}/>
-//                             </div>
-//                         </Link>
-//                     </div>
-//                     <div className="nav-bar-text">
-//                         <div className="host-hover">
-//                             <span>Become a host</span>
-//                         </div>
-//                         <div className="host-hover">
-//                             <span>Help</span>
-//                         </div>
-//                         <div className="host-hover">
-//                             <button onClick={() => openModal('login')}>Login</button>
-//                         </div>
-//                         <div className="host-hover">
-//                             <button onClick={() => openModal('signup')}>Sign up</button>
-//                         </div>
-//                     </div>
-//                 </nav>
-//                 <div className="rental-form">
-//                     <h1>Book unique places to stay and things to do.</h1>
-//                     <div className="rental-form-container">
-//                         <button>   Search   </button>
-//                     </div>
-//                 </div>
-//             </div>
-//         </>
-//     );
-//     const loggedin = () => (
-//         <>  
-//             <nav className="nav-bar-2">
-//                 <div className="nav-bar-left-2">
-//                     <Link to="/listings">
-//                         <div className="logo-2">
-//                             <img className="logo2-2" src={airTran2}/>
-//                         </div>
-//                     </Link>
-//                     <div className="search-bar-2">
-//                         <i className="fas fa-search" ></i>
-//                         <input type="text" placeholder="Try &quot;Costa Blanca&quot;"/>
-//                     </div>
-//                 </div>
-//                 <div className="nav-bar-text-2">
-//                     <div className="host-hover-2">
-//                         <span>Add listing</span>
-//                     </div>
-//                     <div className="host-hover-2">
-//                         <span>Host</span>
-//                     </div>
-//                     <div className="host-hover-2">
-//                         <span>Saved</span>
-//                     </div>
-//                         <div className="host-hover-2">
-//                     <Link to="/trips" className="remove-text-decoration">
-//                             <span>Trips</span>
-//                     </Link>
-//                         </div>
-//                     <div className="host-hover-2">
-//                         <span>Messages</span>
-//                     </div>
-//                     <div className="host-hover-2">
-//                         <span>Help</span>
-//                     </div>
-//                     <div className="host-hover-2">
-//                         <button className="header-button-2" onClick={() => logout().then(props.history.push("/"))}>Log Out</button>
-//                     </div>
-//                 </div>
-//             </nav>
-//         </>
-//     );
-
-//     return (
-//         currentUser ?
-//             loggedin(currentUser, logout) :
-//             splash()
-//     );
-// };
-
-
 class Homepage extends React.Component {
     constructor(props) {
         super(props)
@@ -117,7 +29,7 @@ class Homepage extends React.Component {
         if (e.keyCode === 13) {
             this.setState({search: ""})
             debugger
-            this.props.history.push("/map")
+            this.props.history.push("/listings/map")
         }
     }
 
@@ -127,7 +39,7 @@ class Homepage extends React.Component {
                 <div className="splash-background-image">
                     <nav className="nav-bar">
                         <div className="nav-bar-left">
-                            <Link to="/">
+                            <Link to="/listings">
                                 <div className="logo">
                                     <img className="logo2" src={airTran} />
                                 </div>

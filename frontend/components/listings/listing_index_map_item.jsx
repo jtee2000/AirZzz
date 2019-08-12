@@ -8,7 +8,7 @@ class ListingIndexMapItem extends React.Component {
         return (
             <>
                 <li className="map-listing-container">
-                    <Link to={`/listings/${this.props.listing.id}`}>
+                    <Link to={`/listings/show/${this.props.listing.id}`}>
                         <div className="map-flexing-container">
                             <div className="map-listing-main-img-container">
                                 <img className="map-listing-main-img" src={this.props.listing.photoUrl[0].service_url} />

@@ -1,6 +1,8 @@
 import React from 'react'; 
 import { connect } from 'react-redux'; 
 import { Route, Redirect, withRouter } from 'react-router-dom';
+import AuthNav from '../components/navbar/auth_nav_container';
+import ProtNav from '../components/navbar/prot_nav_container';
 
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
     return (
@@ -28,13 +30,20 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => {
 
 };
 
+const Listings = ({loggedIn, path, exact}) => {
+    debugger
+    return (
+        <Route path={path} exact={exact} render={(props) => (
+            loggedIn ? (<ProtNav />) : (<AuthNav />)
+        )} />
+    )
+};
+
 const mapStateToProps = state => {
     return { loggedIn: Boolean(state.session.id) };
 };
 
-const msp = state => {
-    return { loggedin: Boolean(state.session.id)}
-}
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
-export const ProtectedRoute = withRouter(connect(msp, null)(Protected));
+export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));
+export const ListingsRoute = withRouter(connect(mapStateToProps, null)(Listings));

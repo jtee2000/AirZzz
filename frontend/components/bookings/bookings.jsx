@@ -21,7 +21,6 @@ class Booking extends React.Component {
 
     componentDidMount() {
         this.props.fetchBookings();
-        this.setState({user_id: this.props.user.id });
         const x = window.parseInt(this.props.listing_id, 10);
         this.setState({listing_id: x });
     }
@@ -33,14 +32,13 @@ class Booking extends React.Component {
         // this.setState({start_date: start_date}); 
         // this.setState({end_date: end_date});
         // const booking = Object.assign({}, this.state);
-        const { startDate, endDate, user_id, listing_id, guests} = this.state; 
+        const { startDate, endDate, listing_id, guests} = this.state; 
         this.props.processForm({
             start_date: moment(startDate).format("YYYY-MM-DD"),
             end_date: moment(endDate).format("YYYY-MM-DD"),
-            user_id,
             listing_id,
             guests
-        }).then( () => this.props.history.push("/trips"));
+        }).then( () => this.props.history.push("listings/trips"));
     }
 
     update(field) {

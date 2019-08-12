@@ -22,7 +22,7 @@ class TripsFutureItem extends React.Component {
                             <h1 className="trip-booking-header">{this.props.booking.title}</h1>
                             <h1 className="trip-house-reservation">1 house reservation</h1>
                             <div className="trip-details-show-line"></div>
-                            <Link to={`/listings/${this.props.booking.listing_id}`} className="trips-link-to-show">Show Listing</Link>
+                            <Link to={`/listings/show/${this.props.booking.listing_id}`} className="trips-link-to-show">Show Listing</Link>
                         </div>
                 </li>
             </>

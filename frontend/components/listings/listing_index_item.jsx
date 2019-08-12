@@ -8,7 +8,7 @@ class ListingIndexItem extends React.Component {
         return (
             <>
                 <li className="listing-container">
-                    <Link to={`/listings/${this.props.listing.id}`}>
+                    <Link to={`/listings/show/${this.props.listing.id}`}>
                         <img className="listing-main-img" src={this.props.listing.photoUrl[0].service_url}/>
                         <div className="listing-details-container">
                             <p className="list-loc-ele">{this.props.listing.title.toUpperCase()}</p>

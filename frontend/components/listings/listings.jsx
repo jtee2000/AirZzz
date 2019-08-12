@@ -16,7 +16,7 @@ class Listings extends React.Component {
             <aside>
                
                     <div className="homepage-index-container">
-                        <h1 className="listings-index-header">What can we help you find, {this.props.user.fname.split(" ").join("")}?</h1>
+                        {/* <h1 className="listings-index-header">What can we help you find, {this.props.user.fname.split(" ").join("")}?</h1> */}
                         <h1 className="listings-index-header">Places to stay around the world</h1>
                         <ul className="listing-index-container">
                             {listings}
