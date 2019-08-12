@@ -116,8 +116,8 @@ class Homepage extends React.Component {
     handleEnter(e) {
         if (e.keyCode === 13) {
             this.setState({search: ""})
+            debugger
             this.props.history.push("/map")
-
         }
     }
 

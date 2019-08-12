@@ -1,15 +1,13 @@
 import React from 'react'; 
 import MarkerManager from '../../util/marker_manager'; 
 import ListingIndexMapItem from '../listings/listing_index_map_item';
+import { withRouter } from 'react-router-dom'
 
 class ListingMap extends React.Component {
     constructor(props) {
         super(props)
         this.registerListeners = this.registerListeners.bind(this);
-        this.state = {
-
-        }
-        // this.makeMapWork = this.makeMapWork.bind(this);
+        this.makeMapWork = this.makeMapWork.bind(this);
     }
 
 
@@ -24,63 +22,76 @@ class ListingMap extends React.Component {
         this.MarkerManager = new MarkerManager(this.map);
         // this.props.fetchListings().then( (payload) => this.MarkerManager.updateMarkers(payload)); 
         this.registerListeners();
-        this.MarkerManager.updateMarkers(this.props.benches);
+        this.MarkerManager.updateMarkers(this.props.listings);
         // Integrate Google Places Search Feature 
-        // var input = document.getElementById('airzzz-search');
-        // this.autocomplete = new google.maps.places.Autocomplete(input);
-        // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-        // this.makeMapWork();
+        google.maps.event.addListener(this.map, 'bounds_changed', () => {
+            var input = document.getElementById('airzzz-search');
+            this.autocomplete = new google.maps.places.Autocomplete(input);
+            // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+            this.autocomplete.setBounds(this.map.getBounds());
+            this.makeMapWork();
+        });
     }
 
 
-    // makeMapWork() {
-    //     google.maps.event.addListener(this.map, 'bounds_changed', () => {
-    //         this.autocomplete.setBounds(this.map.getBounds());
-    //     });
-    //     var markers = [];
-    //     // Listen for the event fired when the user selects a prediction and retrieve
-    //     // more details for that place.
-    //     google.maps.event.addListener(this.autocomplete, 'places_changed', () => {
-    //         var places = this.autocomplete.getPlaces();
-    //         if (places.length === 0) {
-    //             return;
-    //         }
-    //         // Clear out the old markers.
-    //         markers.forEach(function (marker) {
-    //             marker.setMap(null);
-    //         });
-    //         markers = [];
-    //         // For each place, get the icon, name and location.
-    //         var bounds = new google.maps.LatLngBounds();
-    //         places.forEach(function (place) {
-    //             if (!place.geometry) {
-    //                 console.log("Returned place contains no geometry");
-    //                 return;
-    //             }
-    //             var icon = {
-    //                 url: place.icon,
-    //                 size: new google.maps.Size(71, 71),
-    //                 origin: new google.maps.Point(0, 0),
-    //                 anchor: new google.maps.Point(17, 34),
-    //                 scaledSize: new google.maps.Size(25, 25)
-    //             };
-    //             // Create a marker for each place.
-    //             markers.push(new google.maps.Marker({
-    //                 map: this.map,
-    //                 icon: icon,
-    //                 title: place.name,
-    //                 position: place.geometry.location
-    //             }));
-    //             if (place.geometry.viewport) {
-    //                 // Only geocodes have viewport.
-    //                 bounds.union(place.geometry.viewport);
-    //             } else {
-    //                 bounds.extend(place.geometry.location);
-    //             }
-    //         });
-    //         this.map.fitBounds(bounds);
-    //     });
-    // }
+    makeMapWork() {
+        
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        const map = this.map;
+        google.maps.event.addListener(this.autocomplete, 'place_changed', () => {
+            var place = this.autocomplete.getPlace();
+            markers.push(new google.maps.Marker({
+                map: map,
+                title: place.name,
+                position: place.geometry.location
+            }));
+            var bounds = new google.maps.LatLngBounds();
+            if (place.geometry.viewport) {
+                    // Only geocodes have viewport.
+                    bounds.union(place.geometry.viewport);
+                } else {
+                    bounds.extend(place.geometry.location);
+                }
+            map.fitBounds(bounds);
+            // this.props.history.push("/map");
+            // Clear out the old markers.
+            // markers.forEach(function (marker) {
+                //     marker.setMap(null);
+            // });
+            // markers = [];
+            // // For each place, get the icon, name and location.
+            // var bounds = new google.maps.LatLngBounds();
+            // places.forEach(function (place) {
+            //     if (!place.geometry) {
+            //         console.log("Returned place contains no geometry");
+            //         return;
+            //     }
+            //     var icon = {
+            //         url: place.icon,
+            //         size: new google.maps.Size(71, 71),
+            //         origin: new google.maps.Point(0, 0),
+            //         anchor: new google.maps.Point(17, 34),
+            //         scaledSize: new google.maps.Size(25, 25)
+            //     };
+            //     // Create a marker for each place.
+            //     markers.push(new google.maps.Marker({
+            //         map: map,
+            //         icon: icon,
+            //         title: place.name,
+            //         position: place.geometry.location
+            //     }));
+            //     if (place.geometry.viewport) {
+            //         // Only geocodes have viewport.
+            //         bounds.union(place.geometry.viewport);
+            //     } else {
+            //         bounds.extend(place.geometry.location);
+            //     }
+            // });
+            // 
+        });
+    }
 
     componentDidUpdate() {
         this.MarkerManager.updateMarkers(this.props.listings);
