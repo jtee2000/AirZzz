@@ -27,6 +27,10 @@ class Booking extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault(); 
+        if (!this.props.user) {
+            this.props.openModal('signup');
+            return;
+        }
         // const start_date = moment(this.state.startDate).format("YYYY/MM/DD");
         // const end_date = moment(this.state.endDate).format("YYYY/MM/DD");
         // this.setState({start_date: start_date}); 
@@ -38,7 +42,7 @@ class Booking extends React.Component {
             end_date: moment(endDate).format("YYYY-MM-DD"),
             listing_id,
             guests
-        }).then( () => this.props.history.push("listings/trips"));
+        }).then( () => this.props.history.push("/listings/trips"));
     }
 
     update(field) {

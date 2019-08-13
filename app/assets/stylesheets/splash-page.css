@@ -175,9 +175,9 @@
     width: 100%; 
 }
 
-.SingleDatePickerInput.SingleDatePickerInput_1.SingleDatePickerInput__withBorder.SingleDatePickerInput__withBorder_2 :first-child{
+.SingleDatePickerInput.SingleDatePickerInput_1.SingleDatePickerInput__withBorder.SingleDatePickerInput__withBorder_2 .DateInput.DateInput_1{
     width: 100%;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     font-family: sans-serif !important;
     
 }
@@ -187,9 +187,9 @@
 }
 
 
-.DateInput_input.DateInput_input_1.DateInput_input__focused.DateInput_input__focused_2:focus-within {
+/* .SingleDatePickerInput.SingleDatePickerInput_1.SingleDatePickerInput__withBorder.SingleDatePickerInput__withBorder_2 first-child:focus-within {
     border: 1px solid #008489;
-}
+} */
 
 
 .pac-container {
