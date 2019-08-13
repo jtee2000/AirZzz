@@ -192,3 +192,21 @@
 }
 
 
+.pac-container {
+    width: 450px !important;
+    left: 100px !important;
+    margin-top: 8px;
+    border-top-right-radius: none; 
+}
+
+.pac-item {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
+    font-size: 15px !important;
+    padding: 12px; 
+    border: none;
+    color: #484848;
+}
+
+.pac-container.pac-logo.hdpi::after {
+    display: none;
+}
