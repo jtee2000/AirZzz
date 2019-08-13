@@ -4,8 +4,21 @@ import { Link } from 'react-router-dom';
 
 class Listings extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.userGreeting = this.userGreeting.bind(this);
+    }
+
     componentDidMount() {
         this.props.fetchListings(); 
+    }
+
+    userGreeting() {
+        if (this.props.user) {
+            return <h1 className="listings-index-header">What can we help you find, {this.props.user.fname.split(" ").join("")}?</h1>; 
+        } else {
+            return <></>
+        }
     }
 
     render() {
@@ -16,6 +29,7 @@ class Listings extends React.Component {
             <aside>
                
                     <div className="homepage-index-container">
+                        {this.userGreeting()}
                         {/* <h1 className="listings-index-header">What can we help you find, {this.props.user.fname.split(" ").join("")}?</h1> */}
                         <h1 className="listings-index-header">Places to stay around the world</h1>
                         <ul className="listing-index-container">

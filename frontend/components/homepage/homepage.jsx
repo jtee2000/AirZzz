@@ -77,7 +77,7 @@ class Homepage extends React.Component {
                                     onDateChange={startDate => this.setState({ startDate })} // PropTypes.func.isRequired
                                     focused={this.state.temp2} // PropTypes.bool
                                     onFocusChange={({ focused: temp2 }) => this.setState({ temp2 })} // PropTypes.func.isRequired
-                                    id="your_unique_i" // PropTypes.string.isRequired,
+                                    id="homepage" // PropTypes.string.isRequired,
                                     placeholder="mm/dd/yyyy"
                                 />
                             </div>
@@ -88,7 +88,7 @@ class Homepage extends React.Component {
                                     onDateChange={endDate => this.setState({ endDate })} // PropTypes.func.isRequired
                                     focused={this.state.temp} // PropTypes.bool
                                     onFocusChange={({ focused: temp }) => this.setState({ temp })} // PropTypes.func.isRequired
-                                    id="your_unique_id" // PropTypes.string.isRequired,
+                                    id="homepage" // PropTypes.string.isRequired,
                                     placeholder={"mm/dd/yyyy"}
                                 />  
                             </div>
@@ -129,7 +129,7 @@ class Homepage extends React.Component {
                             <span>Saved</span>
                         </div>
                         <div className="host-hover-2">
-                            <Link to="/trips" className="remove-text-decoration">
+                            <Link to="/listings/trips" className="remove-text-decoration">
                                 <span>Trips</span>
                             </Link>
                         </div>

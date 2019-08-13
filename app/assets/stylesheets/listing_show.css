@@ -77,7 +77,7 @@
 .listing-show-container {
     padding: 0 20px 0 245px;
     min-width: 787.05px;
-    width: 55%;
+    width: 60%;
 }
 
 .listing-show-title {
@@ -206,7 +206,7 @@
 
 .booking-form-container {
     margin-top: 25px;
-    width: 420px; 
+    width: 370px; 
     height: 460px;
     /* background-color: #00A699; */
 }
@@ -326,7 +326,7 @@
 }
 
 .DateRangePickerInput.DateRangePickerInput_1.DateRangePickerInput__withBorder.DateRangePickerInput__withBorder_2 {
-    width: 356px; 
+    width: 100%; 
 
 }
 

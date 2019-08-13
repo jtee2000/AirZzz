@@ -23,7 +23,7 @@ const App = () => {
             </header>
             <Route exact path="/listings" component={Listings} />
             <Route exact path="/listings/show/:listingId" component={ListingShow}/>
-            <Route exact path="listings/trips" component={Trips} />
+            <Route exact path="/listings/trips" component={Trips} />
             <Route exact path="/listings/map" component={ListingMap} />
         </div>
     )

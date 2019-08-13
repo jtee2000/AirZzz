@@ -54,7 +54,7 @@ class ProtNav extends React.Component {
                             <span>Saved</span>
                         </div>
                         <div className="host-hover-2">
-                            <Link to="/trips" className="remove-text-decoration">
+                            <Link to="/listings/trips" className="remove-text-decoration">
                                 <span>Trips</span>
                             </Link>
                         </div>
