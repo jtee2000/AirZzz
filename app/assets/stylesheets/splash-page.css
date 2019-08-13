@@ -85,6 +85,7 @@
     height: 474px; 
     width: 420px; 
     margin: 47px 60px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12) !important
 }
 
 .rental-form {
@@ -101,7 +102,7 @@
     font-size: 15px;
     background-color: #FF5A5F;
     color: white;
-    width: 90px;
+    width: 100px;
 }
 
 .rental-form-container {
@@ -126,17 +127,24 @@
 }
 
 .homepage-search-bar {
-    border: 1px solid lightgray;
+    border: 1px solid #efefef;
     border-radius: 3px; 
-    padding: 10px 45px; 
-    color: 	#757575;
+    padding: 12px;
+    /* color: 	#757575; */
     font-size: 17px; 
     width: 100%;
     font-weight: 100;
+    /* font-family: 'Montserrat', sans-serif;  */
+}
+
+.homepage-search-bar::placeholder {
+    color: #757575;
+    font-size: 14;
+    font-family: sans-serif;
 }
 
 .homepage-search-bar:focus {
-    border: 1px solid #00A699; 
+    border: 1px solid #008489;
 
 }
 
@@ -145,43 +153,42 @@
     font-weight: 600;
 }
 
-
-/* .test div div div:first-child {
-    width: 356px !important; 
-}  */
-
-/* .test div div div div input {
-    width: 100%;
-} */
-
-
-
-
-/* .test div div div:first-child {
-    width: 100% !important; 
-    /* border-bottom: 1px solid lightgray; */
-.test div div div input:first-child {
-    color: 	#757575;
-    font-size: 17px; 
-    width: 100%;
-    font-weight: 100;
-    font-family: Arial;
-}
-
-/* .test svg {
-    display: none !important; 
-} */
-
-/* .test div div div:nth-child(3) input:first-child{
-    width: 354px !important; 
-} */
-
 .homepage-DATES {
     padding-bottom: 7px; 
     font-size: 13px; 
     font-weight: 600;
 }
 
-.DateRangePickerInput.DateRangePickerInput_1.DateRangePickerInput__withBorder.DateRangePickerInput__withBorder_2 {
-    text-align: center;
+.homepage-date-labels {
+    font-size: 13px; 
+    margin-bottom: 5px;
 }
+
+.date-picker-homepage {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-picker-homepage-container {
+    display: flex; 
+    flex-direction: row;
+    width: 100%; 
+}
+
+.DateInput.DateInput_1 {
+    width: 100%;
+    border-radius: 15px;
+    font-family: sans-serif !important;
+    
+}
+
+.SingleDatePickerInput.SingleDatePickerInput_1.SingleDatePickerInput__withBorder.SingleDatePickerInput__withBorder_2 {
+    border: 1px solid #efefef !important; 
+}
+
+
+.DateInput_input.DateInput_input_1.DateInput_input__focused.DateInput_input__focused_2:focus-within {
+    border: 1px solid #008489;
+}
+
+

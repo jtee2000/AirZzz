@@ -14,7 +14,9 @@ class Homepage extends React.Component {
         this.splash = this.splash.bind(this);
         this.loggedin = this.loggedin.bind(this);
         this.state = {
-            search: ""
+            search: "",
+            startDate: null,
+            endDate: null
         }
         this.handleEnter = this.handleEnter.bind(this);
     }
@@ -66,20 +68,30 @@ class Homepage extends React.Component {
                             <label className="where">WHERE</label>
                             <input className="homepage-search-bar" type="text" placeholder="Anywhere" value={this.state.search} onChange={this.update("search")} onKeyUp={this.handleEnter} />
                         </div>
-                        <div className="test"> 
-                            <div className="homepage-DATES">DATES</div>
-                            <DateRangePicker
-                                numberOfMonths={1}
-                                startDatePlaceholderText="mm/dd/yyyy"
-                                endDatePlaceholderText="mm/dd/yyyy"
-                                startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                                startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                                endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-                                endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                                onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-                                focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                                onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-                            />    
+                        <div className="date-picker-homepage-container"> 
+                            <div className="date-picker-homepage">
+                                <label className="homepage-date-labels">CHECK-IN</label>
+                                <SingleDatePicker
+                                    numberOfMonths={1}
+                                    // date={this.state.date} // momentPropTypes.momentObj or null
+                                    onDateChange={startDate => this.setState({ startDate })} // PropTypes.func.isRequired
+                                    focused={this.state.temp2} // PropTypes.bool
+                                    onFocusChange={({ focused: temp2 }) => this.setState({ temp2 })} // PropTypes.func.isRequired
+                                    id="your_unique_i" // PropTypes.string.isRequired,
+                                    placeholder="mm/dd/yyyy"
+                                />
+                            </div>
+                            <div className="date-picker-homepage">
+                                <label className="homepage-date-labels">CHECKOUT</label>
+                                <SingleDatePicker
+                                    numberOfMonths={1}
+                                    onDateChange={endDate => this.setState({ endDate })} // PropTypes.func.isRequired
+                                    focused={this.state.temp} // PropTypes.bool
+                                    onFocusChange={({ focused: temp }) => this.setState({ temp })} // PropTypes.func.isRequired
+                                    id="your_unique_id" // PropTypes.string.isRequired,
+                                    placeholder={"mm/dd/yyyy"}
+                                />  
+                            </div>
                         </div>
                         <div className="rental-form-container">
                             <button>   Search   </button>

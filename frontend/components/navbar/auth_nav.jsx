@@ -42,17 +42,17 @@ class AuthNav extends React.Component {
                             <input id="airzzz-search" type="text" placeholder="Try &quot;Boston College&quot;" value={this.state.search} onChange={this.update("search")} onKeyUp={this.handleEnter} />
                         </div>
                     </div>
-                    <div className="nav-bar-text">
-                        <div className="host-hover">
+                    <div className="nav-bar-text-2">
+                        <div className="host-hover-2">
                             <span>Become a host</span>
                         </div>
-                        <div className="host-hover">
+                        <div className="host-hover-2">
                             <span>Help</span>
                         </div>
-                        <div className="host-hover">
+                        <div className="host-hover-2">
                             <button onClick={() => this.props.openModal('login')}>Login</button>
                         </div>
-                        <div className="host-hover">
+                        <div className="host-hover-2">
                             <button onClick={() => this.props.openModal('signup')}>Sign up</button>
                         </div>
                     </div>
