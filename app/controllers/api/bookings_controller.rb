@@ -1,7 +1,6 @@
 class Api::BookingsController < ApplicationController 
 
     def create
-        debugger
         @booking = Booking.new(booking_params)
         @booking.user_id = current_user.id 
         if @booking.ensure_nonoverlapping_requests && @booking.save
