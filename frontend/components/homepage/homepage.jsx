@@ -72,7 +72,7 @@ class Homepage extends React.Component {
                                 <label className="homepage-date-labels">CHECK-IN</label>
                                 <SingleDatePicker
                                     numberOfMonths={1}
-                                    // date={this.state.date} // momentPropTypes.momentObj or null
+                                    date={this.state.startDate} // momentPropTypes.momentObj or null
                                     onDateChange={startDate => this.setState({ startDate })} // PropTypes.func.isRequired
                                     focused={this.state.temp2} // PropTypes.bool
                                     onFocusChange={({ focused: temp2 }) => this.setState({ temp2 })} // PropTypes.func.isRequired
@@ -84,6 +84,7 @@ class Homepage extends React.Component {
                                 <label className="homepage-date-labels">CHECKOUT</label>
                                 <SingleDatePicker
                                     numberOfMonths={1}
+                                    date={this.state.endDate}
                                     onDateChange={endDate => this.setState({ endDate })} // PropTypes.func.isRequired
                                     focused={this.state.temp} // PropTypes.bool
                                     onFocusChange={({ focused: temp }) => this.setState({ temp })} // PropTypes.func.isRequired
