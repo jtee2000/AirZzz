@@ -144,12 +144,12 @@ class SessionForm extends React.Component {
                         <br/>
                         </>
                     }
-                    <div className={`email-input ${(this.passwordBlank && this.state.password.length === 0) || this.passwordLength ? "border-error" : "a"}`}>
+                    <div className={`email-input ${(this.passwordBlank && this.state.password.length === 0) || (this.passwordLength && this.state.password.length < 8)? "border-error" : "a"}`}>
                         <input type="password" placeholder="Create Password" value={this.state.password} onChange={this.update("password")} />
                         <i className="fas fa-eye-slash"></i>
                     </div>
                     <div className="credential-errors">{this.passwordBlank && this.state.password.length === 0 ? "Password is required." : undefined}</div>
-                    <div className="credential-errors">{this.passwordLength ? "Your password must be at least 8 characters. Please try again." : undefined}</div>
+                    <div className="credential-errors">{this.passwordLength && this.state.password.length < 8 ? "Your password must be at least 8 characters. Please try again." : undefined}</div>
                     {/* <br/> */}
                     <div className="email-input-5">
                     <input className="form-button" type="submit" value={this.props.formType} />

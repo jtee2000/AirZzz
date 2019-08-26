@@ -94,7 +94,7 @@ class Homepage extends React.Component {
                             </div>
                         </div>
                         <div className="rental-form-container">
-                            <button>   Search   </button>
+                            <button onClick={() => this.props.history.push("/listings/map")}>   Search   </button>
                         </div>
                     </div>
                 </div>

@@ -210,3 +210,12 @@
 .pac-container.pac-logo.hdpi::after {
     display: none;
 }
+
+.DateInput_input.DateInput_input_1.DateInput_input__focused.DateInput_input__focused_2 {
+    border-bottom: none; 
+}
+
+.DateInput_input.DateInput_input_1.DateInput_input__focused.DateInput_input__focused_2:focus-within {
+    border: 1px solid  #008489;
+   
+}

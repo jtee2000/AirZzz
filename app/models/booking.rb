@@ -20,6 +20,11 @@ class Booking < ApplicationRecord
         dependent: :destroy,
         class_name: :Listing
 
+    belongs_to :user, 
+        foreign_key: :user_id, 
+        dependent: :destroy, 
+        class_name: :User
+
     def overlapping_requests 
         Booking
         .where.not(id: self.id)
