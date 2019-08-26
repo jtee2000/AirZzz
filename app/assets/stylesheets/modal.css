@@ -117,7 +117,7 @@
 
 
 
-.form form div:last-of-type {
+.email-input-5 {
     background-color: #FF5A5F; 
     color: white !important;
     text-align: center;
@@ -190,4 +190,48 @@
 .border-error {
     border: 1px solid red;
     background-color: #FFF8F6;
+}
+
+.auth-errors {
+    display: flex; 
+    align-items: center; 
+    width: 500px; 
+    height: 80px;
+    margin: 0px 35px;
+    margin-bottom: 15px; 
+    background-color: white !important; 
+    border: 2px solid #EBEBEB;
+    border-radius: 10px;
+}
+
+.warning-icon {
+    width: 10%; 
+    border-right: 1px solid #EBEBEB; 
+    border-left: 1px solid #FC642D; 
+    text-align: center; 
+    background: #FC642D;
+    height: 100%;
+    display: flex; 
+    align-items: center; 
+    border-top-left-radius: 8px; 
+    border-bottom-left-radius: 8px;
+}
+
+.warning-icon {
+    color: white; 
+    text-align: center; 
+}
+.warning-icon i {
+    text-align: center; 
+    margin: 0 auto; 
+    font-size: 20px; 
+}
+
+.auth-errors-text span {
+    background-color: white !important; 
+    display: inline-block;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 14px;
+    color: #484848 !important;
+    margin: 0 10px;
 }

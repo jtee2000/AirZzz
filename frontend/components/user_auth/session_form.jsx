@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
+import { fileURLToPath } from 'url';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -15,6 +16,18 @@ class SessionForm extends React.Component {
         this.fnameBlank = false; 
         this.lnameBlank = false; 
         this.passwordBlank = false; 
+        this.passwordLength = false; 
+        this.emailInvalid = false; 
+    }
+
+    validEmail(email) {
+        if (!email.includes("@")) return false; 
+        if(!email.includes(".")) return false; 
+        const verify = email.split(".");
+        const verify2 = email.split("@");
+        if (verify[1].length <= 0) return false; 
+        if (verify2[0] === "") return false; 
+        return true; 
     }
 
     handleSubmit(e) {
@@ -23,8 +36,12 @@ class SessionForm extends React.Component {
             const field = Object.keys(this.state)[i];
             debugger
             if (this.state[field] === "") {
-                debugger
                 this.renderBlankErrors(field);
+            }
+            else if (field === "password" && this.state[field].length < 8) {
+                this.renderBlankErrors("passwordLength");
+            } else if (field === "email" && !this.validEmail(this.state[field])) {
+                this.renderBlankErrors("emailInvalid");
             }
         }
         const user = Object.assign({}, this.state);
@@ -45,17 +62,20 @@ class SessionForm extends React.Component {
         this.props.clearErrors();
     }
 
-    // renderErrors() {
-    //     return(
-    //         <ul>
-    //             {this.props.errors.map((error,i) => (
-    //                 <li key={`error-${i}`}>
-    //                     {error}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
+    authorizationErrors() {
+        return (
+            <div className="auth-errors">
+                <div className="warning-icon">
+                    <i className="fas fa-exclamation-triangle"></i>
+                </div>
+                <div className="auth-errors-text">
+                    <span>
+                        The password you entered is incorrect. Try again, or choose another login option. 
+                    </span>
+                </div>
+            </div>
+        )
+    }
 
     renderBlankErrors(input) {
         switch(input) {
@@ -71,12 +91,19 @@ class SessionForm extends React.Component {
             case "password": 
                 this.passwordBlank = true; 
                 break;
+            case "passwordLength": 
+                this.passwordLength = true; 
+                break;
+            case "emailInvalid": 
+                this.emailInvalid = true; 
+                break; 
         }
     }
 
+
     render() {
-        debugger
         const errors = "email-input";
+        debugger
         return (
             <div className="form">
                 {/* <i className="fas fa-times" onClick={this.props.closeModal}></i> */}
@@ -93,33 +120,36 @@ class SessionForm extends React.Component {
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <br/>
-                    <div className={`email-input ${this.emailBlank ? "border-error" : "a"}`}>
+                    {this.props.errors.includes("Invalid username/password") && this.passwordBlank === false && this.emailBlank === false && this.validEmail(this.state.email) ? this.authorizationErrors() : undefined}
+                    <div className={`email-input ${(this.emailBlank && this.state.email.length === 0) || (this.emailInvalid && !this.validEmail(this.state.email))? "border-error" : "a"}`}>
                         <input type="text" placeholder="Email address" value={this.state.email} onChange={this.update("email")} />
                         <i className="far fa-envelope"></i>
                     </div>
-                    <div className="credential-errors"> {this.emailBlank ? "Email is required." : undefined}</div>
+                    <div className="credential-errors"> {this.emailBlank && this.state.email.length === 0 ? "Email is required." : undefined}</div>
+                    <div className="credential-errors"> {!this.validEmail(this.state.email) && this.emailInvalid ? "Enter a valid email." : undefined}</div>
                     <br/>
                     {this.props.formType === "Sign up" && 
                         <>
-                        <div className={`email-input ${this.fnameBlank ? "border-error" : "a"}`}>
+                        <div className={`email-input ${this.fnameBlank && this.state.fname.length === 0 ? "border-error" : "a"}`}>
                             <input type="text" placeholder="First Name" value={this.state.fname} onChange={this.update("fname")} />
                             <i className="fas fa-users"></i>
                         </div>
-                        <div className="credential-errors">{this.fnameBlank ? "First name is required." : undefined}</div>
+                        <div className="credential-errors">{this.fnameBlank && this.state.fname.length === 0? "First name is required." : undefined}</div>
                         <br/>
-                        <div className={`email-input ${this.lnameBlank ? "border-error" : "a"}`}>
+                        <div className={`email-input ${this.lnameBlank && this.state.lname.length === 0 ? "border-error" : "a"}`}>
                             <input type="text" placeholder="Last Name" value={this.state.lname} onChange={this.update("lname")} />
                             <i className="fas fa-users"></i>
                         </div>
-                        <div className="credential-errors">{this.lnameBlank ? "Last name is required." : undefined}</div>
+                        <div className="credential-errors">{this.lnameBlank && this.state.lname.length === 0 ? "Last name is required." : undefined}</div>
                         <br/>
                         </>
                     }
-                    <div className={`email-input ${this.passwordBlank ? "border-error" : "a"}`}>
+                    <div className={`email-input ${(this.passwordBlank && this.state.password.length === 0) || this.passwordLength ? "border-error" : "a"}`}>
                         <input type="password" placeholder="Create Password" value={this.state.password} onChange={this.update("password")} />
                         <i className="fas fa-eye-slash"></i>
                     </div>
-                    <div className="credential-errors">{this.passwordBlank ? "Password is required." : undefined}</div>
+                    <div className="credential-errors">{this.passwordBlank && this.state.password.length === 0 ? "Password is required." : undefined}</div>
+                    <div className="credential-errors">{this.passwordLength ? "Your password must be at least 8 characters. Please try again." : undefined}</div>
                     {/* <br/> */}
                     <div className="email-input-5">
                     <input className="form-button" type="submit" value={this.props.formType} />
