@@ -22,7 +22,7 @@ class AuthNav extends React.Component {
     handleEnter(e) {
         if (e.keyCode === 13) {
             this.setState({ search: "" })
-            this.props.history.push("listings/map")
+            this.props.history.push("/listings/map")
         }
     }
 

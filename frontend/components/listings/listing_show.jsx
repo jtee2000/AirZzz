@@ -110,7 +110,8 @@ class ListingShow extends React.Component {
                         </div>
                         <div className="listing-availability-container">
                             <div className="listing-linebreak"></div>
-                                <h1 className="availability">Availability</h1>
+                            <h1 className="availability">Availability</h1>
+                            <div className="calendar_container">
                                 <DayPickerRangeController
                                     numberOfMonths={2}
                                     isDayBlocked={this.isDayBlocked}
@@ -122,6 +123,7 @@ class ListingShow extends React.Component {
                                     // onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                                     // initialVisibleMonth={() => moment().add(2, "M")} // PropTypes.func or null,
                                 />
+                            </div>
                         </div>
                         
                         <div className="map-show-container">

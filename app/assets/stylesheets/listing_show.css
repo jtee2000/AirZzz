@@ -76,7 +76,7 @@
 
 .listing-show-container {
     padding: 0 20px 0 245px;
-    min-width: 787.05px;
+    min-width: 959.05px;
     width: 60%;
 }
 
@@ -236,6 +236,8 @@
     border-radius: 3px;
     position: sticky;
     top: 0px; 
+    z-index: 100; 
+    background: white;
     /* display: flex;  */
     /* align-items: space-around; */
     
@@ -380,3 +382,11 @@
 .DayPicker_transitionContainer.DayPicker_transitionContainer_1.DayPicker_transitionContainer__horizontal.DayPicker_transitionContainer__horizontal_2 {
     width: 100% !important;
 }
+
+.calendar_conatiner {
+    width: 100%;
+}
+
+/* .DayPicker.DayPicker_1.DayPicker__horizontal.DayPicker__horizontal_2.DayPicker__withBorder.DayPicker__withBorder_3 {
+    width: 800px !important; 
+} */
