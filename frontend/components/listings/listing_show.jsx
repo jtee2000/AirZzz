@@ -39,6 +39,13 @@ class ListingShow extends React.Component {
 
     }
 
+    isOutsideRange(date) {
+        debugger
+        if (date < new Date()) {
+            return true; 
+        }
+    }
+
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.listingId !== this.props.match.params.listingId) {
             this.props.fetchListing(this.props.match.params.listingId); 
@@ -107,6 +114,7 @@ class ListingShow extends React.Component {
                                 <DayPickerRangeController
                                     numberOfMonths={2}
                                     isDayBlocked={this.isDayBlocked}
+                                    isOutsideRange={this.isOutsideRange}
                                     // startDate={this.state.startDate} // momentPropTypes.momentObj or null,
                                     // endDate={this.state.endDate} // momentPropTypes.momentObj or null,
                                     // onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
