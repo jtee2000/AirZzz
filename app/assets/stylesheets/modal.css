@@ -89,7 +89,7 @@
     border-radius: 5px;
     width: 500px; 
     height: 45px;
-    margin: 17px 35px;
+    margin: 0px 35px;
 }
 
 .email-input-5 {
@@ -179,8 +179,14 @@
     padding: 0 35px;
     font-weight: 500;
     font-size: 14px; 
+    margin-top: 7px; 
 }
 
 .email-input-errors {
     border: 1px solid red; 
+}
+
+.border-error {
+    border: 1px solid red;
+    color: #FFF8F6;
 }

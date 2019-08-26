@@ -86,33 +86,35 @@ class SessionForm extends React.Component {
                     <span className="hella-annoying"></span>
                 </div>
                 <form onSubmit={this.handleSubmit}>
-                    {/* {this.renderErrors()} */}
-                    <div className="email-input">
+                    <br/>
+                    <div className={`email-input ${this.emailBlank ? "border-error" : "a"}`}>
                         <input type="text" placeholder="Email address" value={this.state.email} onChange={this.update("email")} />
                         <i className="far fa-envelope"></i>
                     </div>
-                    {}
                     <div className="credential-errors"> {this.emailBlank ? "Email is required." : undefined}</div>
+                    <br/>
                     {this.props.formType === "Sign up" && 
                         <>
-                        <div className={errors}>
+                        <div className={`email-input ${this.fnameBlank ? "border-error" : "a"}`}>
                             <input type="text" placeholder="First Name" value={this.state.fname} onChange={this.update("fname")} />
                             <i className="fas fa-users"></i>
                         </div>
                         <div className="credential-errors">{this.fnameBlank ? "First name is required" : undefined}</div>
-                        {/* {this.props.errors.join('').includes('Fname') ? errors = "email-input-errors" : undefined} */}
-                        <div className="email-input">
+                        <br/>
+                        <div className={`email-input ${this.lnameBlank ? "border-error" : "a"}`}>
                             <input type="text" placeholder="Last Name" value={this.state.lname} onChange={this.update("lname")} />
                             <i className="fas fa-users"></i>
                         </div>
                         <div className="credential-errors">{this.lnameBlank ? "Last name is required" : undefined}</div>
+                        <br/>
                         </>
                     }
-                    <div className="email-input">
-                    <input type="password" placeholder="Create Password" value={this.state.password} onChange={this.update("password")} />
-                    <i className="fas fa-eye-slash"></i>
+                    <div className={`email-input ${this.passwordBlank ? "border-error" : "a"}`}>
+                        <input type="password" placeholder="Create Password" value={this.state.password} onChange={this.update("password")} />
+                        <i className="fas fa-eye-slash"></i>
                     </div>
                     <div className="credential-errors">{this.passwordBlank ? "Password is required" : undefined}</div>
+                    {/* <br/> */}
                     <div className="email-input-5">
                     <input className="form-button" type="submit" value={this.props.formType} />
                     </div>
