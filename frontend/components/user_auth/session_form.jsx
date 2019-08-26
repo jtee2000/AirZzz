@@ -11,10 +11,21 @@ class SessionForm extends React.Component {
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.emailBlank = false; 
+        this.fnameBlank = false; 
+        this.lnameBlank = false; 
+        this.passwordBlank = false; 
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        for (let i = 0; i < Object.keys(this.state).length; i++) {
+            const field = Object.keys(this.state)[i];
+            if (this.state[field] === "") {
+                // this.renderBlankErrors(field); 
+                this.renderBlankErrors(field);
+            }
+        }
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal).then(() => {
             return (
@@ -33,16 +44,29 @@ class SessionForm extends React.Component {
         this.props.clearErrors();
     }
 
-    renderErrors() {
-        return(
-            <ul>
-                {this.props.errors.map((error,i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+    // renderErrors() {
+    //     return(
+    //         <ul>
+    //             {this.props.errors.map((error,i) => (
+    //                 <li key={`error-${i}`}>
+    //                     {error}
+    //                 </li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
+
+    renderBlankErrors(input) {
+        switch(input) {
+            case "fname": 
+                this.fnameBlank = true; 
+            case "email": 
+                this.emailBlank = true; 
+            case "lname": 
+                this.lnameBlank = true; 
+            case "password": 
+                this.passwordBlank = true; 
+        }
     }
 
     render() {
@@ -67,27 +91,28 @@ class SessionForm extends React.Component {
                         <input type="text" placeholder="Email address" value={this.state.email} onChange={this.update("email")} />
                         <i className="far fa-envelope"></i>
                     </div>
-                    <div className="credential-errors">{this.props.errors.join('').includes('Email') ? "Email is required" : undefined}</div>
+                    {}
+                    <div className="credential-errors"> {this.emailBlank ? "Email is required." : undefined}</div>
                     {this.props.formType === "Sign up" && 
                         <>
                         <div className={errors}>
                             <input type="text" placeholder="First Name" value={this.state.fname} onChange={this.update("fname")} />
                             <i className="fas fa-users"></i>
                         </div>
-                        <div className="credential-errors">{this.props.errors.join('').includes('Fname') ? "First name is required" : undefined}</div>
+                        <div className="credential-errors">{this.fnameBlank ? "First name is required" : undefined}</div>
                         {/* {this.props.errors.join('').includes('Fname') ? errors = "email-input-errors" : undefined} */}
                         <div className="email-input">
                             <input type="text" placeholder="Last Name" value={this.state.lname} onChange={this.update("lname")} />
                             <i className="fas fa-users"></i>
                         </div>
-                        <div className="credential-errors">{this.props.errors.join('').includes('Lname') ? "Last name is required" : undefined}</div>
+                        <div className="credential-errors">{this.lnameBlank ? "Last name is required" : undefined}</div>
                         </>
                     }
                     <div className="email-input">
                     <input type="password" placeholder="Create Password" value={this.state.password} onChange={this.update("password")} />
                     <i className="fas fa-eye-slash"></i>
                     </div>
-                    <div className="credential-errors">{this.props.errors.join('').includes('Password') ? "Password is required" : undefined}</div>
+                    <div className="credential-errors">{this.passwordBlank ? "Password is required" : undefined}</div>
                     <div className="email-input-5">
                     <input className="form-button" type="submit" value={this.props.formType} />
                     </div>

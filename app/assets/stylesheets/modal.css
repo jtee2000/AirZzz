@@ -13,15 +13,16 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+ 
 }
 
 .form {
     width: 577px; 
-    height: 500px; 
+    height: 500px;
     background-color: white;
     align-content: center;
     align-content: center;
-    padding: 4px;
+    padding-top: 2px; 
 }
 
 
@@ -29,7 +30,8 @@
 .form form {
     position: absolute;
     align-items: center;
-    
+    background: white;
+    width: 100%;
 }
 
 .form form input {
@@ -153,7 +155,7 @@
 .x {
     width: 100% !important; 
     height: 100% !important;
-    margin: 5px;
+    margin: 10px 5px;
     padding: 8px;
 }
 .x-out {
@@ -176,6 +178,7 @@
     color: #d93900;
     padding: 0 35px;
     font-weight: 500;
+    font-size: 14px; 
 }
 
 .email-input-errors {
