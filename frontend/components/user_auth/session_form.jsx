@@ -21,8 +21,9 @@ class SessionForm extends React.Component {
         e.preventDefault();
         for (let i = 0; i < Object.keys(this.state).length; i++) {
             const field = Object.keys(this.state)[i];
+            debugger
             if (this.state[field] === "") {
-                // this.renderBlankErrors(field); 
+                debugger
                 this.renderBlankErrors(field);
             }
         }
@@ -60,16 +61,21 @@ class SessionForm extends React.Component {
         switch(input) {
             case "fname": 
                 this.fnameBlank = true; 
+                break;
             case "email": 
                 this.emailBlank = true; 
+                break;
             case "lname": 
                 this.lnameBlank = true; 
+                break;
             case "password": 
                 this.passwordBlank = true; 
+                break;
         }
     }
 
     render() {
+        debugger
         const errors = "email-input";
         return (
             <div className="form">
@@ -99,13 +105,13 @@ class SessionForm extends React.Component {
                             <input type="text" placeholder="First Name" value={this.state.fname} onChange={this.update("fname")} />
                             <i className="fas fa-users"></i>
                         </div>
-                        <div className="credential-errors">{this.fnameBlank ? "First name is required" : undefined}</div>
+                        <div className="credential-errors">{this.fnameBlank ? "First name is required." : undefined}</div>
                         <br/>
                         <div className={`email-input ${this.lnameBlank ? "border-error" : "a"}`}>
                             <input type="text" placeholder="Last Name" value={this.state.lname} onChange={this.update("lname")} />
                             <i className="fas fa-users"></i>
                         </div>
-                        <div className="credential-errors">{this.lnameBlank ? "Last name is required" : undefined}</div>
+                        <div className="credential-errors">{this.lnameBlank ? "Last name is required." : undefined}</div>
                         <br/>
                         </>
                     }
@@ -113,7 +119,7 @@ class SessionForm extends React.Component {
                         <input type="password" placeholder="Create Password" value={this.state.password} onChange={this.update("password")} />
                         <i className="fas fa-eye-slash"></i>
                     </div>
-                    <div className="credential-errors">{this.passwordBlank ? "Password is required" : undefined}</div>
+                    <div className="credential-errors">{this.passwordBlank ? "Password is required." : undefined}</div>
                     {/* <br/> */}
                     <div className="email-input-5">
                     <input className="form-button" type="submit" value={this.props.formType} />
