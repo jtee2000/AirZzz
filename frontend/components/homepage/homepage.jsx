@@ -42,8 +42,10 @@ class Homepage extends React.Component {
 
 
         window.onclick = function (e) {
-            if (!e.target.matches(".guests") && !e.target.matches(".fas") && !e.target.matches(".guest-dropdown-content") && !e.target.matches(".buttons") && !e.target.matches(".button-styling") && !e.target.matches(".guest-counter") && !e.target.matches(".button-styling") && !e.target.matches("guests-select-container")) {
-                var dropdowns = document.getElementsByClassName("guest-dropdown-content")[0];
+            debugger
+            if (!e.target.matches(".homepage-guests") && !e.target.matches(".fas") && !e.target.matches(".homepage-guest-dropdown-content") && !e.target.matches(".buttons") && !e.target.matches(".homepage-button-styling") && !e.target.matches(".homepage-guest-counter") && !e.target.matches(".guests-select-container") && !e.target.matches(".guest-display-flex") && !e.target.matches(".adults") && !e.target.matches(".buttons-flex")) {
+                debugger
+                var dropdowns = document.getElementsByClassName("homepage-guest-dropdown-content")[0];
                 if (dropdowns.classList.contains('show')) {
                     dropdowns.classList.remove('show');
                 }
@@ -146,22 +148,22 @@ class Homepage extends React.Component {
                         </div>
                         <div id="homepage-guest-container">
                             <p className="where">GUESTS</p>
-                            <div className="homepage-guest-dropdown" >
+                            <div className="homepage-guest-dropdown">
                                 <div className="guest-display-flex" onClick={this.toggleDropDown}>
                                     <span className="homepage-guests">{this.state.adults + this.state.children} {this.state.adults + this.state.children === 1 ? "Guest" : "Guests"}</span>
-                                    {this.state.infants === 0 ? undefined : <span className="guests">{this.state.infants} {this.state.infants === 1 ? "Infant" : "Infants"}</span>}
+                                    {this.state.infants === 0 ? undefined : <span className="homepage-guests">{this.state.infants} {this.state.infants === 1 ? "Infant" : "Infants"}</span>}
                                     <i className="fas fa-chevron-down" />
                                 </div>
-                                <div id="dropdown" className="guest-dropdown-content">
+                                <div id="dropdown" className="homepage-guest-dropdown-content">
                                     <div className="guests-select-container">
                                         <h2 className="adults">Adults</h2>
                                         <div className="buttons">
                                             <div className="buttons-flex">
-                                                <button className={`button-styling ${this.state.adults > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("adults")} id="adults+" disabled={this.state.adults === 0}>
+                                                <button className={`homepage-button-styling ${this.state.adults > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("adults")} id="adults+" disabled={this.state.adults === 0}>
                                                     -
                                                 </button>
-                                                <p className="guest-counter">{this.state.adults}</p>
-                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("adults")} id="adults-">
+                                                <p className="homepage-guest-counter">{this.state.adults}</p>
+                                                <button className="homepage-button-styling" onClick={() => this.buttonPressedPlus("adults")} id="adults-">
                                                     +
                                                 </button>
                                             </div>
@@ -174,11 +176,11 @@ class Homepage extends React.Component {
                                         </div>
                                         <div className="buttons">
                                             <div className="buttons-flex">
-                                                <button className={`button-styling ${this.state.children > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("children")} id="chidlren-" disabled={this.state.children === 0}>
+                                                <button className={`homepage-button-styling ${this.state.children > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("children")} id="chidlren-" disabled={this.state.children === 0}>
                                                     -
                                                 </button>
-                                                <p className="guest-counter">{this.state.children}</p>
-                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("children")} id="children+">
+                                                <p className="homepage-guest-counter">{this.state.children}</p>
+                                                <button className="homepage-button-styling" onClick={() => this.buttonPressedPlus("children")} id="children+">
                                                     +
                                                 </button>
                                             </div>
@@ -191,11 +193,11 @@ class Homepage extends React.Component {
                                         </div>
                                         <div className="buttons">
                                             <div className="buttons-flex">
-                                                <button className={`button-styling ${this.state.infants > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("infants")} id="infants-" disabled={this.state.infants === 0}>
+                                                <button className={`homepage-button-styling ${this.state.infants > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("infants")} id="infants-" disabled={this.state.infants === 0}>
                                                     -
                                                 </button>
-                                                <p className="guest-counter">{this.state.infants}</p>
-                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("infants")} id="infants+">
+                                                <p className="homepage-guest-counter">{this.state.infants}</p>
+                                                <button className="homepage-button-styling" onClick={() => this.buttonPressedPlus("infants")} id="infants+">
                                                     +
                                                 </button>
                                             </div>
@@ -204,10 +206,10 @@ class Homepage extends React.Component {
                                 </div>
                             </div>
                         </div>
-
                         <div className="rental-form-container">
                             <button onClick={() => this.props.history.push("/listings/map")} className="homepage-button">   Search   </button>
                         </div>
+
                     </div>
                 </div>
             </>
