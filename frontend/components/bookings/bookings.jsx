@@ -85,8 +85,16 @@ class Booking extends React.Component {
     }
 
     toggleDropDown() {
-        document.getElementById("dropdown").classList.toggle("show");
-
+        const drop = document.getElementById("dropdown");
+        drop.classList.toggle("show");
+        const chev = document.getElementById("chev"); 
+        if (drop.classList.contains("show")) {
+            chev.removeAttribute("class");
+            chev.setAttribute("class", "fas fa-chevron-up");
+        } else {
+            chev.removeAttribute("class");
+            chev.setAttribute("class", "fas fa-chevron-down");
+        }
 
         window.onclick = function(e) {
             if (!e.target.matches(".guests") && !e.target.matches(".fas") && !e.target.matches(".guest-dropdown-content") && !e.target.matches(".buttons") && !e.target.matches(".button-styling") && !e.target.matches(".guest-counter") && !e.target.matches(".button-styling") && !e.target.matches("guests-select-container")) {
@@ -94,12 +102,13 @@ class Booking extends React.Component {
                 if (dropdowns.classList.contains('show')) {
                     dropdowns.classList.remove('show');
                 }
-                // for (let i = 0; i < dropdowns.length; i++) {
-                //     var opendropdown = dropdowns[i]; 
-                //     if (opendropdown.classList.contains('.show')) {
-                //         opendropdown.classList.remove('show'); 
-                //     }
-                // }
+            }
+            if (drop.classList.contains("show")) {
+                chev.removeAttribute("class");
+                chev.setAttribute("class", "fas fa-chevron-up");
+            } else {
+                chev.removeAttribute("class");
+                chev.setAttribute("class", "fas fa-chevron-down");
             }
         }
     }
@@ -174,7 +183,7 @@ class Booking extends React.Component {
                                 <div className="guest-display-flex" onClick={this.toggleDropDown}>
                                         <span className="guests">{this.state.adults + this.state.children} {this.state.adults + this.state.children === 1 ? "Guest" : "Guests"}</span>
                                         {this.state.infants === 0 ? undefined : <span className="guests">{this.state.infants} {this.state.infants === 1 ? "Infant" : "Infants"}</span>}
-                                    <i className="fas fa-chevron-down"/>
+                                    <i className="fas fa-chevron-down" id="chev"/>
                                 </div>
                                 <div id="dropdown" className="guest-dropdown-content">
                                     <div className="guests-select-container">

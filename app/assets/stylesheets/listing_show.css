@@ -430,7 +430,7 @@
     display: inline-block;
     vertical-align: middle;
     line-height: 100%;
-    padding: 12px 27px; 
+    padding: 12px 29px; 
 }
 
 .show {
@@ -520,6 +520,7 @@
     color: #484848;
     font-weight: 500; 
     width: 30px; 
+    text-align: center;
 }
 
 .guest-restrictions {

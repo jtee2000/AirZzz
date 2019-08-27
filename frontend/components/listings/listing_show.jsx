@@ -21,7 +21,11 @@ class ListingShow extends React.Component {
                 center: { lat: listing.listing.latitude, lng: listing.listing.longitude},
                 zoom: 16
             }
-            return this.map = new google.maps.Map(this.mapNode, mapOptions);
+            this.map = new google.maps.Map(this.mapNode, mapOptions);
+            new google.maps.Marker({
+                position: { lat: listing.listing.latitude, lng: listing.listing.longitude }, 
+                map: this.map
+            })
         }); 
 
 
@@ -125,12 +129,12 @@ class ListingShow extends React.Component {
                             </div>
                         </div>
                         
-                        {/* <div className="map-show-container">
+                        <div className="map-show-container">
                             <div className="listing-linebreak"></div>
                             <h1>The neighborhood</h1>
                             <div ref={map => this.mapNode = map} className="google-map">
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                     <div className="booking-form-container">
                         <Bookings className="booking-form" listing_id={this.props.match.params.listingId} />
