@@ -16,7 +16,10 @@ class Homepage extends React.Component {
         this.state = {
             search: "",
             startDate: null,
-            endDate: null
+            endDate: null, 
+            adults: 0, 
+            children: 0, 
+            infants: 0
         }
         this.handleEnter = this.handleEnter.bind(this);
     }
@@ -31,6 +34,54 @@ class Homepage extends React.Component {
         if (e.keyCode === 13) {
             this.setState({search: ""})
             this.props.history.push("/listings/map")
+        }
+    }
+
+    toggleDropDown() {
+        document.getElementById("dropdown").classList.toggle("show");
+
+
+        window.onclick = function (e) {
+            if (!e.target.matches(".guests") && !e.target.matches(".fas") && !e.target.matches(".guest-dropdown-content") && !e.target.matches(".buttons") && !e.target.matches(".button-styling") && !e.target.matches(".guest-counter") && !e.target.matches(".button-styling") && !e.target.matches("guests-select-container")) {
+                var dropdowns = document.getElementsByClassName("guest-dropdown-content")[0];
+                if (dropdowns.classList.contains('show')) {
+                    dropdowns.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    buttonPressedPlus(field) {
+        const element = document.getElementById(`${field}+`);
+        debugger
+        switch (field) {
+            case "adults":
+                this.setState({ "adults": this.state.adults + 1 });
+                // debugger
+                // if (element.classList.contains("disabled") && this.state[field] > 0) {
+                //     element.classList.remove('disabled');
+                // }
+                break;
+            case "children":
+                this.setState({ "children": this.state.children + 1 });
+                break;
+            case "infants":
+                this.setState({ "infants": this.state.infants + 1 });
+                break;
+        }
+    }
+
+    buttonPressedMinus(field) {
+        switch (field) {
+            case "adults":
+                this.setState({ "adults": this.state.adults - 1 });
+                break;
+            case "children":
+                this.setState({ "children": this.state.children - 1 });
+                break;
+            case "infants":
+                this.setState({ "infants": this.state.infants - 1 });
+                break;
         }
     }
 
@@ -93,14 +144,77 @@ class Homepage extends React.Component {
                                 />  
                             </div>
                         </div>
+                        <div id="homepage-guest-container">
+                            <p className="where">GUESTS</p>
+                            <div className="homepage-guest-dropdown" >
+                                <div className="guest-display-flex" onClick={this.toggleDropDown}>
+                                    <span className="homepage-guests">{this.state.adults + this.state.children} {this.state.adults + this.state.children === 1 ? "Guest" : "Guests"}</span>
+                                    {this.state.infants === 0 ? undefined : <span className="guests">{this.state.infants} {this.state.infants === 1 ? "Infant" : "Infants"}</span>}
+                                    <i className="fas fa-chevron-down" />
+                                </div>
+                                <div id="dropdown" className="guest-dropdown-content">
+                                    <div className="guests-select-container">
+                                        <h2 className="adults">Adults</h2>
+                                        <div className="buttons">
+                                            <div className="buttons-flex">
+                                                <button className={`button-styling ${this.state.adults > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("adults")} id="adults+" disabled={this.state.adults === 0}>
+                                                    -
+                                                </button>
+                                                <p className="guest-counter">{this.state.adults}</p>
+                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("adults")} id="adults-">
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="guests-select-container">
+                                        <div>
+                                            <h2 className="adults">Children</h2>
+                                            <h3 className="guest-restrictions">Ages 2-12</h3>
+                                        </div>
+                                        <div className="buttons">
+                                            <div className="buttons-flex">
+                                                <button className={`button-styling ${this.state.children > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("children")} id="chidlren-" disabled={this.state.children === 0}>
+                                                    -
+                                                </button>
+                                                <p className="guest-counter">{this.state.children}</p>
+                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("children")} id="children+">
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="guests-select-container">
+                                        <div>
+                                            <h2 className="adults">Infants</h2>
+                                            <h3 className="guest-restrictions">Under 2</h3>
+                                        </div>
+                                        <div className="buttons">
+                                            <div className="buttons-flex">
+                                                <button className={`button-styling ${this.state.infants > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("infants")} id="infants-" disabled={this.state.infants === 0}>
+                                                    -
+                                                </button>
+                                                <p className="guest-counter">{this.state.infants}</p>
+                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("infants")} id="infants+">
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="rental-form-container">
-                            <button onClick={() => this.props.history.push("/listings/map")}>   Search   </button>
+                            <button onClick={() => this.props.history.push("/listings/map")} className="homepage-button">   Search   </button>
                         </div>
                     </div>
                 </div>
             </>
         )
     }
+
+    
 
 
     loggedin() {

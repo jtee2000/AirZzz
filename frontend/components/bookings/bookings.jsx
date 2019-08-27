@@ -43,6 +43,7 @@ class Booking extends React.Component {
         // this.setState({end_date: end_date});
         // const booking = Object.assign({}, this.state);
         const { startDate, endDate, listing_id, guests} = this.state; 
+        this.setState({guests: this.state.adults + this.state.children + this.state.infants})
         this.props.processForm({
             start_date: moment(startDate).format("YYYY-MM-DD"),
             end_date: moment(endDate).format("YYYY-MM-DD"),
@@ -104,27 +105,26 @@ class Booking extends React.Component {
     }
 
     buttonPressedPlus(field) {
+        const element = document.getElementById(`${field}+`);
+        debugger
         switch(field) {
             case "adults": 
-                this.setState({"adults": this.state.adults + 1});
-                break;
+            this.setState({"adults": this.state.adults + 1});
+            // debugger
+            // if (element.classList.contains("disabled") && this.state[field] > 0) {
+            //     element.classList.remove('disabled');
+            // }
+            break;
             case "children":
                 this.setState({ "children": this.state.children + 1 });
                 break;
             case "infants":
                 this.setState({ "infants": this.state.infants + 1 });
-                break;
-
+                break;   
         }
     }
 
     buttonPressedMinus(field) {
-        // if (this.state[field] <= 0) {
-        //     document.getElementById(field).classList.add("disabled");
-        //     return; 
-        // } else {
-        //     document.getElementById(field).classList.remove("disabled");
-        // }
         switch(field) {
             case "adults": 
                 this.setState({"adults": this.state.adults - 1});
@@ -172,8 +172,8 @@ class Booking extends React.Component {
                             <p className="guest-label">Guests</p>
                             <div className="guest-dropdown" >
                                 <div className="guest-display-flex" onClick={this.toggleDropDown}>
-                                    <span className="guests">{this.state.adults + this.state.children} Guest</span>
-                                    {this.state.infants === 0 ? undefined : <span className="guests">{this.state.infants} Infants</span>}
+                                        <span className="guests">{this.state.adults + this.state.children} {this.state.adults + this.state.children === 1 ? "Guest" : "Guests"}</span>
+                                        {this.state.infants === 0 ? undefined : <span className="guests">{this.state.infants} {this.state.infants === 1 ? "Infant" : "Infants"}</span>}
                                     <i className="fas fa-chevron-down"/>
                                 </div>
                                 <div id="dropdown" className="guest-dropdown-content">
@@ -181,11 +181,11 @@ class Booking extends React.Component {
                                         <h2 className="adults">Adults</h2>
                                         <div className="buttons">
                                             <div className="buttons-flex">
-                                                <button className="button-styling" onClick={() => this.buttonPressedMinus("adults")} id="adults"  >
+                                                <button className={`button-styling ${this.state.adults > 0 ? undefined: "disabled"}`} onClick={() => this.buttonPressedMinus("adults")} id="adults+" disabled={this.state.adults === 0}>
                                                     -
                                                 </button>
                                                 <p className="guest-counter">{this.state.adults}</p>
-                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("adults")}>
+                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("adults")} id="adults-">
                                                     +
                                                 </button>
                                             </div>
@@ -198,11 +198,11 @@ class Booking extends React.Component {
                                         </div>
                                         <div className="buttons">
                                             <div className="buttons-flex">
-                                                <button className="button-styling" onClick={() => this.buttonPressedMinus("children")}>
+                                                <button className={`button-styling ${this.state.children > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("children")} id="chidlren-" disabled={this.state.children === 0}>
                                                     -
                                                 </button>
                                                 <p className="guest-counter">{this.state.children}</p>
-                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("children")}>
+                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("children")} id="children+">
                                                     +
                                                 </button>
                                             </div>
@@ -215,11 +215,11 @@ class Booking extends React.Component {
                                         </div>
                                         <div className="buttons">
                                             <div className="buttons-flex">
-                                                <button className="button-styling" onClick={() => this.buttonPressedMinus("infants")}>
+                                                <button className={`button-styling ${this.state.infants > 0 ? undefined : "disabled"}`} onClick={() => this.buttonPressedMinus("infants")} id="infants-" disabled={this.state.infants === 0}>
                                                     -
                                                 </button>
                                                 <p className="guest-counter">{this.state.infants}</p>
-                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("infants")}>
+                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("infants")} id="infants+">
                                                     +
                                                 </button>
                                             </div>

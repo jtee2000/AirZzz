@@ -96,7 +96,7 @@
     font-weight: 600;
 }
 
-.rental-form button {
+.homepage-button  {
     border-radius: 4px;
     padding: 15px;
     font-size: 15px;
@@ -139,7 +139,7 @@
 
 .homepage-search-bar::placeholder {
     color: #757575;
-    font-size: 14;
+    font-size: 16px;
     font-family: sans-serif;
 }
 
@@ -218,4 +218,21 @@
 .DateInput_input.DateInput_input_1.DateInput_input__focused.DateInput_input__focused_2:focus-within {
     border: 1px solid  #008489;
    
+}
+
+#homepage-guest-container {
+    width: 360px; 
+}
+
+.homepage-guest-dropdown {
+    border: 1px solid #efefef;
+    border-radius: 5px; 
+}
+
+.homepage-guests {
+    color: #757575;
+    font-size: 16px; 
+    font-family: sans-serif;
+    font-weight: 100; 
+    margin: 15px 10px; 
 }

@@ -44,10 +44,9 @@ class Trips extends React.Component {
     }
 
     yesPastBookings() {
-        debugger
         const past_bookings = Object.keys(this.props.bookings).map((id) => {
             if (this.props.bookings[id].user_id === this.props.user) {
-                if (Date.parse(this.props.bookings[id].end_date) < this.state.date)
+                if (Date.parse(this.props.bookings[id].start_date) < this.state.date)
                     return <TripsPastItem key={id} booking={this.props.bookings[id]} />
             }
         })
