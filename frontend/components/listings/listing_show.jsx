@@ -125,12 +125,12 @@ class ListingShow extends React.Component {
                             </div>
                         </div>
                         
-                        <div className="map-show-container">
+                        {/* <div className="map-show-container">
                             <div className="listing-linebreak"></div>
                             <h1>The neighborhood</h1>
                             <div ref={map => this.mapNode = map} className="google-map">
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="booking-form-container">
                         <Bookings className="booking-form" listing_id={this.props.match.params.listingId} />

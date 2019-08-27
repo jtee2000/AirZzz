@@ -17,6 +17,7 @@ class Booking extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.isDayBlocked = this.isDayBlocked.bind(this);
+        this.toggleDropDown = this.toggleDropDown.bind(this);
     }
 
     componentDidMount() {
@@ -77,6 +78,26 @@ class Booking extends React.Component {
 
     }
 
+    toggleDropDown() {
+        document.getElementById("dropdown").classList.toggle("show");
+
+
+        window.onclick = function(e) {
+            if (!e.target.matches(".guests")) {
+                var dropdowns = document.getElementsByClassName("guest-dropdown-content")[0];
+                if (dropdowns.classList.contains('show')) {
+                    dropdowns.classList.remove('show');
+                }
+                // for (let i = 0; i < dropdowns.length; i++) {
+                //     var opendropdown = dropdowns[i]; 
+                //     if (opendropdown.classList.contains('.show')) {
+                //         opendropdown.classList.remove('show'); 
+                //     }
+                // }
+            }
+        }
+    }
+
 
 
     render () {
@@ -107,7 +128,66 @@ class Booking extends React.Component {
                             onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                         />
                         </div>
-                        {/* <input className="reserve-button" type="submit" value="Reserve" /> */}
+                        <div className="guest-container" >
+                            <p className="guest-label">Guests</p>
+                            <div className="guest-dropdown" >
+                                <div className="guest-display-flex" onClick={this.toggleDropDown}>
+                                    <span className="guests">1 Guest</span>
+                                    <i className="fas fa-chevron-down" id="icon-1" ></i>
+                                </div>
+                                <div id="dropdown" className="guest-dropdown-content">
+                                    <div className="guests-select-container">
+                                        <h2 className="adults">Adults</h2>
+                                        <div className="buttons">
+                                            <div className="buttons-flex">
+                                                <button className="button-styling">
+                                                    -
+                                                </button>
+                                                <p className="guest-counter">0</p>
+                                                <button className="button-styling">
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="guests-select-container">
+                                        <div>
+                                            <h2 className="adults">Children</h2>
+                                            <h3 className="guest-restrictions">Ages 2-12</h3>
+                                        </div>
+                                        <div className="buttons">
+                                            <div className="buttons-flex">
+                                                <button className="button-styling">
+                                                    -
+                                                </button>
+                                                <p className="guest-counter">0</p>
+                                                <button className="button-styling">
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="guests-select-container">
+                                        <div>
+                                            <h2 className="adults">Infants</h2>
+                                            <h3 className="guest-restrictions">Under 2</h3>
+                                        </div>
+                                        <div className="buttons">
+                                            <div className="buttons-flex">
+                                                <button className="button-styling" disabled>
+                                                    -
+                                                </button>
+                                                <p className="guest-counter">0</p>
+                                                <button className="button-styling">
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <form onSubmit={this.handleSubmit} className="form-container">
                             {/* <div className="bookings-details-container"><span></span><span></span></div>
                             <div className="date-inputs">
@@ -122,6 +202,7 @@ class Booking extends React.Component {
                                 <input className="reserve-button" type="submit" value="Reserve"/>
                             </div>
                         </form>
+                     
                     </div>
 
                 </aside>

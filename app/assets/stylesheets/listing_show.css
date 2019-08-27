@@ -217,11 +217,10 @@
     font-size: 15px;
     background-color: #FF5A5F;
     color: white;
-    width: 80%;
+    width: 86%;
     text-align: center;
     font-family: Arial;
     font-weight: 900;
-    /* margin-top: 300px; */
 }
 
 .reserve-button:hover {
@@ -250,7 +249,7 @@
 
 
 .form-container {
-    height: 66.66%;
+    height: 30.66%;
     display: flex; 
     flex-direction: column; 
     /* align-items: space-between; */
@@ -390,3 +389,155 @@
 /* .DayPicker.DayPicker_1.DayPicker__horizontal.DayPicker__horizontal_2.DayPicker__withBorder.DayPicker__withBorder_3 {
     width: 800px !important; 
 } */
+
+
+#your_unique_start_date_id:focus-within {
+    border: none; 
+}
+
+#your_unique_end_date_id:focus-within {
+    border: none; 
+}
+
+.guest-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 3px; 
+    height: 45px; 
+}
+
+
+.guest-dropdown-content {
+    display: none;
+    position: relative;
+    width: 100%;
+    bottom: 10%;
+    background: white;
+    border: 2px solid #efefef;
+    border-top: 2px solid #008489;
+    box-shadow: 2px 2px 5px #efefef; 
+    padding: 15px; 
+}
+
+.guests {
+    width: 100% !important;
+    text-align: left; 
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    color: #484848; 
+    font-size: 16px; 
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 100%;
+    padding: 12px 25px; 
+}
+
+.show {
+    display: block;
+}
+
+.guest-label {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    color: #484848;
+    padding-bottom: 3px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.guest-container {
+    margin-top: 20px; 
+    width: 100%; 
+    display: flex;
+    padding: 0 25px;
+    flex-direction: column;
+}
+
+
+.guests-select-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.guests-select-container:first-of-type {
+    margin-bottom: 25px; 
+}
+
+.guests-select-container:nth-child(2) {
+    margin-bottom: 15px; 
+}
+
+
+.adults {
+    width: 50%;
+    text-align: left; 
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    color: #484848;
+    font-weight: 500;
+    font-size: 17px; 
+
+}
+
+.buttons{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    vertical-align: middle;
+}
+
+.buttons-flex {
+    display: flex;
+    justify-content: row;
+    text-align: right;
+}
+
+.button-styling {
+    border-radius: 50%; 
+    border: 1px solid #008489;
+    /* padding: 6px;  */
+    height: 35px; 
+    width: 35px;
+    text-align: center;
+    color: #008489;
+    /* margin: 0 25px; */
+}
+
+.button-styling:first-of-type {
+    margin-right: 25px; 
+}
+
+.button-styling:last-of-type {
+    margin-left: 25px; 
+}
+
+.guest-counter {
+    padding-top: 7px; 
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    color: #484848;
+    font-weight: 500; 
+}
+
+.guest-restrictions {
+    font-size: 12px; 
+    /* font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed; */
+    font-family: 'Montserrat', sans-serif;
+    color: #484848; 
+    margin-top: 7px; 
+}
+
+.guest-display-flex {
+    display: flex;
+    justify-content: row; 
+}
+
+.guest-display-flex i {
+    padding: 14px 14px; 
+    color: #484848;
+    font-size: 18px; 
+}
+
+.disabled {
+    color: #BEDADC;
+    border: 1px solid #BEDADC; 
+}
