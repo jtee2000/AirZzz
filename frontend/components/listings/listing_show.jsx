@@ -40,7 +40,6 @@ class ListingShow extends React.Component {
     }
 
     isOutsideRange(date) {
-        debugger
         if (date < new Date()) {
             return true; 
         }

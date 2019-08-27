@@ -34,7 +34,6 @@ class SessionForm extends React.Component {
         e.preventDefault();
         for (let i = 0; i < Object.keys(this.state).length; i++) {
             const field = Object.keys(this.state)[i];
-            debugger
             if (this.state[field] === "") {
                 this.renderBlankErrors(field);
             }
@@ -103,7 +102,6 @@ class SessionForm extends React.Component {
 
     render() {
         const errors = "email-input";
-        debugger
         return (
             <div className="form">
                 {/* <i className="fas fa-times" onClick={this.props.closeModal}></i> */}
