@@ -13,11 +13,16 @@ class Booking extends React.Component {
             endDate: null, 
             user_id: 0, 
             listing_id: 0,
-            guests: 0
+            guests: 0,
+            adults: 0, 
+            children: 0, 
+            infants: 0, 
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.isDayBlocked = this.isDayBlocked.bind(this);
         this.toggleDropDown = this.toggleDropDown.bind(this);
+        this.buttonPressedPlus = this.buttonPressedPlus.bind(this);
+        this.buttonPressedMinus = this.buttonPressedMinus.bind(this);
     }
 
     componentDidMount() {
@@ -83,7 +88,7 @@ class Booking extends React.Component {
 
 
         window.onclick = function(e) {
-            if (!e.target.matches(".guests")) {
+            if (!e.target.matches(".guests") && !e.target.matches(".fas") && !e.target.matches(".guest-dropdown-content") && !e.target.matches(".buttons") && !e.target.matches(".button-styling") && !e.target.matches(".guest-counter") && !e.target.matches(".button-styling") && !e.target.matches("guests-select-container")) {
                 var dropdowns = document.getElementsByClassName("guest-dropdown-content")[0];
                 if (dropdowns.classList.contains('show')) {
                     dropdowns.classList.remove('show');
@@ -95,6 +100,41 @@ class Booking extends React.Component {
                 //     }
                 // }
             }
+        }
+    }
+
+    buttonPressedPlus(field) {
+        switch(field) {
+            case "adults": 
+                this.setState({"adults": this.state.adults + 1});
+                break;
+            case "children":
+                this.setState({ "children": this.state.children + 1 });
+                break;
+            case "infants":
+                this.setState({ "infants": this.state.infants + 1 });
+                break;
+
+        }
+    }
+
+    buttonPressedMinus(field) {
+        // if (this.state[field] <= 0) {
+        //     document.getElementById(field).classList.add("disabled");
+        //     return; 
+        // } else {
+        //     document.getElementById(field).classList.remove("disabled");
+        // }
+        switch(field) {
+            case "adults": 
+                this.setState({"adults": this.state.adults - 1});
+                break;
+            case "children": 
+                this.setState({"children": this.state.children - 1});
+                break; 
+            case "infants": 
+                this.setState({"infants": this.state.infants - 1});
+                break; 
         }
     }
 
@@ -128,23 +168,24 @@ class Booking extends React.Component {
                             onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                         />
                         </div>
-                        <div className="guest-container" >
+                        <div className="guest-container">
                             <p className="guest-label">Guests</p>
                             <div className="guest-dropdown" >
                                 <div className="guest-display-flex" onClick={this.toggleDropDown}>
-                                    <span className="guests">1 Guest</span>
-                                    <i className="fas fa-chevron-down" id="icon-1" ></i>
+                                    <span className="guests">{this.state.adults + this.state.children} Guest</span>
+                                    {this.state.infants === 0 ? undefined : <span className="guests">{this.state.infants} Infants</span>}
+                                    <i className="fas fa-chevron-down"/>
                                 </div>
                                 <div id="dropdown" className="guest-dropdown-content">
                                     <div className="guests-select-container">
                                         <h2 className="adults">Adults</h2>
                                         <div className="buttons">
                                             <div className="buttons-flex">
-                                                <button className="button-styling">
+                                                <button className="button-styling" onClick={() => this.buttonPressedMinus("adults")} id="adults"  >
                                                     -
                                                 </button>
-                                                <p className="guest-counter">0</p>
-                                                <button className="button-styling">
+                                                <p className="guest-counter">{this.state.adults}</p>
+                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("adults")}>
                                                     +
                                                 </button>
                                             </div>
@@ -157,11 +198,11 @@ class Booking extends React.Component {
                                         </div>
                                         <div className="buttons">
                                             <div className="buttons-flex">
-                                                <button className="button-styling">
+                                                <button className="button-styling" onClick={() => this.buttonPressedMinus("children")}>
                                                     -
                                                 </button>
-                                                <p className="guest-counter">0</p>
-                                                <button className="button-styling">
+                                                <p className="guest-counter">{this.state.children}</p>
+                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("children")}>
                                                     +
                                                 </button>
                                             </div>
@@ -174,11 +215,11 @@ class Booking extends React.Component {
                                         </div>
                                         <div className="buttons">
                                             <div className="buttons-flex">
-                                                <button className="button-styling" disabled>
+                                                <button className="button-styling" onClick={() => this.buttonPressedMinus("infants")}>
                                                     -
                                                 </button>
-                                                <p className="guest-counter">0</p>
-                                                <button className="button-styling">
+                                                <p className="guest-counter">{this.state.infants}</p>
+                                                <button className="button-styling" onClick={() => this.buttonPressedPlus("infants")}>
                                                     +
                                                 </button>
                                             </div>
