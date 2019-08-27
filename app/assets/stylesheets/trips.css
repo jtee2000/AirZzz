@@ -141,3 +141,21 @@
     margin: 30px 100px; 
     padding: 10px 25px; 
 }
+
+.next-trip-bottom-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-reservation {
+    display: inline-block;
+    padding: 20px 0; 
+    color: #008489;
+    font-weight: 500;
+    font-size: 13px; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cancel-reservation:hover {
+    cursor: pointer;
+}

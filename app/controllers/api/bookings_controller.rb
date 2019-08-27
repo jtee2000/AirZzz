@@ -18,6 +18,12 @@ class Api::BookingsController < ApplicationController
 
 
     def destroy 
+        @booking = Booking.find(params[:id])
+        if @booking 
+            @booking.destroy 
+        else  
+            render json: ['Booking id invalid'], status: 422
+        end
     end
 
     private 

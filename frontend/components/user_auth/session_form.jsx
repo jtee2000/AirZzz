@@ -76,6 +76,21 @@ class SessionForm extends React.Component {
         )
     }
 
+    authorizationEmailErrors() {
+        return (
+            <div className="auth-errors">
+                <div className="warning-icon">
+                    <i className="fas fa-exclamation-triangle"></i>
+                </div>
+                <div className="auth-errors-text">
+                    <span>
+                        The email you entered is already associated with an account. Try again, or login instead. 
+                    </span>
+                </div>
+            </div>
+        )
+    }
+
     renderBlankErrors(input) {
         switch(input) {
             case "fname": 
@@ -119,6 +134,7 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <br/>
                     {this.props.errors.includes("Invalid username/password") && this.passwordBlank === false && this.emailBlank === false && this.validEmail(this.state.email) ? this.authorizationErrors() : undefined}
+                    {this.props.errors.includes("Email has already been taken") ? this.authorizationEmailErrors() : undefined}
                     <div className={`email-input ${(this.emailBlank && this.state.email.length === 0) || (this.emailInvalid && !this.validEmail(this.state.email))? "border-error" : "a"}`}>
                         <input type="text" placeholder="Email address" value={this.state.email} onChange={this.update("email")} />
                         <i className="far fa-envelope"></i>

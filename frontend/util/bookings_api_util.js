@@ -14,3 +14,10 @@ export const fetchBookings = () => {
     })
 }
 
+export const deleteBooking = (id) => {
+    return $.ajax({
+        method: "DELETE", 
+        url: `api/bookings/${id}`
+    })
+}
+

@@ -17,12 +17,10 @@ class Booking < ApplicationRecord
 
     belongs_to :listing,
         foreign_key: :listing_id, 
-        dependent: :destroy,
         class_name: :Listing
 
     belongs_to :user, 
         foreign_key: :user_id, 
-        dependent: :destroy, 
         class_name: :User
 
     def overlapping_requests 

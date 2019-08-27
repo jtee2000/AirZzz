@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'; 
 import Trips from './trips';
-import { fetchBookings } from '../../actions/booking_actions';
+import { fetchBookings, deleteBooking } from '../../actions/booking_actions';
 import { fetchListings } from '../../actions/listing_actions'
 
 const msp = (state) => {
@@ -18,6 +18,7 @@ const mdp = (dispatch) => {
     return({
         fetchBookings: () => dispatch(fetchBookings()),
         fetchListings: () => dispatch(fetchListings()),
+        deleteBooking: (id) => dispatch(deleteBooking(id))
     })
 }
 

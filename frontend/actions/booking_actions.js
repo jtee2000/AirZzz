@@ -27,4 +27,8 @@ export const fetchBookings = () => dispatch => {
     return ApiUtil.fetchBookings().then( (bookings) => dispatch(receiveBookings(bookings)))
 }
 
+export const deleteBooking = (id) => dispatch => {
+    return ApiUtil.deleteBooking(id).then( () => dispatch(receiveBooking({})))
+}
+
 

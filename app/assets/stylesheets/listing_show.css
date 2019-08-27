@@ -236,8 +236,8 @@
     border-radius: 3px;
     position: sticky;
     top: 0px; 
-    z-index: 100; 
     background: white;
+    min-width: 370px;
     /* display: flex;  */
     /* align-items: space-around; */
     
