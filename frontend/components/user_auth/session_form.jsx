@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.modals = this.modals.bind(this); 
         this.emailBlank = false; 
         this.fnameBlank = false; 
         this.lnameBlank = false; 
@@ -114,6 +115,12 @@ class SessionForm extends React.Component {
         }
     }
 
+    modals() {
+        this.props.closeModal(); 
+        if (this.props.formType === 'Sign up') this.props.openModal('login');
+        if (this.props.formType === 'Login') this.props.openModal('signup');
+    }
+
 
     render() {
         const errors = "email-input";
@@ -124,7 +131,7 @@ class SessionForm extends React.Component {
                     <img className="x" onClick={this.props.closeModal} src={x_img} alt=""/>
                 </div>
                 <div className="login-text">
-                    <span>{this.props.formType} with </span><span className="link-highlight">Facebook </span><span>or </span><span className="link-highlight">Google</span>
+                    <span>{this.props.formType} with </span><span className="link-highlight" onClick={this.modals}>Facebook </span><span>or </span><span className="link-highlight">Google</span>
                 </div>
                 <div className="form-border">
                     <span className="span-is-annoying"></span>
