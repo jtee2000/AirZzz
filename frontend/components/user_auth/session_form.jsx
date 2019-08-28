@@ -123,6 +123,12 @@ class SessionForm extends React.Component {
 
 
     render() {
+        let switched; 
+        if (this.props.formType === 'Sign up') {
+            switched = 'Log In';
+        } else {
+            switched = 'Sign up'
+        }
         const errors = "email-input";
         return (
             <div className="form">
@@ -131,7 +137,7 @@ class SessionForm extends React.Component {
                     <img className="x" onClick={this.props.closeModal} src={x_img} alt=""/>
                 </div>
                 <div className="login-text">
-                    <span>{this.props.formType} with </span><span className="link-highlight" onClick={this.modals}>Facebook </span><span>or </span><span className="link-highlight">Google</span>
+                    <span>{this.props.formType} with </span><span className="link-highlight">Demo </span><span>or </span><span className="link-highlight" onClick={this.modals}>{switched}</span>
                 </div>
                 <div className="form-border">
                     <span className="span-is-annoying"></span>
