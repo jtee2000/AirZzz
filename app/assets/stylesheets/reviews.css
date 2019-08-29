@@ -1,0 +1,66 @@
+.review-form-container {
+    background: white; 
+    height: 580px; 
+    width: 500px; 
+    padding: 10px; 
+}
+
+.blue-stars {
+    color: #008489;
+}
+
+
+
+.hover-effect:hover {
+    text-decoration: underline; 
+    cursor: pointer;
+}
+
+.reviews-heading {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+    font-size: 22px; 
+    color: #484848; 
+    font-weight: 700; 
+    width: 100%; 
+    text-align: center; 
+    padding: 0 10px 10px 10px; 
+
+}
+
+.reviews-container {
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.reviews-secondary-container {
+    width: 50%; 
+    text-align: center; 
+    font-family: 'Montserrat', sans-serif; 
+    /* font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed; */
+    /* font-family: Arial, Helvetica, sans-serif; */
+    padding: 7px 0; 
+
+
+}
+
+.review-input {
+    border: 1px solid #efefef; 
+    font-family: 'Montserrat', sans-serif; 
+    color: #757575;
+    resize: none; 
+    width: 100%; 
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    padding: 10px; 
+    border-radius: 3px; 
+}
+
+#override {
+    width: 30%; 
+    text-align: center; 
+}
+
+.review-button-flex {
+    display: flex; 
+    justify-content: flex-end; 
+}

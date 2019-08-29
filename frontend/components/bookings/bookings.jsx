@@ -115,11 +115,9 @@ class Booking extends React.Component {
 
     buttonPressedPlus(field) {
         const element = document.getElementById(`${field}+`);
-        debugger
         switch(field) {
             case "adults": 
             this.setState({"adults": this.state.adults + 1});
-            // debugger
             // if (element.classList.contains("disabled") && this.state[field] > 0) {
             //     element.classList.remove('disabled');
             // }

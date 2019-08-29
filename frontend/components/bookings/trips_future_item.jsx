@@ -18,7 +18,6 @@ class TripsFutureItem extends React.Component {
 
 
     render() {
-        debugger
         var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         var startDate = new Date(this.props.booking.start_date.split("/"))
         var endDate = new Date(this.props.booking.end_date.split("/"))

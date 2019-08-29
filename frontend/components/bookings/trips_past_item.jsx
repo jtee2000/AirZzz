@@ -16,6 +16,8 @@ class TripsPastItem extends React.Component {
                         <p className="trips-date-past">{months[startDate.getMonth()].toUpperCase()} {startDate.getFullYear()}</p>
                         <h1>{this.props.booking.title}</h1>
                         <p className="trip-house-reservation">1 reservation</p>
+                        <p className="trip-house-reservation hover-effect" style={{color: "#008489"}} onClick={() => this.props.openModal('review')}>Write a Review</p>
+
                     </div>
                 </li>
             </>
