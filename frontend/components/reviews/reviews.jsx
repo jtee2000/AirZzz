@@ -101,7 +101,7 @@ export default class Review extends React.Component {
                         />
                     </div>
                 </div>
-                <textarea placeholder="Write review here" cols="30" rows="10" onChange={this.updateTextarea} className="review-input"></textarea>
+                <textarea placeholder="Write review here..." cols="30" rows="9" onChange={this.updateTextarea} className="review-input"></textarea>
                 <div className="review-button-flex">
                     <button id="override" className="reserve-button">Submit</button>
                 </div>
