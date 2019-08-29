@@ -23,6 +23,10 @@ class Listing < ApplicationRecord
     
     has_many :bookings
 
+    has_many :reviews, 
+        foreign_key: :listing_id, 
+        class_name: :Review 
+
     def self.in_bounds(bounds)
         Listing
             .where("latitude < ?", bounds[:northEast][:lat])

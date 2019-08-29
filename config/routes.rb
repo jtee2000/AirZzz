@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       end
     end
     resources :bookings, only: [:create, :destroy, :index]
+    resources :reviews, only: [:create]
   end
 end
