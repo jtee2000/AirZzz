@@ -8,9 +8,9 @@ function ReviewItem({review, listing}) {
 
     return (
         <div>
-            <p>{listing.name}</p>
-            <p>{months[date.getMonth()]} {date.getFullYear()}</p>
-            {review.body}
+            <p className="review-name">{listing.name}</p>
+            <p className="review-date">{months[date.getMonth()]} {date.getFullYear()}</p>
+            <p className="review-body">{review.body}</p>
             <div className="listing-linebreak"></div>
         </div>
     )

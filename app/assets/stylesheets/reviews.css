@@ -105,3 +105,28 @@
     display: flex; 
     justify-content: space-between;
 }
+
+.review-name {
+    padding: 10px 0 5px 0;
+    color: #484848; 
+    font-size: 16px; 
+    font-weight: 600;
+    font-family: Circular, -apple-system BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed;
+}
+
+.review-date {
+    color: #767676; 
+    font-size: 13px; 
+    /* font-family: Circular, -apple-system BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed; */
+    font-family: 'Montserrat', sans-serif;
+
+    padding-bottom: 10px; 
+}
+
+.review-body {
+    /* font-family: Circular, -apple-system BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif, condensed; */
+    font-family: 'Montserrat', sans-serif;
+    color: #484848; 
+    font-size: 14px; 
+
+}

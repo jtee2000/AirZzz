@@ -94,7 +94,8 @@ class ListingShow extends React.Component {
             sum += review[i].check_in; 
             sum += review[i].value; 
         }
-        return sum/review.length; 
+        debugger
+        return sum/(review.length*5); 
     }
 
     individualRating(field) {
@@ -111,6 +112,14 @@ class ListingShow extends React.Component {
         return this.props.listing.reviews.map( (review) => {
             return <ReviewItem review={review} key={review.id} listing={this.props.listing}/>
         })
+    }
+
+    s() {
+        if (this.props.listing.reviews.length === 1) {
+            return "Review";
+        } else {
+            return "Reviews"
+        }
     }
 
     render() {
@@ -174,7 +183,7 @@ class ListingShow extends React.Component {
                         <div className="show-reviews-container">
                             <div className="listing-linebreak"></div>
                             <div className="show-reviews-flex">
-                                <h1 className="availability" id="show-reviews-title">{this.props.listing.reviews ? this.props.listing.reviews.length : undefined} Review</h1>
+                                <h1 className="availability" id="show-reviews-title">{this.props.listing.reviews ? this.props.listing.reviews.length : undefined} {this.props.listing.reviews ? this.s() : undefined}</h1>
                                 <div className="margin">
                                     <Rating
                                         emptySymbol={<i className="fas fa-star gray-stars"></i>}

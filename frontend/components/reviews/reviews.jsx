@@ -8,7 +8,7 @@ class Review extends React.Component {
         super(props);
         debugger
         this.state = {
-            accuracy: 1, 
+            accuracy: 0, 
             communication: 0, 
             cleanliness: 0, 
             location: 0, 
