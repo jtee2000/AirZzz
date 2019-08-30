@@ -1,4 +1,4 @@
-class Api::Reviews_Controller < ApplicationController 
+class Api::ReviewsController < ApplicationController 
 
     def create 
         @review = Review.new(review_params)
@@ -16,6 +16,7 @@ class Api::Reviews_Controller < ApplicationController
     private 
 
     def review_params
+        debugger
         params.require(:review).permit(:listing_id, :body, :accuracy, :communication, :cleanliness, :location, :check_in, :value)
     end
 

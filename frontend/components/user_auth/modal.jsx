@@ -10,7 +10,8 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
-    switch (modal) {
+    debugger
+    switch (modal.action) {
         case 'login':
             component = <LoginFormContainer />;
             break;
@@ -18,7 +19,7 @@ function Modal({ modal, closeModal }) {
             component = <SignupFormContainer />;
             break;
         case 'review': 
-            component= <ReviewFormContainer />; 
+            component= <ReviewFormContainer id={modal.listing_id}/>; 
             break;
         default:
             return null;

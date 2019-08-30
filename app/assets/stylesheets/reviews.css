@@ -47,7 +47,7 @@
 }
 
 .review-input {
-    border: 1px solid #efefef; 
+    border: 1px solid lightgray; 
     font-family: 'Montserrat', sans-serif; 
     color: #484848;
     resize: none; 
@@ -63,11 +63,15 @@
 }
 
 #override {
-    width: 30%; 
+    width: 25%; 
     text-align: center; 
 }
 
 .review-button-flex {
     display: flex; 
     justify-content: flex-end; 
+}
+
+.gray-stars {
+    color: lightgray;
 }

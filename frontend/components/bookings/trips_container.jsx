@@ -22,7 +22,7 @@ const mdp = (dispatch) => {
         fetchListings: () => dispatch(fetchListings()),
         deleteBooking: (id) => dispatch(deleteBooking(id)), 
         closeModal: () => dispatch(closeModal()), 
-        openModal: (modal) => dispatch(openModal(modal)),
+        openModal: (modal, id) => dispatch(openModal(modal, id)),
 
 
         

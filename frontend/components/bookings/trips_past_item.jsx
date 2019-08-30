@@ -6,6 +6,7 @@ class TripsPastItem extends React.Component {
     render() {
         var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         var startDate = new Date(this.props.booking.start_date.split("/"))
+        debugger
         return (
             <>
                 <li className="trips-past-show-container">
@@ -16,7 +17,7 @@ class TripsPastItem extends React.Component {
                         <p className="trips-date-past">{months[startDate.getMonth()].toUpperCase()} {startDate.getFullYear()}</p>
                         <h1>{this.props.booking.title}</h1>
                         <p className="trip-house-reservation">1 reservation</p>
-                        <p className="trip-house-reservation hover-effect" style={{color: "#008489"}} onClick={() => this.props.openModal('review')}>Write a Review</p>
+                        <p className="trip-house-reservation hover-effect" style={{color: "#008489"}} onClick={() => this.props.openModal('review', this.props.booking.listing_id)}>Write a Review</p>
 
                     </div>
                 </li>

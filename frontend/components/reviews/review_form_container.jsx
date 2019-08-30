@@ -5,15 +5,16 @@ import { closeModal } from '../../actions/modal_actions'
 
 
 const msp = (state) => {
+    debugger
     return({
-
+        id: state.ui.modal.listing_id
     })
 }; 
 
 
 const mdp = (dispatch) => {
     return({
-        createReview: (review) => dispatch(createReview(review)),
+        createReview: (review) => createReview(review),
         closeModal: () => dispatch(closeModal()),
     })
 }; 
