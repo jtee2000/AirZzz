@@ -6,13 +6,14 @@ import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'rea
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import Rating from 'react-rating';
+import ReviewItem from '../reviews/review_item'; 
 
 class ListingShow extends React.Component {
 
     constructor(props) {
         super(props); 
         this.isDayBlocked = this.isDayBlocked.bind(this);
-    
+        this.reviewItem = this.reviewItem.bind(this);
     }
 
     componentDidMount() {
@@ -103,6 +104,13 @@ class ListingShow extends React.Component {
             sum+= review[i][field]; 
         }
         return sum/review.length
+    }
+
+    reviewItem() {
+        debugger
+        return this.props.listing.reviews.map( (review) => {
+            return <ReviewItem review={review} key={review.id} listing={this.props.listing}/>
+        })
     }
 
     render() {
@@ -233,6 +241,7 @@ class ListingShow extends React.Component {
                                     />
                                 </div>
                             </div>
+                            {this.props.listing.reviews ? this.reviewItem() : undefined}
                         </div>
                         
                         {/* <div className="map-show-container">

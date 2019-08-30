@@ -1,6 +1,6 @@
 class Api::ListingsController < ApplicationController 
     def index 
-        @listings = Listing.all  
+        @listings = Listing.all 
         if @listings 
             render :index
         else  

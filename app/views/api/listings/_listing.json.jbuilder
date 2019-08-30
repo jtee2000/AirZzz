@@ -1,5 +1,9 @@
 json.extract! listing, :id, :title, :description, :price, :guests, :beds, :bedrooms, :baths, :longitude, :latitude 
 json.reviews listing.reviews
+listing.reviews.each do |review| 
+        json.name review.user.fname
+end 
+
 if listing.photos.attached?
     json.photoUrl do
         json.array! listing.photos.each do |photo|

@@ -1,7 +1,8 @@
 import React from 'react'; 
 import Rating from 'react-rating';
+import {withRouter} from 'react-router-dom';
 
-export default class Review extends React.Component {
+class Review extends React.Component {
     
     constructor(props) {
         super(props);
@@ -28,8 +29,10 @@ export default class Review extends React.Component {
 
 
     handleSubmit() {
-        const {body, rating} = this.state; 
-        this.props.createReview(this.state)
+        this.props.createReview(this.state).then( () => {
+            this.props.closeModal();
+            this.props.history.push(`/listings/show/${this.state.listing_id}`);
+        })
     }
 
     updateRating(rating) {
@@ -110,6 +113,6 @@ export default class Review extends React.Component {
         )
     }
 
-
-
 }
+
+export default withRouter(Review);

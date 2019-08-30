@@ -14,9 +14,7 @@ class Api::ReviewsController < ApplicationController
 
 
     private 
-
     def review_params
-        debugger
         params.require(:review).permit(:listing_id, :body, :accuracy, :communication, :cleanliness, :location, :check_in, :value)
     end
 
