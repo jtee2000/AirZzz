@@ -1,7 +1,6 @@
 
 @listings.each do |listing|
     json.set! listing.id do
-        json.partial! "api/listings/listing", listing: listing
-        json.reviews listing.reviews 
+        json.partial! "api/listings/listing", listing: listing 
     end
 end

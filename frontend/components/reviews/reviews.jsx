@@ -7,7 +7,7 @@ export default class Review extends React.Component {
         super(props);
         debugger
         this.state = {
-            accuracy: 0, 
+            accuracy: 1, 
             communication: 0, 
             cleanliness: 0, 
             location: 0, 

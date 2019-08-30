@@ -5,6 +5,7 @@ import 'react-dates/initialize';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
+import Rating from 'react-rating';
 
 class ListingShow extends React.Component {
 
@@ -22,10 +23,20 @@ class ListingShow extends React.Component {
                 zoom: 16
             }
             this.map = new google.maps.Map(this.mapNode, mapOptions);
-            new google.maps.Marker({
-                position: { lat: listing.listing.latitude, lng: listing.listing.longitude }, 
-                map: this.map
-            })
+            new google.maps.Circle({
+                strokeColor: '#00A699',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#008489',
+                fillOpacity: 0.15,
+                map: this.map,
+                center: { lat: listing.listing.latitude, lng: listing.listing.longitude },
+                radius: 120
+            });
+            // new google.maps.Marker({
+            //     position: { lat: listing.listing.latitude, lng: listing.listing.longitude }, 
+            //     map: this.map
+            // })
         }); 
 
 
@@ -69,6 +80,20 @@ class ListingShow extends React.Component {
         } else {
             return <div></div>;
         }
+    }
+
+    averageRating() {
+        let sum = 0; 
+        const review = this.props.listing.reviews; 
+        for (let i = 0; i < review.length; i++) {
+            sum += review[0].accuracy; 
+            sum += review[0].communication; 
+            sum += review[0].cleanliness; 
+            sum += review[0].location; 
+            sum += review[0].check_in; 
+            sum += review[0].value; 
+        }
+        return sum/review.length; 
     }
 
     render() {
@@ -128,13 +153,78 @@ class ListingShow extends React.Component {
                                 />
                             </div>
                         </div>
+                        <div className="show-reviews-container">
+                            <div className="listing-linebreak"></div>
+                            <div className="show-reviews-flex">
+                                <h1 className="availability" id="show-reviews-title">{this.props.listing.reviews ? this.props.listing.reviews.length : undefined} Review</h1>
+                                <div className="margin">
+                                    <Rating
+                                        emptySymbol={<i className="fas fa-star gray-stars"></i>}
+                                        initialRating={this.props.listing.reviews ? this.averageRating() : 0}
+                                        readonly={true}
+                                        fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                    />
+                                </div>
+                            </div>
+                            <div className="listing-linebreak"></div>
+                            <div className="reviews-container">
+                                <div className="reviews-secondary-container-2">
+                                    <h1>Accuracy</h1>
+                                    <Rating
+                                        emptySymbol={<i className="fas fa-star gray-stars"></i>}
+                                        initialRating={5}
+                                        fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                    />
+                                </div>
+                                <div className="reviews-secondary-container-2">
+                                    <h1>Communication</h1>
+                                    <Rating
+                                        emptySymbol={<i className="fas fa-star gray-stars"></i>}
+                                        initialRating={5}
+                                        fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                    />
+                                </div>
+                                <div className="reviews-secondary-container-2">
+                                    <h1>Cleanliness</h1>
+                                    <Rating
+                                        emptySymbol={<i className="fas fa-star gray-stars"></i>}
+                                        initialRating={5}
+                                        fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                    />
+                                </div>
+                                <div className="reviews-secondary-container-2">
+                                    <h1>Location</h1>
+                                    <Rating
+                                        emptySymbol={<i className="fas fa-star gray-stars"></i>}
+                                        initialRating={5}
+                                        fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                    />
+                                </div>
+                                <div className="reviews-secondary-container-2">
+                                    <h1>Check-In</h1>
+                                    <Rating
+                                        emptySymbol={<i className="fas fa-star gray-stars"></i>}
+                                        initialRating={5}
+                                        fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                    />
+                                </div>
+                                <div className="reviews-secondary-container-2">
+                                    <h1>Value</h1>
+                                    <Rating
+                                        emptySymbol={<i className="fas fa-star gray-stars"></i>}
+                                        initialRating={5}
+                                        fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                         
-                        <div className="map-show-container">
+                        {/* <div className="map-show-container">
                             <div className="listing-linebreak"></div>
                             <h1>The neighborhood</h1>
                             <div ref={map => this.mapNode = map} className="google-map">
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="booking-form-container">
                         <Bookings className="booking-form" listing_id={this.props.match.params.listingId} />

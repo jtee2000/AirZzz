@@ -42,8 +42,6 @@
     font-size: 18px; 
     /* font-family: Arial, Helvetica, sans-serif; */
     padding: 6px 0; 
-
-
 }
 
 .review-input {
@@ -74,4 +72,36 @@
 
 .gray-stars {
     color: lightgray;
+}
+
+.show-reviews-flex {
+    display: flex; 
+    justify-content: row; 
+}
+
+.show-reviews-flex span {
+    display: inline-block; 
+    padding-top: 20px; 
+}
+
+.margin {
+    margin-left: 30px; 
+}
+
+#show-reviews-title {
+    font-size: 27px; 
+}
+
+.reviews-secondary-container-2 {
+    width: 50%; 
+    text-align: center; 
+    /* font-family: 'Montserrat', sans-serif;  */
+    font-family: 'Montserrat', sans-serif;
+    color: #767676;
+    font-weight: 100; 
+    font-size: 15px; 
+    /* font-family: Arial, Helvetica, sans-serif; */
+    padding: 6px 15px 6px 0px; 
+    display: flex; 
+    justify-content: space-between;
 }
