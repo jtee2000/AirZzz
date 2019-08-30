@@ -6,7 +6,6 @@ class Review extends React.Component {
     
     constructor(props) {
         super(props);
-        debugger
         this.state = {
             accuracy: 0, 
             communication: 0, 
