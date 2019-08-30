@@ -258,6 +258,7 @@ class Booking extends React.Component {
                             </div> */}
                             <div>
                                 <input className="reserve-button" type="submit" value="Reserve"/>
+                            <h1 className="charge">You won't be charged yet</h1>
                             </div>
                         </form>
                      
