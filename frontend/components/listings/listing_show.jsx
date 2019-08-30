@@ -86,6 +86,9 @@ class ListingShow extends React.Component {
     averageRating() {
         let sum = 0; 
         const review = this.props.listing.reviews; 
+        if (this.props.listing.reviews === undefined) {
+            return; 
+        }
         for (let i = 0; i < review.length; i++) {
             sum += review[i].accuracy; 
             sum += review[i].communication; 
@@ -94,7 +97,6 @@ class ListingShow extends React.Component {
             sum += review[i].check_in; 
             sum += review[i].value; 
         }
-        debugger
         return sum/(review.length*5); 
     }
 
@@ -108,9 +110,11 @@ class ListingShow extends React.Component {
     }
 
     reviewItem() {
-        debugger
-        return this.props.listing.reviews.map( (review) => {
-            return <ReviewItem review={review} key={review.id} listing={this.props.listing}/>
+        return this.props.listing.reviews.map( (review, idx) => {
+            if (idx === this.props.listing.reviews.length - 1) {
+                    return <ReviewItem review ={ review } key ={ review.id } listing = { this.props.listing } verify={"hello"}/>
+            }
+            return <ReviewItem review={review} key={review.id} listing={this.props.listing} verify={"bye"}/>
         })
     }
 
@@ -194,7 +198,7 @@ class ListingShow extends React.Component {
                                 </div>
                             </div>
                             <div className="listing-linebreak"></div>
-                            <div className="reviews-container">
+                            <div className="reviews-container-2">
                                 <div className="reviews-secondary-container-2">
                                     <h1>Accuracy</h1>
                                     <Rating
@@ -253,15 +257,15 @@ class ListingShow extends React.Component {
                             {this.props.listing.reviews ? this.reviewItem() : undefined}
                         </div>
                         
-                        {/* <div className="map-show-container">
+                        <div className="map-show-container">
                             <div className="listing-linebreak"></div>
                             <h1>The neighborhood</h1>
                             <div ref={map => this.mapNode = map} className="google-map">
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                     <div className="booking-form-container">
-                        <Bookings className="booking-form" listing_id={this.props.match.params.listingId} />
+                        <Bookings className="booking-form" listing_id={this.props.match.params.listingId} rating={this.averageRating()} count={this.props.listing.reviews ? this.props.listing.reviews.length : undefined}/>
                     </div>
                 </div> 
             </>

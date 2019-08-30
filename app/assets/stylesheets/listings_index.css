@@ -42,9 +42,7 @@
 .listing-details-container p {
     padding: 2px 10px;
 }
-.listing-details-container span {
-    padding: 2px 10px;
-}
+
 
 .list-loc-ele {
     font-family: 'Montserrat', sans-serif; 
@@ -68,13 +66,15 @@
     font-weight: 100;
 }
 
-.listing-details-container span i {
-    color: #00A699;
-    font-size: 8px;
-}
 
 .star-reviews {
     font-size: 10px; 
     font-family: 'Montserrat', sans-serif;
     color: #767676;
+    padding-left: 4px; 
+}
+
+.playing-with-more-stars {
+    font-size: 8px; 
+    padding: 2px 10px; 
 }

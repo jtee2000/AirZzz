@@ -32,6 +32,12 @@
     flex-wrap: wrap; 
 }
 
+.reviews-container-2 {
+    display: flex; 
+    flex-wrap: wrap; 
+    padding-top: 20px;
+}
+
 .reviews-secondary-container {
     width: 50%; 
     text-align: center; 
@@ -129,4 +135,8 @@
     color: #484848; 
     font-size: 14px; 
 
+}
+
+.hello {
+    display: none; 
 }

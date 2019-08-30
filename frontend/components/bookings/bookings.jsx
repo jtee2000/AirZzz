@@ -4,6 +4,8 @@ import 'react-dates/initialize';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
+import Rating from 'react-rating';
+
 class Booking extends React.Component {
 
     constructor(props) {
@@ -156,7 +158,15 @@ class Booking extends React.Component {
                             <div className="bookings-span-mini-details">
                                 <span className="bookings-price-header"><i className="fas fa-dollar-sign"></i>{this.props.listing.price} <span className="bookings-per-night"> per night</span></span>
                             </div>
-                            <span id="bookings-show-star-reviews"><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><span className="star-reviews"> No Reviews</span></span>
+                            {/* <span id="bookings-show-star-reviews"><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><span className="star-reviews"> No Reviews</span></span> */}
+                            <Rating
+                                emptySymbol={<i className="fas fa-star gray-stars"></i>}
+                                initialRating={this.props.rating}
+                                fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                readonly={true}
+                                className="playing-with-stars"
+                            />
+                            <span className="star-reviews">{this.props.count === 0 ? "No" : this.props.count} Reviews</span>
                             <div className="bookings-linebreak"></div>
                         </div>
                         <div className="date-picker-calendar">

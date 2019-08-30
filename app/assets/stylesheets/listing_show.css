@@ -150,18 +150,17 @@
 }
 
 .map-show-container {
-    padding: 25px; 
+    padding: 0 25px 25px 25px; 
     
 }
 
 .map-show-container h1 {
-    padding-top: 60px; 
+    padding-top: 30px; 
     padding-bottom: 20px;
     color: #484848;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     font-size: 24px; 
     font-weight: 600;
-
 }
 
 
@@ -243,7 +242,7 @@
 }
 
 .the-literal-literal-container {
-    height: 1500px;
+    height: 2000px;
     
 }
 
@@ -561,3 +560,7 @@
     
 }
 
+
+.playing-with-stars {
+    font-size: 10px; 
+}
