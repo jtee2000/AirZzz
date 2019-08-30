@@ -86,14 +86,23 @@ class ListingShow extends React.Component {
         let sum = 0; 
         const review = this.props.listing.reviews; 
         for (let i = 0; i < review.length; i++) {
-            sum += review[0].accuracy; 
-            sum += review[0].communication; 
-            sum += review[0].cleanliness; 
-            sum += review[0].location; 
-            sum += review[0].check_in; 
-            sum += review[0].value; 
+            sum += review[i].accuracy; 
+            sum += review[i].communication; 
+            sum += review[i].cleanliness; 
+            sum += review[i].location; 
+            sum += review[i].check_in; 
+            sum += review[i].value; 
         }
         return sum/review.length; 
+    }
+
+    individualRating(field) {
+        let sum = 0; 
+        const review = this.props.listing.reviews; 
+        for (let i = 0; i < review.length; i++) {
+            sum+= review[i][field]; 
+        }
+        return sum/review.length
     }
 
     render() {
@@ -122,6 +131,7 @@ class ListingShow extends React.Component {
                 <div className="listing-show-body">
                     <div className="listing-show-container">
                         <h1 className="listing-show-title">{this.props.listing.title}</h1>
+                        <h2 className="city">Boston</h2>
                         <div className="listing-detail-container">
                             <div className="first-collection">
                                 <i className="fas fa-home"></i>
@@ -172,48 +182,54 @@ class ListingShow extends React.Component {
                                     <h1>Accuracy</h1>
                                     <Rating
                                         emptySymbol={<i className="fas fa-star gray-stars"></i>}
-                                        initialRating={5}
+                                        initialRating={this.props.listing.reviews ? this.individualRating("accuracy") : 0}
                                         fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                        readonly={true}
                                     />
                                 </div>
                                 <div className="reviews-secondary-container-2">
                                     <h1>Communication</h1>
                                     <Rating
                                         emptySymbol={<i className="fas fa-star gray-stars"></i>}
-                                        initialRating={5}
+                                        initialRating={this.props.listing.reviews ? this.individualRating("communication") : 0}
                                         fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                        readonly={true}
                                     />
                                 </div>
                                 <div className="reviews-secondary-container-2">
                                     <h1>Cleanliness</h1>
                                     <Rating
                                         emptySymbol={<i className="fas fa-star gray-stars"></i>}
-                                        initialRating={5}
+                                        initialRating={this.props.listing.reviews ? this.individualRating("cleanliness") : 0}
                                         fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                        readonly={true}
                                     />
                                 </div>
                                 <div className="reviews-secondary-container-2">
                                     <h1>Location</h1>
                                     <Rating
                                         emptySymbol={<i className="fas fa-star gray-stars"></i>}
-                                        initialRating={5}
+                                        initialRating={this.props.listing.reviews ? this.individualRating("location") : 0}
                                         fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                        readonly={true}
                                     />
                                 </div>
                                 <div className="reviews-secondary-container-2">
                                     <h1>Check-In</h1>
                                     <Rating
                                         emptySymbol={<i className="fas fa-star gray-stars"></i>}
-                                        initialRating={5}
+                                        initialRating={this.props.listing.reviews ? this.individualRating("check_in") : 0}
                                         fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                        readonly={true}
                                     />
                                 </div>
                                 <div className="reviews-secondary-container-2">
                                     <h1>Value</h1>
                                     <Rating
                                         emptySymbol={<i className="fas fa-star gray-stars"></i>}
-                                        initialRating={5}
+                                        initialRating={this.props.listing.reviews ? this.individualRating("value") : 0}
                                         fullSymbol={<i className="fas fa-star blue-stars"></i>}
+                                        readonly={true}
                                     />
                                 </div>
                             </div>

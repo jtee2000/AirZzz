@@ -83,7 +83,7 @@
 .listing-show-title {
     color: #484848;
     font-size: 35px; 
-    padding: 25px;
+    padding: 25px 25px 10px;
     font-weight: 600;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     font-stretch: extra-expanded;
@@ -175,7 +175,7 @@
 }
 
 .show-more-button {
-    color: #00A699;
+    color: #008489;
     font-weight: 700;
     display: flex;
     flex-direction: row-reverse;
@@ -188,7 +188,7 @@
 
 
 .show-more-btn-container i {
-    color: #00A699;
+    color: #008489;
     margin-left: 10px;
 }
 
@@ -551,5 +551,13 @@
 
 .show-reviews-container {
     padding: 25px; 
+}
+
+.city {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px; 
+    color: #767676;
+    padding: 0 25px;
+    
 }
 
