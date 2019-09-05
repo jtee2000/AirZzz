@@ -140,7 +140,6 @@ class SessionForm extends React.Component {
             switched = 'Sign up'
         }
         const errors = "email-input";
-        debugger
         return (
             <div className="form">
                 {/* <i className="fas fa-times" onClick={this.props.closeModal}></i> */}
