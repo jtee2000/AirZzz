@@ -12,6 +12,8 @@
 #  location      :integer
 #  check_in      :integer
 #  value         :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 
 class Review < ApplicationRecord 

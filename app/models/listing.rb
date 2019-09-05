@@ -14,10 +14,11 @@
 #  latitude    :float            not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  city        :string
 #
 
 class Listing < ApplicationRecord 
-    validates :title, :description, :price, :guests, :beds, :bedrooms, :baths, :longitude, :latitude, presence: true 
+    validates :title, :description, :price, :guests, :beds, :bedrooms, :baths, :longitude, :latitude, :city, presence: true 
 
     has_many_attached :photos
     

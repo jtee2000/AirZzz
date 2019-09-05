@@ -1,4 +1,4 @@
-json.extract! listing, :id, :title, :description, :price, :guests, :beds, :bedrooms, :baths, :longitude, :latitude 
+json.extract! listing, :id, :title, :description, :price, :guests, :beds, :bedrooms, :baths, :longitude, :latitude, :city
 json.reviews listing.reviews
 listing.reviews.each do |review| 
         json.name review.user.fname
