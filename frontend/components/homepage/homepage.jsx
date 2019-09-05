@@ -112,12 +112,16 @@ class Homepage extends React.Component {
                             </Link>
                         </div>
                         <div className="nav-bar-text">
-                            <div className="host-hover">
-                                <span>Become a host</span>
-                            </div>
-                            <div className="host-hover">
-                                <span>Help</span>
-                            </div>
+                            <a href="https://www.linkedin.com/in/jason-tee-516608191/" target="_blank">
+                                <div className="host-hover" >
+                                    <span>LinkedIn</span>
+                                </div>
+                            </a>
+                            <a href="https://drive.google.com/file/d/1T2FNhuFNuliE98v2xBYFY1zlRi42jBG5/view" target="_blank">
+                                <div className="host-hover" >
+                                    <span>Resume</span>
+                                </div>
+                            </a>
                             <div className="host-hover">
                                 <button onClick={() => this.props.openModal('login')}>Login</button>
                             </div>

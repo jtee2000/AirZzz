@@ -152,7 +152,7 @@ class ListingShow extends React.Component {
                 <div className="listing-show-body">
                     <div className="listing-show-container">
                         <h1 className="listing-show-title">{this.props.listing.title}</h1>
-                        <h2 className="city">Boston</h2>
+                        <h2 className="city">{this.props.listing.city}</h2>
                         <div className="listing-detail-container">
                             <div className="first-collection">
                                 <i className="fas fa-home"></i>

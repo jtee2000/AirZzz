@@ -43,25 +43,35 @@ class ProtNav extends React.Component {
                         </div>
                     </div>
                     <div className="nav-bar-text-2">
-                        <div className="host-hover-2">
-                            <span>Add listing</span>
-                        </div>
-                        <div className="host-hover-2">
-                            <span>Host</span>
-                        </div>
-                        <div className="host-hover-2">
-                            <span>Saved</span>
-                        </div>
+                        <a href="https://www.linkedin.com/in/jason-tee-516608191/" target="_blank">
+                            <div className="host-hover-2">
+                                <span>LinkedIn</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/jtee2000/AirZzz" target="_blank">
+                            <div className="host-hover-2" >
+                                <span>Github</span>
+                            </div>
+                        </a>
+                        <a href="https://angel.co/jason-tee" target="_blank">
+                            <div className="host-hover-2" >
+                                <span>AngelList</span>
+                            </div>
+                        </a>
+                        <a href="https://jasontee.me/" target="_blank">
+                            <div className="host-hover-2" >
+                                <span>Portfolio</span>
+                            </div>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1T2FNhuFNuliE98v2xBYFY1zlRi42jBG5/view" target="_blank">
+                            <div className="host-hover-2" >
+                                <span>Resume</span>
+                            </div>
+                        </a>
                         <div className="host-hover-2">
                             <Link to="/listings/trips" className="remove-text-decoration">
                                 <span>Trips</span>
                             </Link>
-                        </div>
-                        <div className="host-hover-2">
-                            <span>Messages</span>
-                        </div>
-                        <div className="host-hover-2">
-                            <span>Help</span>
                         </div>
                         <div className="host-hover-2">
                             <button className="header-button-2" onClick={() => this.props.logout().then(this.props.history.push("/"))}>Log Out</button>

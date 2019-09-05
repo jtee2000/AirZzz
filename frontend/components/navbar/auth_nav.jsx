@@ -42,12 +42,16 @@ class AuthNav extends React.Component {
                         </div>
                     </div>
                     <div className="nav-bar-text-2">
-                        <div className="host-hover-2">
-                            <span>Become a host</span>
-                        </div>
-                        <div className="host-hover-2">
-                            <span>Help</span>
-                        </div>
+                        <a href="https://www.linkedin.com/in/jason-tee-516608191/" target="_blank">
+                            <div className="host-hover-2">
+                                <span>LinkedIn</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/jtee2000/AirZzz" target="_blank">
+                            <div className="host-hover-2" >
+                                <span>Github</span>
+                            </div>
+                        </a>
                         <div className="host-hover-2">
                             <button onClick={() => this.props.openModal('login')}>Login</button>
                         </div>
