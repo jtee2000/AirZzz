@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this); 
         this.modals = this.modals.bind(this); 
         this.emailBlank = false; 
         this.fnameBlank = false; 
@@ -121,6 +122,15 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'Login') this.props.openModal('signup');
     }
 
+    demoLogin(e) {
+        this.setState({email: "demo@demo.com", password: "starwars"}, () => {
+            this.props.processForm(this.state).then(() => {
+                this.props.closeModal();
+                this.props.history.push("/listings")
+            })
+        }); 
+    }
+
 
     render() {
         let switched; 
@@ -130,6 +140,7 @@ class SessionForm extends React.Component {
             switched = 'Sign up'
         }
         const errors = "email-input";
+        debugger
         return (
             <div className="form">
                 {/* <i className="fas fa-times" onClick={this.props.closeModal}></i> */}
@@ -137,7 +148,7 @@ class SessionForm extends React.Component {
                     <img className="x" onClick={this.props.closeModal} src={x_img} alt=""/>
                 </div>
                 <div className="login-text">
-                    <span>{this.props.formType} with </span><span className="link-highlight">Demo </span><span>or </span><span className="link-highlight" onClick={this.modals}>{switched}</span>
+                    <span>{this.props.formType} {this.props.formType === "Login" ? "with" : undefined} </span><span className="link-highlight" onClick={this.demoLogin}> {this.props.formType === "Login" ? "Demo" : undefined} </span><span>or </span><span className="link-highlight" onClick={this.modals}>{switched}</span>
                 </div>
                 <div className="form-border">
                     <span className="span-is-annoying"></span>

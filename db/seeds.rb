@@ -10,6 +10,8 @@ Listing.delete_all
 User.delete_all 
 Booking.delete_all
 
+demo = User.create({email: "demo@demo.com", fname: "Demo", lname: "Demo", password: "starwars"})
+
 walsh = Listing.create({title: "Walsh Hall", description: "A building comprised of sophomores, eight-mans, and the Front Desk Pilot Project: Walsh Hall on Lower Campus, home to many late nights and sophomore bonding, is a favorite and quickly-picked building during the housing process.
 Eight-man suites contain two bathrooms and a common room, offering more living space for residents to enjoy. Walsh is also centrally located—with its proximity to Corcoran Commons, the Res, the B-Line, and other residence halls, residents are able to enjoy different aspects of campus life right outside their door.
 Walsh Hall is on Lower Campus and composed of four- and eight-person suites. \n\n It is the least expensive option for sophomores living on Lower Campus. If someone lives in Walsh, he or she is required to buy the meal plan since only the eight-man rooms come with a kitchenette.

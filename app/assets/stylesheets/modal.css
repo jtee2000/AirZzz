@@ -149,6 +149,11 @@
     color: #00A699 !important;
 }
 
+.link-highlight:hover {
+    cursor: pointer;
+    text-decoration: underline; 
+}
+
 .form ul {
     text-align: center;
 }
