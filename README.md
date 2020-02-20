@@ -139,8 +139,8 @@ class ListingMap extends React.Component {
 
 ## Bookings 
 * Users can input their potential rental date
+* Dates that have not already been rented will show up
 ![](app/assets/gif/Bookings.gif)
-* Listings that have not already been rented will show up
 ```
 class Booking extends React.Component {
     ...
