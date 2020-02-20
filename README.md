@@ -173,5 +173,29 @@ class Booking extends React.Component {
  ```
 * Users can access to all of their past and future trips 
 
+## Reviews
+* Users who have completed a trip may write a review
+![](app/assets/gif/Reviews.gif)
+* Users can look at reviews
+```
+class Api::ReviewsController < ApplicationController 
+
+    def create 
+        @review = Review.new(review_params)
+        @review.user_id = current_user.id 
+        if @review.save 
+        else  
+            render json: ["Review invalid"], status: 422
+        end 
+    end 
+
+    private 
+    def review_params
+        params.require(:review).permit(:listing_id, :body, :accuracy, :communication, :cleanliness, :location, :check_in, :value)
+    end
+end
+
+```
+* Listing total reviews are displayed and auto-adjusted to match rating
 
 
