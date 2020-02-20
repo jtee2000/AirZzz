@@ -66,10 +66,10 @@ end
 
 ## Listings Search + Google Maps API
 * Users can view featured listings shown on the map using Google Maps API
-![](app/assets/gif/ListingSearch.gif)
-* User can click on a listing which brings them to a show page
 * Users can search in a search bar for listings in their area
 * Users can move the map and the search results will adjust to display only what is in the map bounds
+![](app/assets/gif/ListingSearch.gif)
+* User can click on a listing which brings them to a show page
 ```
 class ListingMap extends React.Component {
     constructor(props) {
