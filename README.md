@@ -24,7 +24,7 @@ AirZzz is a full-stack single-page web application modeled after the notorious A
 * Users can log in
 * Users cannot make rentals without being logged in
 
-![](app/assets/gif/Hnet.com-image.gif)
+![](app/assets/gif/Hnet-image.gif)
 
 
 
