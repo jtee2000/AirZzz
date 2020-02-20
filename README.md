@@ -1,24 +1,31 @@
-# README
+# AirZzz
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+AirZzz is a full-stack single-page web application modeled after the notorious Airbnb. It uses Ruby on Rails as the webframework to handle all API requests, React/Redux to manage frontend state changes, and a PostgreSQL database on the backend. To manage all of the displayed photos, the application links Amazon Web Services. 
 
-Things you may want to cover:
 
-* Ruby version
+**[Visit the Live Application](https://air-zzz.herokuapp.com/#/)**
 
-* System dependencies
+# Technologies 
+* React/Redux
+* Ruby on Rails
+* PostgreSQL
+* Javascript
+* CSS
+* HTML
+* AWS
+* Google Maps API
+* Webpack 
+* jQuery 
 
-* Configuration
+# Key Features 
 
-* Database creation
+**User Authenticaton**
+* Users can create an account
+* Users can log in
+* Users cannot make rentals without being logged in
 
-* Database initialization
+<a href="https://imgflip.com/gif/3ps8fr"><img src="https://i.imgflip.com/3ps8fr.gif" title="made at imgflip.com"/></a>
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
