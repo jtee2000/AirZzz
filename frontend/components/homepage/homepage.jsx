@@ -117,7 +117,7 @@ class Homepage extends React.Component {
                                     <span>LinkedIn</span>
                                 </div>
                             </a>
-                            <a href="https://drive.google.com/file/d/1sqIgNyNBUGmd9S5jhqfW2J3hV7YJwpXU/view?usp=sharing" target="_blank">
+                            <a href="https://drive.google.com/file/d/1QUsNb6McOwB0RMA7_Tv2OlcOiU-9aY4L/view?usp=sharing" target="_blank">
                                 <div className="host-hover" >
                                     <span>Resume</span>
                                 </div>
