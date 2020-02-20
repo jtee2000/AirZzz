@@ -176,8 +176,8 @@ class Booking extends React.Component {
 
 ## Reviews
 * Users who have completed a trip may write a review
-![](app/assets/gif/Reviews.gif)
 * Users can look at reviews
+![](app/assets/gif/Reviews.gif)
 ```
 class Api::ReviewsController < ApplicationController 
 
