@@ -138,8 +138,39 @@ class ListingMap extends React.Component {
 
 ## Bookings 
 * Users can input their potential rental date
-* Listings that have not already been rented will show up
 ![](app/assets/gif/Bookings.gif)
+* Listings that have not already been rented will show up
+```
+class Booking extends React.Component {
+    ...
+    handleSubmit(e) {
+        e.preventDefault(); 
+        if (!this.props.user) {
+            this.props.openModal('signup');
+            return;
+        }
+        const { startDate, endDate, listing_id, guests} = this.state; 
+        this.setState({guests: this.state.adults + this.state.children + this.state.infants})
+        this.props.processForm({
+            start_date: moment(startDate).format("YYYY-MM-DD"),
+            end_date: moment(endDate).format("YYYY-MM-DD"),
+            listing_id,
+            guests
+        }).then( () => this.props.history.push("/listings/trips"));
+    }
+
+    isDayBlocked(date) {
+        const formatted = moment(date).format("YYYY-MM-DD");
+        for (let i = 1; i < Object.keys(this.props.bookings).length + 1; i++) {
+            if (!Object.values(this.props.bookings)[i]) break; 
+            if (formatted >= Object.values(this.props.bookings)[i].start_date && formatted <= Object.values(this.props.bookings)[i].end_date && this.props.listing.id === Object.values(this.props.bookings)[i].listing_id) {
+                return true; 
+            }
+        }
+
+    }
+    ...
+ ```
 * Users can access to all of their past and future trips 
 
 
