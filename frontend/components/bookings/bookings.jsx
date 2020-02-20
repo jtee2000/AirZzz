@@ -7,7 +7,6 @@ import moment from 'moment';
 import Rating from 'react-rating';
 
 class Booking extends React.Component {
-
     constructor(props) {
         super(props)
         this.state = {
@@ -39,11 +38,6 @@ class Booking extends React.Component {
             this.props.openModal('signup');
             return;
         }
-        // const start_date = moment(this.state.startDate).format("YYYY/MM/DD");
-        // const end_date = moment(this.state.endDate).format("YYYY/MM/DD");
-        // this.setState({start_date: start_date}); 
-        // this.setState({end_date: end_date});
-        // const booking = Object.assign({}, this.state);
         const { startDate, endDate, listing_id, guests} = this.state; 
         this.setState({guests: this.state.adults + this.state.children + this.state.infants})
         this.props.processForm({
