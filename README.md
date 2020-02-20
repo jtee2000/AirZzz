@@ -20,5 +20,12 @@ AirZzz is a full-stack single-page web application modeled after the notorious A
 # Key Features 
 
 **User Authenticaton**
+* Users can create an account
+* Users can log in
+* Users cannot make rentals without being logged in
+
+<a href="https://imgflip.com/gif/3ps8fr"><img src="https://i.imgflip.com/3ps8fr.gif" title="made at imgflip.com"/></a>
+
+
 
 
