@@ -66,7 +66,7 @@ end
 
 ## Listings Search + Google Maps API
 * Users can view featured listings shown on the map using Google Maps API
-![](app/assets/gif/ListSearch.gif)
+![](app/assets/gif/ListingSearch.gif)
 * User can click on a listing which brings them to a show page
 * Users can search in a search bar for listings in their area
 
