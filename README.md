@@ -69,6 +69,7 @@ end
 ![](app/assets/gif/ListingSearch.gif)
 * User can click on a listing which brings them to a show page
 * Users can search in a search bar for listings in their area
+* Users can move the map and the search results will adjust to display only what is in the map bounds
 ```
 class ListingMap extends React.Component {
     constructor(props) {
