@@ -69,5 +69,5 @@ end
 ![](app/assets/gif/ListSearch.gif)
 * User can click on a listing which brings them to a show page
 * Users can search in a search bar for listings in their area
-* A list of nearby listings appears on a map
+
 
