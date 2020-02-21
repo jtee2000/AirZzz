@@ -21,8 +21,9 @@ AirZzz is a full-stack single-page web application modeled after the notorious A
 # Key Features 
 
 ## User Authenticaton
-* Users can create an account
-* Users can log in
+* Users can create an account and log in
+* Backend errors are relayed to the frontend 
+* State is managed with React to handle input validations
 ![](app/assets/gif/Hnet-image.gif)
 * Users cannot make rentals without being logged in
 ```
@@ -67,9 +68,10 @@ end
 
 ## Listings Search + Google Maps API
 * Users can view featured listings shown on the map using Google Maps API
+* Users can search in a search bar for listings in their area
+* Users can move the map and the search results will adjust to display only what is in the map bounds
 ![](app/assets/gif/ListingSearch.gif)
 * User can click on a listing which brings them to a show page
-* Users can search in a search bar for listings in their area
 ```
 class ListingMap extends React.Component {
     constructor(props) {
@@ -139,8 +141,8 @@ class ListingMap extends React.Component {
 
 ## Bookings 
 * Users can input their potential rental date
+* Dates that have not already been rented will show up
 ![](app/assets/gif/Bookings.gif)
-* Listings that have not already been rented will show up
 ```
 class Booking extends React.Component {
     ...
@@ -174,5 +176,29 @@ class Booking extends React.Component {
  ```
 * Users can access to all of their past and future trips 
 
+## Reviews
+* Users who have completed a trip may write a review
+* Users can look at reviews
+![](app/assets/gif/Reviews.gif)
+```
+class Api::ReviewsController < ApplicationController 
+
+    def create 
+        @review = Review.new(review_params)
+        @review.user_id = current_user.id 
+        if @review.save 
+        else  
+            render json: ["Review invalid"], status: 422
+        end 
+    end 
+
+    private 
+    def review_params
+        params.require(:review).permit(:listing_id, :body, :accuracy, :communication, :cleanliness, :location, :check_in, :value)
+    end
+end
+
+```
+* Listing total reviews are displayed and auto-adjusted to match rating
 
 
