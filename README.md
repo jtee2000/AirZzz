@@ -20,9 +20,9 @@ AirZzz is a full-stack single-page web application modeled after the notorious A
 # Key Features 
 
 ## User Authenticaton
-* Users can create an account
-* Users can log in
-* Backend errors are relayed to the frontend using React state changes to manage input validations
+* Users can create an account and log in
+* Backend errors are relayed to the frontend 
+* State is managed with React to handle input validations
 ![](app/assets/gif/Hnet-image.gif)
 * Users cannot make rentals without being logged in
 ```
