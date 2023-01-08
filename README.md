@@ -2,8 +2,8 @@
 
 AirZzz is a full-stack single-page web application modeled after the notorious Airbnb. It uses Ruby on Rails as the webframework to handle all API requests, React/Redux to manage frontend state changes, and a PostgreSQL database on the backend. To manage all of the displayed photos, the application links Amazon Web Services. 
 
-![](app/assets/images/AirZzzCover.png)
 **[Visit the Live Application](https://air-zzz.herokuapp.com/#/)**
+![](app/assets/images/AirZzzCover.png)
 
 
 # Technologies 
