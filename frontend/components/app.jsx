@@ -14,6 +14,7 @@ const App = () => {
     return(
         <div>
             <Modal />
+            
             <header>
             <AuthRoute exact path="/" component={Homepage} />
             {/* <Homepage /> */}
