@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.5.1'
+
 require 'open-uri'
 gem 'bootsnap', '>= 1.1.0', require: false 
 gem "aws-sdk-s3"
