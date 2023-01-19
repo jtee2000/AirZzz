@@ -58,7 +58,7 @@ GEM
     aws-sdk-kms (1.61.0)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.117.2)
+    aws-sdk-s3 (1.118.0)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.4)
@@ -100,7 +100,7 @@ GEM
     erubi (1.12.0)
     execjs (2.8.1)
     ffi (1.15.5)
-    globalid (1.0.0)
+    globalid (1.0.1)
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -137,7 +137,7 @@ GEM
       strscan
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.1.2)
+    net-protocol (0.1.1)
       io-wait
       timeout
     net-smtp (0.3.0)
